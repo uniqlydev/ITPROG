@@ -1,0 +1,46 @@
+{
+    "drinks": {
+        "1":"Margarita",
+        "2":"Martini",
+        "3":"Old Fashioned",
+        "4":"Mojito",
+        "5":"Gin and Tonic",
+        "6":"Moscow Mule",
+        "7":"Mai Tai",
+        "8":"Manhattan",
+        "9":"Whiskey Sour",
+        "10":"Daiquiri",
+        "11":"Bloody Mary",
+        "12":"Pina Colada",
+        "13":"White Russian",
+        "14":"Sangria",
+        "15":"Cosmopolitan"
+    },
+    "Meal" : {
+        "1":"Fries and Nachoes",
+        "2":"Cheese Burger",
+        "3":"Chicken Wings",
+        "4":"Pizza",
+        "5":"Tacos",
+        "6":"Hot Dog",
+        "7":"Sandwich",
+        "8":"Pasta",
+        "9":"Salad",
+        "10":"Soup",
+        "11":"Steak",
+        "12":"Sushi",
+        "13":"Burrito",
+        "14":"Ribs",
+        "15":"Fried Chicken"
+    },
+    "Sides" : {
+        "1":"Mac and Cheese",
+        "2":"Mashed Potatoes",
+        "3":"French Fries",
+        "4":"Onion Rings",
+        "5":"Corn",
+        "6":"Baked Potato",
+        "7":"Baked Beans"
+
+    }
+}
