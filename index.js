@@ -24,7 +24,9 @@ app.listen(port, () => {
 
 // Routing view
 app.get('/', (req, res) => {
+    const username = "admin"; 
     res.render('home/index', {
-        title: 'Home'
+        title: 'Home',
+        username: username
     });
 });
