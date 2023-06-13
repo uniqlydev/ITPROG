@@ -2,9 +2,25 @@ body{
     background-color: #26AE57;
 }
 
-.blank-layer {
+.menu-layer {
     width: 98.8vw; /* Set the width of the layer */
     height: 97.4vh; /* Set the height of the layer */
     background-color: #F6F4F4; /* Set the background color of the layer */
     border-radius: 20px;
+    display:flex;
   }
+.cart-layer{
+    width: 25%; /* Set the width of the small layer */
+    height: 98.1%; /* Set the height to match the parent layer */
+    background-color: gray; /* Set the background color of the small layer */
+    margin-left: auto; /* Push the small layer to the right side */
+    border-radius: 20px;
+    display: flex; /* Use flexbox to center the text vertically and horizontally */
+    justify-content: center;
+    align-items: top;   
+    padding-top: 1%;
+}
+.cart-text{
+    font-size: 24px; /* Adjust the font size as desired */
+    font-weight: bold; /* Optionally make the text bold */
+}
