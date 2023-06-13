@@ -6,4 +6,5 @@ body{
     width: 98.8vw; /* Set the width of the layer */
     height: 97.4vh; /* Set the height of the layer */
     background-color: #F6F4F4; /* Set the background color of the layer */
+    border-radius: 20px;
   }
