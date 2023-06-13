@@ -24,9 +24,15 @@ app.listen(port, () => {
 
 // Routing view
 app.get('/', (req, res) => {
-    const username = "admin"; 
+    const username = "Brute"; 
     res.render('home/index', {
         title: 'Home',
         username: username
+    });
+});
+
+app.get('/about', (req, res) => {
+    res.render('about/index', {
+        title: 'About'
     });
 });
