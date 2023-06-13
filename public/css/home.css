@@ -12,15 +12,25 @@ body{
 .cart-layer{
     width: 25%; /* Set the width of the small layer */
     height: 98.1%; /* Set the height to match the parent layer */
-    background-color: gray; /* Set the background color of the small layer */
+    background-color: #FFFFFF; /* Set the background color of the small layer */
     margin-left: auto; /* Push the small layer to the right side */
     border-radius: 20px;
     display: flex; /* Use flexbox to center the text vertically and horizontally */
-    justify-content: center;
-    align-items: top;   
-    padding-top: 1%;
+    padding-top: 1%;    
+    flex-direction: column; /* Align elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center items horizontally */
 }
 .cart-text{
     font-size: 24px; /* Adjust the font size as desired */
     font-weight: bold; /* Optionally make the text bold */
+    font-family: 'Calibri';
 }
+
+.rectangular-shape {
+   
+    width: 80px; /* Adjust the width of the rectangular shape */
+    height: 40px; /* Adjust the height of the rectangular shape */
+    background-color: #D9D9D9; /* Set the background color of the rectangular shape */
+    border-radius: 10%;
+  }
