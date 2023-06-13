@@ -20,7 +20,7 @@ body{
     flex-direction: column; /* Align elements vertically */
     justify-content: flex-start; /* Align items to the top */
     align-items: center; /* Center items horizontally */
-}
+}   
 .cart-text{
     font-size: 24px; /* Adjust the font size as desired */
     font-weight: bold; /* Optionally make the text bold */
@@ -28,9 +28,85 @@ body{
 }
 
 .rectangular-shape {
-   
-    width: 80px; /* Adjust the width of the rectangular shape */
-    height: 40px; /* Adjust the height of the rectangular shape */
+    margin-top: 6%;
+    width: 350px; /* Adjust the width of the rectangular shape */
+    height: 55px; /* Adjust the height of the rectangular shape */
     background-color: #D9D9D9; /* Set the background color of the rectangular shape */
-    border-radius: 10%;
+    border-radius: 5.3%;
+    display: flex; /* Use flexbox to center the shape text */
+    justify-content:left; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+  }
+
+  .shape-text {
+    color: #2C666E; /* Set the text color */
+    font-weight: bold; /* Optionally make the text bold */
+    margin-left: 65px;
+  }
+
+#cost{
+    margin-top: 105%;
+    height: 75px;
+}
+
+#total{
+    margin-top: 10%;
+}
+
+
+
+.button-container {
+    margin-top: 29px; /* Add margin to separate from the rectangular shape */
+    
+}
+
+.buttons {
+    padding: 10px 140px; /* Adjust the button padding as desired */
+    background-color: #2F9F63; /* Set the background color of the button */
+    color: #fff; /* Set the text color of the button */
+    border: none; /* Remove button border */
+    border-radius: 20px; /* Add rounded corners to the button */
+    font-size: 16px; /* Adjust the font size as desired */
+    font-weight: bold; /* Optionally make the button text bold */
+  }  
+
+  .button-group {
+    display: flex; /* Use flexbox to align the buttons */
+    align-items: center; /* Center the buttons vertically */
+    margin-top: 8px; /* Add margin between the shape text and buttons */
+  }
+  
+  .subtract-button{
+    width: 24px; /* Adjust the button width as desired */
+    height: 24px; /* Adjust the button height as desired */
+    background-color: #E75252; /* Set the background color of the buttons */
+    color: #fff; /* Set the text color of the buttons */
+    border: none; /* Remove button border */
+    border-radius: 50%; /* Make the buttons circular */
+    font-weight: bold; /* Optionally make the button text bold */
+    display: flex; /* Use flexbox to center the button text */
+    justify-content: center; /* Center the button text horizontally */
+    align-items: center; /* Center the button text vertically */
+    cursor: pointer; /* Add cursor pointer on hover */
+    margin-left: 98px;
+  }
+  .add-button {
+    width: 24px; /* Adjust the button width as desired */
+    height: 24px; /* Adjust the button height as desired */
+    background-color: #78C584; /* Set the background color of the buttons */
+    color: #fff; /* Set the text color of the buttons */
+    border: none; /* Remove button border */
+    border-radius: 50%; /* Make the buttons circular */
+    font-weight: bold; /* Optionally make the button text bold */
+    display: flex; /* Use flexbox to center the button text */
+    justify-content: center; /* Center the button text horizontally */
+    align-items: center; /* Center the button text vertically */
+    cursor: pointer; /* Add cursor pointer on hover */
+
+  }
+  
+  .number-indicator {
+    color: #2C666E; /* Set the text color */
+    font-weight: bold; /* Optionally make the text bold */
+    margin: 0 8px; /* Add margin between the buttons */
   }
