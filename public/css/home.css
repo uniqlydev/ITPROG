@@ -40,13 +40,13 @@ body{
 
   .shape-text {
     color: #2C666E; /* Set the text color */
-    font-weight: bold; /* Optionally make the text bold */
     margin-left: 65px;
   }
 
 #cost{
     margin-top: 105%;
     height: 75px;
+    
 }
 
 #total{
@@ -60,7 +60,7 @@ body{
     
 }
 
-.buttons {
+#button {
     padding: 10px 140px; /* Adjust the button padding as desired */
     background-color: #2F9F63; /* Set the background color of the button */
     color: #fff; /* Set the text color of the button */
@@ -68,15 +68,16 @@ body{
     border-radius: 20px; /* Add rounded corners to the button */
     font-size: 16px; /* Adjust the font size as desired */
     font-weight: bold; /* Optionally make the button text bold */
-  }  
+    cursor: pointer; /* Add cursor pointer on hover */
+}  
 
-  .button-group {
+.button-group {
     display: flex; /* Use flexbox to align the buttons */
     align-items: center; /* Center the buttons vertically */
     margin-top: 8px; /* Add margin between the shape text and buttons */
-  }
+}
   
-  .subtract-button{
+.subtract-button{
     width: 24px; /* Adjust the button width as desired */
     height: 24px; /* Adjust the button height as desired */
     background-color: #E75252; /* Set the background color of the buttons */
@@ -89,8 +90,8 @@ body{
     align-items: center; /* Center the button text vertically */
     cursor: pointer; /* Add cursor pointer on hover */
     margin-left: 98px;
-  }
-  .add-button {
+}
+.add-button {
     width: 24px; /* Adjust the button width as desired */
     height: 24px; /* Adjust the button height as desired */
     background-color: #78C584; /* Set the background color of the buttons */
@@ -103,10 +104,16 @@ body{
     align-items: center; /* Center the button text vertically */
     cursor: pointer; /* Add cursor pointer on hover */
 
-  }
+}
   
-  .number-indicator {
+.number-indicator {
     color: #2C666E; /* Set the text color */
     font-weight: bold; /* Optionally make the text bold */
     margin: 0 8px; /* Add margin between the buttons */
-  }
+}
+
+.right-side {
+    color: #2C666E; /* Set the text color */
+
+  margin-left: 30%; /* Align the text to the right side */
+}
