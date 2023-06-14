@@ -31,6 +31,9 @@ ul, li {
     border-radius: 20px;
   }
 
+.quantity_class {
+    display: inline-block;
+}
 
   .shape-text {
     color: #2C666E; /* Set the text color */
