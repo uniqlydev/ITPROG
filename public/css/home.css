@@ -9,6 +9,47 @@ body{
     border-radius: 20px;
     display:flex;
   }
+.main-layer{
+    width: 75%; /* Set the width of the small layer */
+    height: 98.1%; /* Set the height to match the parent layer */
+    /*background-color: yellow; /* Set the background color of the small layer */
+    margin-left: auto; /* Push the small layer to the right side */
+    border-radius: 20px;
+    display: flex; /* Use flexbox to center the text vertically and horizontally */  
+    flex-direction: column; /* Align elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    /*align-items: center; /* Center items horizontally */
+}  
+.header-layer{
+    width: 100%; /* Set the width of the small layer */
+    height: 10%; /* Set the height to match the parent layer */
+    /*background-color: blue; /* Set the background color of the small layer */
+    border-radius: 20px;
+    display:flex;
+} 
+.navigation-layer{
+    width: 100%; /* Set the width of the small layer */
+    height: 10%; /* Set the height to match the parent layer */
+    /*background-color: orange; /* Set the background color of the small layer */
+    border-radius: 20px;
+    display:flex;
+    justify-content: space-between;
+} 
+.tiles-layer{
+    width: 100%; /* Set the width of the small layer */
+    height: 70%; /* Set the height to match the parent layer */
+    /*background-color: red; /* Set the background color of the small layer */
+    border-radius: 20px;
+    display:flex;
+    justify-content: space-between;
+} 
+.cancel-layer{
+    width: 100%; /* Set the width of the small layer */
+    height: 10%; /* Set the height to match the parent layer */
+    /*background-color: orange; /* Set the background color of the small layer */
+    border-radius: 20px;
+    display:flex;
+}  
 .cart-layer{
     width: 25%; /* Set the width of the small layer */
     height: 98.1%; /* Set the height to match the parent layer */
@@ -45,20 +86,20 @@ body{
   }
 
 #cost{
-    margin-top: 105%;
+    margin-top: 95%;
     height: 75px;
     
 }
 
 #total{
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 
 
 .button-container {
-    margin-top: 29px; /* Add margin to separate from the rectangular shape */
-    
+    margin-top: 10px; /* Add margin to separate from the rectangular shape */
+    margin-bottom: 10px; /* Add margin to separate from the rectangular shape */
 }
 
 #button {
@@ -121,3 +162,53 @@ body{
 #totalText{
     margin-left: 19%; /* Align the text to the right side */
 }
+
+.animo-text{
+    font-size: 40px; /* Adjust the font size as desired */
+    font-weight: bold; /* Optionally make the text bold */
+    font-family: 'Calibri';
+    margin-left: 5%;
+    margin-top: 1%;
+    color: #2C666E; /* Set the text color */
+}
+.time-text{
+    font-size: 18px; /* Adjust the font size as desired */
+    font-weight: bold; /* Optionally make the text bold */
+    font-family: 'Calibri';
+    margin-left: 55%;
+    margin-top: 2.9%;
+    color: #2C666E; /* Set the text color */
+}
+
+.button-menu-container {
+    margin-top: 2px; /* Add margin to separate from the rectangular shape */
+    margin-bottom: 2px; /* Add margin to separate from the rectangular shape */
+    flex: 1;
+
+}
+
+#button-menu {
+    margin-left: 25%;
+    margin-top: 1%;
+    padding: 15px 60px; /* Adjust the button padding as desired */
+    background-color: #D9D9D9; /* Set the background color of the rectangular shape */
+    color: #2C666E; /* Set the text color */
+    border: none; /* Remove button border */
+    border-radius: 20px; /* Add rounded corners to the button */
+    font-size: 16px; /* Adjust the font size as desired */
+    font-weight: bold; /* Optionally make the button text bold */
+    cursor: pointer; /* Add cursor pointer on hover */
+}
+#button-cancel {
+    margin-left: 8%;
+    margin-top: 1%;
+    padding: 15px 60px; /* Adjust the button padding as desired */
+    background-color: #E75252; /* Set the background color of the buttons */
+    color: #FFFFFF; /* Set the text color */; /* Set the text color of the button */
+    border: none; /* Remove button border */
+    border-radius: 20px; /* Add rounded corners to the button */
+    font-size: 16px; /* Adjust the font size as desired */
+    font-weight: bold; /* Optionally make the button text bold */
+    cursor: pointer; /* Add cursor pointer on hover */
+}
+  
