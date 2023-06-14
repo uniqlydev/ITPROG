@@ -7,6 +7,44 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <h1>Welcome, <%= username %></h1>
+    <div class="menu-layer">
+        <div class="cart-layer">
+            
+            <div class = "cart-text">CART</div>
+                <div class = "rectangular-shape">
+                    <span class="shape-text">
+                        Steak <br>
+                        Php 900
+                    </span>
+                    <div class="button-group">
+                        <button class="subtract-button">-</button>
+                        <span class="number-indicator">0</span>
+                        <button class="add-button">+</button>
+                    </div>
+                </div>
+                <div id ="cost" class = "rectangular-shape">
+                    <span class="shape-text">
+                        Subtotal<br>
+                        Discount
+                    </span>
+                    <div id = "totalText" class="right-side">
+                        Php 900<br>
+                        Php 0
+                    </div>
+                </div>
+                <div id ="total" class = "rectangular-shape">
+                    <span class="shape-text">
+                        Total 
+                    </span>
+                    <div class="right-side">
+                        Php 900
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id = "button">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
