@@ -178,6 +178,7 @@ body{
     margin-left: 55%;
     margin-top: 2.9%;
     color: #2C666E; /* Set the text color */
+
 }
 
 .button-menu-container {
@@ -198,6 +199,7 @@ body{
     font-size: 16px; /* Adjust the font size as desired */
     font-weight: bold; /* Optionally make the button text bold */
     cursor: pointer; /* Add cursor pointer on hover */
+    font-family: 'Calibri';
 }
 #button-cancel {
     margin-left: 8%;
@@ -210,5 +212,40 @@ body{
     font-size: 16px; /* Adjust the font size as desired */
     font-weight: bold; /* Optionally make the button text bold */
     cursor: pointer; /* Add cursor pointer on hover */
+    font-family: 'Calibri';
 }
-  
+
+
+#button-image {
+    width: 230px;
+    height: 150px;
+    margin-left: 20%;
+    margin-top: 1%;
+    padding: 15px 60px;
+    background-color: #D9D9D9;
+    color: #2C666E;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Calibri';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#button-image .image {
+    background-image: url('https://www.seriouseats.com/thmb/5pAD_2uyE6kWYo6GDJse6lu4fyQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/butter-basted-pan-seared-steaks-recipe-hero-06-03b1131c58524be2bd6c9851a2fbdbc3.jpg');
+    width: 110%;
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+#button-image .text {
+    padding-top: 10px;
+}
