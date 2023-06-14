@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const customerRoutes = require('./routes/customerRoutes');
+const customerController = require('./controllers/customerController');
 
 const app = express();
 
@@ -24,10 +25,8 @@ app.listen(port, () => {
 
 // Routing view
 app.get('/', (req, res) => {
-    const username = "Brute"; 
     res.render('home/index', {
         title: 'Home',
-        username: username
     });
 });
 

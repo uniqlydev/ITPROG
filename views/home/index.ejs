@@ -8,9 +8,59 @@
 </head>
 <body>
     <div class="menu-layer">
-        <div class="cart-layer">
+        <div class="cart-container">
+            <h1>CART</h1>
+
+            <!-- Scrollable container for cart items -->
+            <div class="scrollable">
+
+                <ul>
+                    <li>
+                <div class="item-container">
+                    <div class="name-price">
+                        <span class="name"><h3>Steak</h3></span>
+                        <span class="price"><h3>Php 900</h3></span>
+                    </div>
+
+                    <div class="button">
+                        <span><button id="add-button" class="add">+</button> <p id="quantity">0</p> <button id="minus-button" class="minus">-</button></span>
+                        <script src="script/home/home.js"></script>
+                    </div>
+                </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="price-div">
+                <div>
+                <span class="label">Subtotal:</span>
+                <span class="money">Php 900</span>
+                </div>
+
+                <div>
+                <span class="label">Discount:</span>
+                <span class="money">Php 0</span>
+                </div>
+            </div>
+
+            <div class="total-div">
+                <span class="label">Total:</span>
+                <span class="money">Php 900</span>
+            </div>
+
+            <div class="button-div">
+                <button class="checkout">Checkout</button>
+            </div>
             
-            <div class = "cart-text">CART</div>
+
+
+            <!-- Scrollable container for cart items -->
+            <!-- <div class = "cart-container"> -->
+                <!-- Item container -->
+
+            <!-- <div class = "item-container">
                 <div class = "rectangular-shape">
                     <span class="shape-text">
                         Steak <br>
@@ -22,6 +72,9 @@
                         <button class="add-button">+</button>
                     </div>
                 </div>
+            </div>
+            </div> -->
+<!-- 
                 <div id ="cost" class = "rectangular-shape">
                     <span class="shape-text">
                         Subtotal<br>
@@ -42,8 +95,8 @@
                 </div>
                 <div class="button-container">
                     <button id = "button">Checkout</button>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
         </div>
     </div>
 </body>
