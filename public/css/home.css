@@ -1,5 +1,13 @@
 body{
     background-color: #26AE57;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Remove style ul and li */
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-layer {
@@ -9,75 +17,27 @@ body{
     border-radius: 20px;
     display:flex;
   }
-.main-layer{
-    width: 75%; /* Set the width of the small layer */
-    height: 98.1%; /* Set the height to match the parent layer */
-    /*background-color: yellow; /* Set the background color of the small layer */
-    margin-left: auto; /* Push the small layer to the right side */
-    border-radius: 20px;
-    display: flex; /* Use flexbox to center the text vertically and horizontally */  
-    flex-direction: column; /* Align elements vertically */
-    justify-content: flex-start; /* Align items to the top */
-    /*align-items: center; /* Center items horizontally */
-}  
+
 .header-layer{
     width: 100%; /* Set the width of the small layer */
-    height: 10%; /* Set the height to match the parent layer */
-    /*background-color: blue; /* Set the background color of the small layer */
-    border-radius: 20px;
-    display:flex;
-} 
-.navigation-layer{
-    width: 100%; /* Set the width of the small layer */
-    height: 10%; /* Set the height to match the parent layer */
-    /*background-color: orange; /* Set the background color of the small layer */
-    border-radius: 20px;
-    display:flex;
-    justify-content: space-between;
-} 
-.tiles-layer{
-    width: 100%; /* Set the width of the small layer */
-    height: 70%; /* Set the height to match the parent layer */
-    /*background-color: red; /* Set the background color of the small layer */
-    border-radius: 20px;
-    display:flex;
-    justify-content: space-between;
-} 
-.cancel-layer{
-    width: 100%; /* Set the width of the small layer */
-    height: 10%; /* Set the height to match the parent layer */
-    /*background-color: orange; /* Set the background color of the small layer */
-    border-radius: 20px;
-    display:flex;
-}  
-.cart-layer{
-    width: 25%; /* Set the width of the small layer */
-    height: 98.1%; /* Set the height to match the parent layer */
-    background-color: #FFFFFF; /* Set the background color of the small layer */
-    margin-left: auto; /* Push the small layer to the right side */
-    border-radius: 20px;
-    display: flex; /* Use flexbox to center the text vertically and horizontally */
-    padding-top: 1%;    
-    flex-direction: column; /* Align elements vertically */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Center items horizontally */
-}   
-.cart-text{
-    font-size: 24px; /* Adjust the font size as desired */
-    font-weight: bold; /* Optionally make the text bold */
-    font-family: 'Calibri';
-}
+
 
 .rectangular-shape {
     margin-top: 6%;
     width: 350px; /* Adjust the width of the rectangular shape */
     height: 55px; /* Adjust the height of the rectangular shape */
     background-color: #D9D9D9; /* Set the background color of the rectangular shape */
-    border-radius: 5.3%;
     display: flex; /* Use flexbox to center the shape text */
     justify-content:left; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
+
+    /* Make border round */
+    border-radius: 20px;
   }
+
+.quantity_class {
+    display: inline-block;
+}
 
   .shape-text {
     color: #2C666E; /* Set the text color */
@@ -162,6 +122,7 @@ body{
 #totalText{
     margin-left: 19%; /* Align the text to the right side */
 }
+
 
 .animo-text{
     font-size: 40px; /* Adjust the font size as desired */
@@ -249,3 +210,200 @@ body{
 #button-image .text {
     padding-top: 10px;
 }
+=======
+/* Cart */
+
+.cart-container {
+    /* Rounded border div on the right portion of the screen */
+    width: 500px; /* Set the width of the small layer */
+    margin-left: auto; /* Push the small layer to the right side */
+    border-radius: 20px;
+    display: flex; /* Use flexbox to center the text vertically and horizontally */
+    flex-direction: column; /* Align elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+
+    background-color: #FFFFFF;
+
+    /* add padding to the surrounding or the outside of the div */
+    padding: 10px;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+
+    /* Center child */
+    align-items: center;
+
+
+}
+
+.cart-container .scrollable {
+    /* Make the div scrollable */
+    overflow-y: scroll;
+    height: 550px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    border : 1px solid red;
+}
+
+
+.item-container {
+
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 10px;
+
+    /* Padding inside */
+    margin:10px;
+
+    color: #2C666E;
+
+    /* Make items next to each other */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.item-container .name-price {
+    /* Make name and price span on top of each other */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Add margin */
+    margin-left: 30%;
+
+}
+
+.button {
+    /* Add margin */
+    margin-right: 20%;
+}
+
+.button .add {
+    /* Make circle and green */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #78C584;
+    color: white;
+
+    /* Remove button style */
+    border: none;
+
+    /* Add button cursor */
+    cursor: pointer;
+
+}
+
+
+.button .minus {
+    /* Make circle and red */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #E75252;
+    color: white;
+
+    /* Add button style */
+    cursor: pointer;
+
+    /* Remove button style */
+    border: none;
+}
+
+.item-container .name-price h3 {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Pricing outside scrollable */
+.price-div {
+    /* Place below scrollable div */
+    background-color: #D9D9D9;
+
+    /* Make border roubd */
+    border-radius: 20px;
+    width: 80%;
+
+    /* Add padding to each elements inside */
+    padding: 20px;
+
+}
+
+.price-div div {
+    padding: 10px
+}
+
+.price-div div .label {
+    /* Place in the left side of the div */
+    float: left;
+}
+
+.price-div div .money {
+    /* Place in the right side of the div */
+    float: right;
+}
+
+/* Total div */
+.total-div {
+    /* Place below scrollable div */
+    background-color: #D9D9D9;
+
+    /* Make border roubd */
+    border-radius: 20px;
+    width: 80%;
+
+    /* Add padding to each elements inside */
+    padding: 20px;
+
+    /* Add margin */
+    margin-top: 10px;
+}
+
+.total-div {
+    padding: 10px
+}
+
+.total-div .label {
+    /* Place in the left side of the div */
+    float: left;
+}
+
+.total-div .money {
+    /* Place in the right side of the div */
+    float: right;
+}
+
+/* Checkout button */
+.checkout {
+    /* Make button green */
+    background-color: #78C584;
+    color: white;
+
+    /* Make border round */
+    border-radius: 20px;
+
+    /* Remove button style */
+    border: none;
+
+    /* Add padding */
+    padding: 10px;
+
+    /* Add margin */
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+
+
+
+
+
+

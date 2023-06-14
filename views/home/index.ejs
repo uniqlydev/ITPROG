@@ -7,40 +7,61 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+    <script type="text/javascript" src="scripts/home/home.js"></script>
     <div class="menu-layer">
-        <div class="main-layer">
-            <div class="header-layer">
-            <div class = "animo-text">Animo Bites</div>
-            <div class = "time-text">Mon, June 19, 2023 12:45 PM</div>
-            </div>
-            <div class="navigation-layer">
-                <div class="button-menu-container">
-                    <button id = "button-menu">Main</button>
+        <div class="cart-container">
+            <h1>CART</h1>
+
+            <!-- Scrollable container for cart items -->
+            <div class="scrollable">
+
+                <ul>
+                    <li>
+                <div class="item-container">
+                    <div class="name-price">
+                        <span class="name"><h3>Steak</h3></span>
+                        <span class="price"><h3>Php 900</h3></span>
+                    </div>
+                    
+                    <div class="button">
+                        <button id="minus-button" class="minus" onclick="removeQuantity()">-</button> <p id="quantity" class="quantity_class">0</p> <button id="add-button" class="add" onclick="addQuantity()">+</button>
+                    </div>
+
                 </div>
-                <div class="button-menu-container">
-                    <button id = "button-menu">Sides</button>
-                </div>
-                <div class="button-menu-container">
-                    <button id = "button-menu">Drinks</button>
-                </div>
-            </div>
-            <div class="tiles-layer">
-                <button id="button-image">
-                    <div class="image"></div>
-                    <div class="text">Steak</div>
-                </button>
+                    </li>
+
+                </ul>
 
             </div>
-            <div class="cancel-layer">
-                <div class="button-menu-container">
-                    <button id = "button-cancel">Main</button>
+
+            <div class="price-div">
+                <div>
+                <span class="label">Subtotal:</span>
+                <span class="money">Php 900</span>
+                </div>
+
+                <div>
+                <span class="label">Discount:</span>
+                <span class="money">Php 0</span>
                 </div>
             </div>
-        </div>
 
-        <div class="cart-layer">
+            <div class="total-div">
+                <span class="label">Total:</span>
+                <span class="money">Php 900</span>
+            </div>
+
+            <div class="button-div">
+                <button class="checkout">Checkout</button>
+            </div>
             
-            <div class = "cart-text">CART</div>
+
+
+            <!-- Scrollable container for cart items -->
+            <!-- <div class = "cart-container"> -->
+                <!-- Item container -->
+
+            <!-- <div class = "item-container">
                 <div class = "rectangular-shape">
                     <span class="shape-text">
                         Steak <br>
@@ -52,6 +73,9 @@
                         <button class="add-button">+</button>
                     </div>
                 </div>
+            </div>
+            </div> -->
+<!-- 
                 <div id ="cost" class = "rectangular-shape">
                     <span class="shape-text">
                         Subtotal<br>
@@ -72,8 +96,8 @@
                 </div>
                 <div class="button-container">
                     <button id = "button">Checkout</button>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
         </div>
     </div>
 </body>
