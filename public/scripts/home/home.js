@@ -1,10 +1,15 @@
-const addButton = document.getElementById('add-button');
-const minusButton = document.getElementById('minus-button');
-const quanity = document.getElementById('quantity');
+function addQuantity() {
+    var quantity = document.getElementById("quantity").innerHTML;
+    quantity++;
+    document.getElementById("quantity").innerHTML = quantity;
+}
 
-let counter = 0;
-
-addButton.addEventListener('click', () => {
-    counter++;
-    alert("PUTANGINA GUMAGANA NA");
-});
+function removeQuantity() {
+    var quantity = document.getElementById("quantity").innerHTML;
+    if (quantity > 0) {
+        quantity--;
+        document.getElementById("quantity").innerHTML = quantity;
+    } else {
+        alert("Quantity cannot be less than 0");
+    }
+}

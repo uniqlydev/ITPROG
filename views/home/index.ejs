@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+    <script type="text/javascript" src="scripts/home/home.js"></script>
     <div class="menu-layer">
         <div class="cart-container">
             <h1>CART</h1>
@@ -21,11 +22,11 @@
                         <span class="name"><h3>Steak</h3></span>
                         <span class="price"><h3>Php 900</h3></span>
                     </div>
-
+                    
                     <div class="button">
-                        <span><button id="add-button" class="add">+</button> <p id="quantity">0</p> <button id="minus-button" class="minus">-</button></span>
-                        <script src="script/home/home.js"></script>
+                        <button id="add-button" class="add" onclick="addQuantity()">+</button> <p id="quantity">0</p> <button id="minus-button" class="minus" onclick="removeQuantity()">-</button>
                     </div>
+
                 </div>
                     </li>
 
