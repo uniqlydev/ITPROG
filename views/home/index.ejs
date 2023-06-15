@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
+    <script type="text/javascript" src="scripts/home/home.js"></script>
+    
+
 </head>
 <body>
-    <script type="text/javascript" src="scripts/home/home.js"></script>
     <div class="menu-layer">
-
         <div class="main-layer">
             <div class="header-layer">
             <div class = "animo-text">Animo Bites</div>
@@ -71,29 +72,26 @@
         </div>
 
         <!-- FOR CART -->
+        <form action="" method="post">
         <div class="cart-container">
             <h1>CART</h1>
             <!-- Scrollable container for cart items -->
             <div class="scrollable">
-
                 <ul>
                     <li>
-                <div class="item-container">
+                <div class="item-container" id = "1">
                     <div class="name-price">
                         <span class="name"><h3>Steak</h3></span>
                         <span class="price"><h3>Php 900</h3></span>
                     </div>
-                    
                     <div class="button">
-                        <button id="minus-button" class="minus" onclick="removeQuantity()">-</button> <p id="quantity" class="quantity_class">0</p> <button id="add-button" class="add" onclick="addQuantity()">+</button>
+                        <button id='minus-button' class="minus">-</button> <p id="quantity" class="quantity_class">0</p> <button id="add-button" class="add">+</button>
                     </div>
-
                 </div>
                     </li>
-
                 </ul>
-
             </div>
+        </form>
 
             <div class="price-div">
                 <div>

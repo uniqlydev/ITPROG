@@ -2,8 +2,11 @@ const express = require('express');
 const path = require('path');
 const customerRoutes = require('./routes/customerRoutes');
 const customerController = require('./controllers/customerController');
+const bodyparser = require('body-parser');
 
 const app = express();
+app.use(bodyparser.json);
+app.use(bodyparser.urlencoded({ extended: false }));
 
 app.use(express.json());
 
@@ -30,8 +33,6 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/about', (req, res) => {
-    res.render('about/index', {
-        title: 'About'
-    });
+app.post('/', (req, res) => {
+    
 });
