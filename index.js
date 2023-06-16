@@ -24,7 +24,11 @@ app.listen(port, () => {
 
 // Routing view
 app.get('/', (req, res) => {
+    let totalpr = 0;
+    let discountpr = 0;
     res.render('home/index', {
         title: 'Home',
+        total: totalpr,
+        discount: discountpr
     });
 });

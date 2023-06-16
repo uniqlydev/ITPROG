@@ -1,6 +1,6 @@
-const Order = require('../../models/order.js')
+// const Order = require('../../models/order.js')
 
-const order = new Order();
+// const order = new Order();
 
 // Add event listener to minus button
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const plusbutton = document.getElementById('add-button');
 
     minusbutton.addEventListener('click', (id) => {
-        const item = document.getElementById(id);
+        alert("Puta gumana");
 
         
     });

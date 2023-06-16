@@ -70,33 +70,22 @@
                 </div>
             </div>
         </div>
-
         <!-- FOR CART -->
-        <form action="" method="post">
         <div class="cart-container">
             <h1>CART</h1>
             <!-- Scrollable container for cart items -->
             <div class="scrollable">
                 <ul>
                     <li>
-                <div class="item-container" id = "1">
-                    <div class="name-price">
-                        <span class="name"><h3>Steak</h3></span>
-                        <span class="price"><h3>Php 900</h3></span>
-                    </div>
-                    <div class="button">
-                        <button id='minus-button' class="minus">-</button> <p id="quantity" class="quantity_class">0</p> <button id="add-button" class="add">+</button>
-                    </div>
-                </div>
+                        <!-- Will add here if button press -->
                     </li>
                 </ul>
             </div>
-        </form>
 
             <div class="price-div">
                 <div>
                 <span class="label">Subtotal:</span>
-                <span class="money">Php 900</span>
+                <span class="money">Php <%= total %></span>
                 </div>
 
                 <div>
@@ -107,11 +96,11 @@
 
             <div class="total-div">
                 <span class="label">Total:</span>
-                <span class="money">Php 900</span>
+                <span class="money">Php <%= total %></span>
             </div>
 
             <div class="button-div">
-                <button class="checkout">Checkout</button>
+                <button class="checkout">checkout</button>
             </div>
         </div>
         <!-- END OF CART -->
