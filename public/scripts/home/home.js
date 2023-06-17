@@ -1,3 +1,5 @@
+const orderController = require('../../../controllers/orderController'); // There is problem with import cuz of this line
+
 document.addEventListener('DOMContentLoaded', () => {
     const buttonmenu = document.getElementById('main-button');
     const sidesbutton = document.getElementById('sides-button');
