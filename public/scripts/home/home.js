@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sides2 = document.getElementById('sides2');
     const sides3 = document.getElementById('sides3');
 
+    // This is for 'Main' menu
     buttonmenu.addEventListener('click', () => {
         alert("Puta gumana");
     });

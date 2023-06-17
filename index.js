@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
         title: 'Home',
         total: totalpr,
         discount: discountpr,
-        date: new Date().getDay() + '/' + new Date().getMonth() + '/' + new Date().getFullYear() + ' ' + new Date().getHours() + ':' + new Date().getMinutes(),
+        date: new Date().toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }),
         sides: sides,
         meals: meals,
         drinks: drinks
