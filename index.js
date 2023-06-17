@@ -26,9 +26,17 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     let totalpr = 0;
     let discountpr = 0;
+    const sides = ["Baked Potato","Mashed Potato","Steamed Vegetables"];
+    const meals = ["Steak","Salmon","Chicken"];
+    const drinks = ["Iced Tea", "Root Beer", "Water"];
+
     res.render('home/index', {
         title: 'Home',
         total: totalpr,
-        discount: discountpr
+        discount: discountpr,
+        date: new Date().getDay() + '/' + new Date().getMonth() + '/' + new Date().getFullYear() + ' ' + new Date().getHours() + ':' + new Date().getMinutes(),
+        sides: sides,
+        meals: meals,
+        drinks: drinks
     });
 });
