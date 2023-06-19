@@ -1,9 +1,29 @@
-const orderController = require('../../../controllers/orderController'); // There is problem with import cuz of this line
+function addItemToLI(name) {
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode("Puta gumana"));
+
+    /* For reference (This dev should be the one appened to the list @wassmer)
+    <div class="item-container">
+    <div class="name-price">
+        <span class="name"><h3>Steak</h3></span>
+        <span class="price"><h3>Php 900</h3></span>
+    </div>
+    
+    <div class="button">
+        <button id="minus-button" class="minus" onclick="removeQuantity()">-</button> <p id="quantity" class="quantity_class">0</p> <button id="add-button" class="add" onclick="addQuantity()">+</button>
+    </div>
+    </div>
+    */ 
+
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttonmenu = document.getElementById('main-button');
     const sidesbutton = document.getElementById('sides-button');
     const drinksbutton = document.getElementById('drinks-button');
+
+    /* get the order button then it's a POST method. Handle the post method then pass it sa customerRoutes.js 
+    to create a customer */
 
     // Drinks
     const drinks1 = document.getElementById('drinks1');
@@ -34,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     drinks1.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI();
     });
 
     drinks2.addEventListener('click', () => {
@@ -69,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Puta gumana");
     });
 });
+
+
+
 
 
 
