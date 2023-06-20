@@ -1,6 +1,42 @@
-function addItemToLI(name) {
+function addItemToLI(name, price) {
+    const ul = document.getElementById('orders');
     const li = document.createElement('li');
-    li.appendChild(document.createTextNode("Puta gumana"));
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
+    const div3 = document.createElement('div');
+    const span1 = document.createElement('span');
+    const span2 = document.createElement('span');
+    const button1 = document.createElement('button');
+    const button2 = document.createElement('button');
+    const p = document.createElement('p');
+
+    div1.className = "item-container";
+    div2.className = "name-price";
+    div3.className = "button";
+    span1.className = "name";
+    span2.className = "price";
+    button1.className = "minus";
+    button1.id = "minus-button";
+    button1.onclick = "removeQuantity()";
+    button2.className = "add";
+    button2.id = "add-button";
+    button2.onclick = "addQuantity()";
+    p.className = "quantity_class";
+    p.id = "quantity";
+
+    button1.appendChild(document.createTextNode("-"));
+    button2.appendChild(document.createTextNode("+"));
+    span1.appendChild(document.createTextNode(name));
+    span2.appendChild(document.createTextNode("Php " + price));
+    div2.appendChild(span1);
+    div2.appendChild(span2);
+    div3.appendChild(button1);
+    div3.appendChild(p);
+    div3.appendChild(button2);
+    div1.appendChild(div2);
+    div1.appendChild(div3);
+    li.appendChild(div1);
+    ul.appendChild(li);
 
     /* For reference (This dev should be the one appened to the list @wassmer)
     <div class="item-container">
@@ -14,7 +50,6 @@ function addItemToLI(name) {
     </div>
     </div>
     */ 
-
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,53 +75,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const sides2 = document.getElementById('sides2');
     const sides3 = document.getElementById('sides3');
 
-    // This is for 'Main' menu
+    // This is for 'main' menu
     buttonmenu.addEventListener('click', () => {
-        alert("Puta gumana");
+        // alert("Puta gumana");
     });
 
     sidesbutton.addEventListener('click', () => {
-        alert("Puta gumana");
+        // alert("Puta gumana");
     });
 
     drinksbutton.addEventListener('click', () => {
-        alert("Puta gumana");
+        // alert("Puta gumana");
     });
 
     drinks1.addEventListener('click', () => {
-        addItemToLI();
+        addItemToLI("Iced Tea", 55);
     });
 
     drinks2.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI("Root Beer", 60);
     });
 
     drinks3.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI("Water", 20);
     });
 
     meals1.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI("Steak", 900);
     });
 
     meals2.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI("Salmon", 850);
     });
 
     meals3.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI("Chicken", 300);
     });
 
     sides1.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI("Baked Potato", 80);
     });
 
     sides2.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI("Mashed Potato", 75);
     });
 
     sides3.addEventListener('click', () => {
-        alert("Puta gumana");
+        addItemToLI("Steamed Vegetables", 50);
     });
 });
 

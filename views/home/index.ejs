@@ -34,6 +34,7 @@
         <div class="cart-container">
             <h1>CART</h1>
             <!-- Scrollable container for cart items -->
+            <form action="/views/home/checkout.ejs" method="POST"></form>
             <div class="scrollable">
                 <ul id="orders">
                     <li>
@@ -60,8 +61,12 @@
             </div>
 
             <div class="button-div">
-                <button class="checkout">checkout</button>
+                <!-- Submit button that links to checkout.ejs -->
+                <input type="submit" class="checkout" value="Checkout" name="checkout"></input>
+                <!-- <button class="checkout">checkout</button> -->
             </div>
+
+            </form>
         </div>
         <!-- END OF CART -->
     </div>
