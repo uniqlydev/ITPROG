@@ -31,6 +31,7 @@ function addItemToLI(name, price) {
     div2.appendChild(span1);
     div2.appendChild(span2);
     div3.appendChild(button1);
+    p.appendChild(document.createTextNode("0"));
     div3.appendChild(p);
     div3.appendChild(button2);
     div1.appendChild(div2);
@@ -50,6 +51,20 @@ function addItemToLI(name, price) {
     </div>
     </div>
     */ 
+}
+
+function addQuantity() {
+    const quantity = document.getElementById('quantity');
+    const value = parseInt(quantity.innerHTML);
+    quantity.innerHTML = value + 1;
+}
+
+function removeQuantity() {
+    const quantity = document.getElementById('quantity');
+    const value = parseInt(quantity.innerHTML);
+    if (value > 0) {
+        quantity.innerHTML = value - 1;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
