@@ -71,6 +71,11 @@ function removeQuantity() {
     }
 }
 
+function clearOrder() {
+    const ul = document.getElementById('orders');
+    ul.innerHTML = "";
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const buttonmenu = document.getElementById('main-button');
     const sidesbutton = document.getElementById('sides-button');
