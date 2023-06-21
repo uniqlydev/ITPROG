@@ -281,7 +281,7 @@ ul, li {
 
 }
 
-#button-menu {
+.button-menu {
     margin-left: 25%;
     margin-top: 1%;
     padding: 15px 60px; /* Adjust the button padding as desired */
@@ -293,7 +293,7 @@ ul, li {
     font-weight: bold; /* Optionally make the button text bold */
     cursor: pointer; /* Add cursor pointer on hover */
 }
-#button-cancel {
+.button-cancel {
     margin-left: 8%;
     margin-top: 1%;
     padding: 15px 60px; /* Adjust the button padding as desired */

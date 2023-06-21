@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const customerRoutes = require('./routes/customerRoutes');
-const customerController = require('./controllers/customerController');
 
 const app = express();
 
@@ -25,13 +24,28 @@ app.listen(port, () => {
 
 // Routing view
 app.get('/', (req, res) => {
+    let totalpr = 0;
+    let discountpr = 0;
+    const sides = ["Baked Potato","Mashed Potato","Steamed Vegetables"];
+    const meals = ["Steak","Salmon","Chicken"];
+    const drinks = ["Iced Tea", "Root Beer", "Water"];
+
     res.render('home/index', {
         title: 'Home',
+        total: totalpr,
+        discount: discountpr,
+        date: new Date().toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }),
+        sides: sides,
+        meals: meals,
+        drinks: drinks
     });
 });
 
-app.get('/about', (req, res) => {
-    res.render('about/index', {
-        title: 'About'
+// Handle post from home to order_success
+app.post('/customer', (req, res) => {
+
+    console.log(req.body);
+    res.render('order_success/index.ejs', {
+
     });
 });
