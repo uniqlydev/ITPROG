@@ -17,10 +17,14 @@ function addItemToLI(name, price) {
     span2.className = "price";
     button1.className = "minus";
     button1.id = "minus-button";
-    button1.onclick = "removeQuantity()";
+    button1.addEventListener('click', () => {
+        removeQuantity();
+    });
     button2.className = "add";
     button2.id = "add-button";
-    button2.onclick = "addQuantity()";
+    button2.addEventListener('click', () => {
+        addQuantity();
+    });
     p.className = "quantity_class";
     p.id = "quantity";
 
