@@ -6,8 +6,6 @@ function addItemToLI(name, price) {
     const div3 = document.createElement('div');
     const span1 = document.createElement('span');
     const span2 = document.createElement('span');
-    const button1 = document.createElement('button');
-    const button2 = document.createElement('button');
     const p = document.createElement('p');
 
     div1.className = "item-container";
@@ -15,21 +13,24 @@ function addItemToLI(name, price) {
     div3.className = "button";
     span1.className = "name";
     span2.className = "price";
+
+    // Make sure button has a unique ID for each item
+    const button1 = document.createElement('button');
+    const button2 = document.createElement('button');
     button1.className = "minus";
     button1.id = "minus-button";
-    button1.addEventListener('click', () => {
-        removeQuantity();
-    });
+    button1.onclick = removeQuantity;
+    button1.appendChild(document.createTextNode("-"));
     button2.className = "add";
     button2.id = "add-button";
-    button2.addEventListener('click', () => {
-        addQuantity();
-    });
+    button2.onclick = addQuantity;
+    button2.appendChild(document.createTextNode("+"));
+    
+
     p.className = "quantity_class";
     p.id = "quantity";
 
-    button1.appendChild(document.createTextNode("-"));
-    button2.appendChild(document.createTextNode("+"));
+
     span1.appendChild(document.createTextNode(name));
     span2.appendChild(document.createTextNode("Php " + price));
     div2.appendChild(span1);
@@ -99,53 +100,77 @@ document.addEventListener('DOMContentLoaded', () => {
     const sides2 = document.getElementById('sides2');
     const sides3 = document.getElementById('sides3');
 
-    // This is for 'main' menu
-    buttonmenu.addEventListener('click', () => {
-        // alert("Puta gumana");
-    });
-
-    sidesbutton.addEventListener('click', () => {
-        // alert("Puta gumana");
-    });
-
-    drinksbutton.addEventListener('click', () => {
-        // alert("Puta gumana");
-    });
-
     drinks1.addEventListener('click', () => {
         addItemToLI("Iced Tea", 55);
+
+        // Disable the button 
+        drinks1.disabled = true;
+        drinks2.disabled = true;
+        drinks3.disabled = true;
     });
 
     drinks2.addEventListener('click', () => {
         addItemToLI("Root Beer", 60);
+
+        drinks1.disabled = true;
+        drinks2.disabled = true;
+        drinks3.disabled = true;
     });
 
     drinks3.addEventListener('click', () => {
         addItemToLI("Water", 20);
+
+        drinks1.disabled = true;
+        drinks2.disabled = true;
+        drinks3.disabled = true;
     });
 
     meals1.addEventListener('click', () => {
         addItemToLI("Steak", 900);
+
+        meals1.disabled = true;
+        meals2.disabled = true;
+        meals3.disabled = true;
     });
 
     meals2.addEventListener('click', () => {
         addItemToLI("Salmon", 850);
+
+        meals1.disabled = true;
+        meals2.disabled = true;
+        meals3.disabled = true;
     });
 
     meals3.addEventListener('click', () => {
         addItemToLI("Chicken", 300);
+
+        meals1.disabled = true;
+        meals2.disabled = true;
+        meals3.disabled = true;
     });
 
     sides1.addEventListener('click', () => {
         addItemToLI("Baked Potato", 80);
+
+        sides1.disabled = true;
+        sides2.disabled = true;
+        sides3.disabled = true;
     });
 
     sides2.addEventListener('click', () => {
         addItemToLI("Mashed Potato", 75);
+
+        sides1.disabled = true;
+        sides2.disabled = true;
+        sides3.disabled = true;
     });
 
     sides3.addEventListener('click', () => {
         addItemToLI("Steamed Vegetables", 50);
+
+        sides1.disabled = true;
+        sides2.disabled = true;
+        sides3.disabled = true;
     });
 });
 
