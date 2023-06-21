@@ -75,6 +75,33 @@ function removeQuantity() {
 function clearOrder() {
     const ul = document.getElementById('orders');
     ul.innerHTML = "";
+
+    // Drinks
+    const drinks1 = document.getElementById('drinks1');
+    const drinks2 = document.getElementById('drinks2');
+    const drinks3 = document.getElementById('drinks3');
+
+    // Meals
+    const meals1 = document.getElementById('meals1');
+    const meals2 = document.getElementById('meals2');
+    const meals3 = document.getElementById('meals3');
+
+    // Sides
+    const sides1 = document.getElementById('sides1');
+    const sides2 = document.getElementById('sides2');
+    const sides3 = document.getElementById('sides3');
+
+    drinks1.disabled = false;
+    drinks2.disabled = false;
+    drinks3.disabled = false;
+
+    meals1.disabled = false;
+    meals2.disabled = false;
+    meals3.disabled = false;
+
+    sides1.disabled = false;
+    sides2.disabled = false;
+    sides3.disabled = false;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
