@@ -129,6 +129,19 @@ function addQuantityMain() {
     const quantity = document.getElementById('quantity_main');
     const quantityValue = parseInt(quantity.innerHTML);
     quantity.innerHTML = quantityValue + 1;
+
+
+    // TODO: Fix update subtotal
+    // Update subtotal
+    const subtotal = document.getElementById('subtotal');
+    const subtotalValue = parseInt(subtotal.innerHTML);
+    subtotal.innerHTML = subtotalValue + price;
+
+    // TODO: Fix update total
+    // Update total
+    const total = document.getElementById('total');
+    const totalValue = parseInt(total.innerHTML);
+    total.innerHTML = totalValue + price;
 }
 
 function removeQuantityMain() {
