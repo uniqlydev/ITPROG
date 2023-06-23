@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const customerRoutes = require('./routes/customerRoutes');
+const customerController = require('./controllers/customerController');
 
 const app = express();
 
@@ -43,8 +44,14 @@ app.get('/', (req, res) => {
 
 // Handle post from home to order_success
 app.post('/customer', (req, res) => {
-    
-    res.render('order_success/index.ejs', {
 
-    });
+    // Send res.status from createCustomer
+    const status = customerController.createCustomer(req, res);
+
+    // If status is 201, redirect to order_success
+    if (status == 201) {
+        res.render(
+            'home/order_success',
+        );
+    }
 });
