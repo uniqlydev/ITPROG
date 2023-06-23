@@ -43,8 +43,7 @@ app.get('/', (req, res) => {
 
 // Handle post from home to order_success
 app.post('/customer', (req, res) => {
-
-    console.log(req.body);
+    
     res.render('order_success/index.ejs', {
 
     });
