@@ -1,3 +1,6 @@
+var totalPriceGlobal = 0;
+
+
 function addItemToLI(type, name, price) {
     const ul = document.getElementById('orders');
     const li = document.createElement('li');
@@ -16,11 +19,14 @@ function addItemToLI(type, name, price) {
     const sideButton1 = document.createElement('button');
     const sideButton2 = document.createElement('button');
 
+    totalPriceGlobal+=price; // Store into a global total variable
+
     div1.className = "item-container";
     div2.className = "name-price";
     div3.className = "button";
     span1.className = "name";
     span2.className = "price";
+
 
     if (type == "Main") {
         mainButton1.className = "minus";
@@ -37,6 +43,9 @@ function addItemToLI(type, name, price) {
 
         span1.appendChild(document.createTextNode(name));
         span2.appendChild(document.createTextNode("Php " + price));
+
+        span1.id = name;
+        
         div2.appendChild(span1);
         div2.appendChild(span2);
         div3.appendChild(mainButton1);
@@ -48,6 +57,7 @@ function addItemToLI(type, name, price) {
         li.appendChild(div1);
         ul.appendChild(li);
     }
+    
     if (type == "Drink") {
         drinkButton1.className = "minus";
         drinkButton1.id = "minus-button";
@@ -74,6 +84,8 @@ function addItemToLI(type, name, price) {
         li.appendChild(div1);
         ul.appendChild(li);
     }
+
+
     if (type == "Sides"){
         sideButton1.className = "minus";
         sideButton1.id = "minus-button";
@@ -105,43 +117,32 @@ function addItemToLI(type, name, price) {
     const subtotal = document.getElementById('subtotal');
     const subtotalValue = parseInt(subtotal.innerHTML);
     subtotal.innerHTML = subtotalValue + price;
+    totalPriceGlobal = subtotalValue + price;
 
     // Update total
     const total = document.getElementById('total');
     const totalValue = parseInt(total.innerHTML);
     total.innerHTML = totalValue + price;
-
-    /* For reference (This dev should be the one appened to the list @wassmer)
-    <div class="item-container">
-    <div class="name-price">
-        <span class="name"><h3>Steak</h3></span>
-        <span class="price"><h3>Php 900</h3></span>
-    </div>
-    
-    <div class="button">
-        <button id="minus-button" class="minus" onclick="removeQuantity()">-</button> <p id="quantity" class="quantity_class">0</p> <button id="add-button" class="add" onclick="addQuantity()">+</button>
-    </div>
-    </div>
-    */ 
+    totalPriceGlobal = totalValue + price;
 }
 
-function addQuantityMain() {
+
+function addQuantityMain(price) {
     const quantity = document.getElementById('quantity_main');
     const quantityValue = parseInt(quantity.innerHTML);
     quantity.innerHTML = quantityValue + 1;
 
-
-    // TODO: Fix update subtotal
-    // Update subtotal
     const subtotal = document.getElementById('subtotal');
     const subtotalValue = parseInt(subtotal.innerHTML);
-    subtotal.innerHTML = subtotalValue + price;
+    subtotal.innerHTML = subtotalValue ;
+
 
     // TODO: Fix update total
     // Update total
     const total = document.getElementById('total');
     const totalValue = parseInt(total.innerHTML);
     total.innerHTML = totalValue + price;
+    totalPriceGlobal = subtotalValue + price;
 }
 
 function removeQuantityMain() {
@@ -221,9 +222,6 @@ function clearOrder() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const buttonmenu = document.getElementById('main-button');
-    const sidesbutton = document.getElementById('sides-button');
-    const drinksbutton = document.getElementById('drinks-button');
 
     /* get the order button then it's a POST method. Handle the post method then pass it sa customerRoutes.js 
     to create a customer */
