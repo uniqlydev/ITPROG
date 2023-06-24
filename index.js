@@ -13,20 +13,12 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-
 const port = process.env.PORT || 8080;
 
-
-//dont touch this Frontend
+// Use the customerRoutes for API requests
 app.use('/api', customerRoutes);
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
-
-
-// Routing view
+// Routing for views
 app.get('/', (req, res) => {
     let totalpr = 0;
     let discountpr = 0;
@@ -46,7 +38,7 @@ app.get('/', (req, res) => {
 });
 
 // Handle post from home to checkout
-app.post('/checkout.ejs', (req, res) => {
+app.post('/checkout', (req, res) => {
     // Print order to console
     console.log(req.body);
 
@@ -60,7 +52,7 @@ app.post('/checkout.ejs', (req, res) => {
     const total = req.body.total;
 
     // Render order_success.ejs
-    res.render('home/checkout', {
+    res.render('payment/checkout', {
         title: 'Checkout',
         meal: meal,
         sides: sides,
@@ -70,4 +62,8 @@ app.post('/checkout.ejs', (req, res) => {
         dquan: dquan,
         total: total,
     });
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
