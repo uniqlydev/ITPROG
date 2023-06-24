@@ -1,8 +1,30 @@
-<html>
-    <head>
-        <title>Test Page</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+</head>
     <body>
-        <h1>Test Page</h1>
+        <h1>Order Confirmation</h1>
+        <h2>Order Summary</h2>
+        <p>Meal: <%= meal %> </p>
+        <p>Quantity: <%= mquan %> </p>
+        <p>Sides: <%= sides %> </p>
+        <p>Quantity: <%= squan %> </p>
+        <p>Drinks: <%= drink %> </p>
+        <p>Quantity: <%= dquan %> </p>
+        <p>Total: <%= total %> </p>
+        <br>
+        <br>
+        <br>
+        
+        <!-- Form that asks for amount to be paid -->
+        <form action="/saveorder" method="post">
+            <label for="amount">Amount to be paid:</label>
+            <input type="number" id="amount" name="amount" min="<%= total %>" required>
+            <br>
+            <br>
+            <input type="submit" value="Pay">
+        </form>
     </body>
 </html>

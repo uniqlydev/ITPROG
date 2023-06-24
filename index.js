@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Setting ejs as the view engine
@@ -44,21 +45,29 @@ app.get('/', (req, res) => {
     });
 });
 
-// Handle post from home to order_success
-app.post('/customer2', (req, res) => {
-    // Access the data sent in the request body
+// Handle post from home to checkout
+app.post('/checkout.ejs', (req, res) => {
+    // Print order to console
+    console.log(req.body);
+
+    // Get variables
     const meal = req.body.meal;
-    const mquan = req.body.mquan;
-    const drink = req.body.drink;
-    const dquan = req.body.dquan;
     const sides = req.body.sides;
+    const drink = req.body.drink;
+    const mquan = req.body.mquan;
     const squan = req.body.squan;
+    const dquan = req.body.dquan;
     const total = req.body.total;
-  
-    // Do something with the data (e.g., store it, process it, etc.)
-    console.log('Received data:', req.body);
-  
-    // Send a response if needed
-    res.send('Data received successfully.');
+
+    // Render order_success.ejs
+    res.render('home/checkout', {
+        title: 'Checkout',
+        meal: meal,
+        sides: sides,
+        drink: drink,
+        mquan: mquan,
+        squan: squan,
+        dquan: dquan,
+        total: total,
+    });
   });
-  

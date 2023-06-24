@@ -306,7 +306,18 @@ ul, li {
     cursor: pointer; /* Add cursor pointer on hover */
 }
 
-
+.button-order {
+    margin-left: 8%;
+    margin-top: 1%;
+    padding: 15px 60px; /* Adjust the button padding as desired */
+    background-color: #78C584; /* Set the background color of the buttons */
+    color: #FFFFFF; /* Set the text color */; /* Set the text color of the button */
+    border: none; /* Remove button border */
+    border-radius: 20px; /* Add rounded corners to the button */
+    font-size: 16px; /* Adjust the font size as desired */
+    font-weight: bold; /* Optionally make the button text bold */
+    cursor: pointer; /* Add cursor pointer on hover */
+}
 
 
 
