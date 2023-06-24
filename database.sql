@@ -1,3 +1,17 @@
+-- CREATE TABLE Customer (
+--                         id int(10) NOT NULL AUTO_INCREMENT,
+--                         main VARCHAR(40) ,
+--                         sides VARCHAR(40),
+--                         drinks VARCHAR(40),
+--                         total DOUBLE NULL,
+--                         date DATE,
+--                         mquan INT(2) NOT NULL , # Quantity meal
+--                         squan INT(2) NOT NULL, # Quantity Sides
+--                         dquan INT(3) NOT NULL,  # Quantity drinks
+--                         # Setting up Primary key
+--                         PRIMARY KEY (id)
+-- );
+
 CREATE TABLE Customer (
                         id int(10) NOT NULL AUTO_INCREMENT,
                         main VARCHAR(40) ,
@@ -5,9 +19,9 @@ CREATE TABLE Customer (
                         drinks VARCHAR(40),
                         total DOUBLE NULL,
                         date DATE,
-                        mquan INT(2) NOT NULL , # Quantity meal
-                        squan INT(2) NOT NULL, # Quantity Sides
-                        dquan INT(3) NOT NULL,  # Quantity drinks
+                        mquan INT(2) , # Quantity meal
+                        squan INT(2) , # Quantity Sides
+                        dquan INT(3) ,  # Quantity drinks
                         # Setting up Primary key
                         PRIMARY KEY (id)
 );

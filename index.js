@@ -70,4 +70,4 @@ app.post('/checkout.ejs', (req, res) => {
         dquan: dquan,
         total: total,
     });
-  });
+});
