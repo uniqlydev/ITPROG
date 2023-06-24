@@ -1,18 +1,52 @@
-
 // Variables for subtotal and total
 var totl = 0;
 var subtotal = 0;
 
-
-
-
-
 function add(price) {
     total += price;
     document.getElementById('total').value = total;
+    total.value = subtotal.toString();
 }
 
+function checkFields(event) {
+    let mainField = document.getElementById('mainm').value;
+    let sideField = document.getElementById('sides').value;
+    let drinkField = document.getElementById('drinks').value;
 
+    if (mainField == "" && sideField == "" && drinkField == "") {
+        alert("Please fill out at least 1 field");
+        event.preventDefault();
+    }
+}
+
+function clearOrder() {
+    document.getElementById('mainm').value = "";
+    document.getElementById('drinks').value = "";
+    document.getElementById('sides').value = "";
+
+    document.getElementById('quantitymain').value = 0;
+    document.getElementById('quantitydrink').value = 0;
+    document.getElementById('quantityside').value = 0;
+
+    document.getElementById('total').value = 0;
+
+    // Enable buttons
+    document.getElementById('meals1').disabled = false;
+    document.getElementById('meals2').disabled = false;
+    document.getElementById('meals3').disabled = false;
+
+    document.getElementById('drinks1').disabled = false;
+    document.getElementById('drinks2').disabled = false;
+    document.getElementById('drinks3').disabled = false;
+
+    document.getElementById('sides1').disabled = false;
+    document.getElementById('sides2').disabled = false;
+    document.getElementById('sides3').disabled = false;
+
+    // Reset variables
+    subtotal = 0;
+    totl = 0;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // Drinks
@@ -36,9 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const total = document.getElementById('total');
 
+    const mquan = document.getElementById('quantitymain');
+    const squan = document.getElementById('quantityside');
+    const dquan = document.getElementById('quantitydrink');
 
     meals1.addEventListener('click', () => {
         mainm.value = meals1.innerHTML;
+
+        mquan.value = 1;
     
         subtotal += 900;
         total.value = subtotal.toString();
@@ -51,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
     meals2.addEventListener('click', () => {
         mainm.value = meals2.innerHTML;
 
+        mquan.value = 1;
+
         subtotal += 800;
         total.value = subtotal.toString();
 
@@ -61,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     meals3.addEventListener('click', () => {
         mainm.value = meals3.innerHTML;
+
+        mquan.value = 1;
 
         subtotal += 350;
         total.value = subtotal.toString();
@@ -73,6 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
     drinks1.addEventListener('click', () => {
         drinks.value = drinks1.innerHTML;
 
+        dquan.value = 1;
+
         subtotal += 55;
         total.value = subtotal.toString();
 
@@ -83,6 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     drinks2.addEventListener('click', () => {
         drinks.value = drinks2.innerHTML;
+
+        dquan.value = 1;
 
         subtotal += 60;
         total.value = subtotal.toString();
@@ -95,6 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
     drinks3.addEventListener('click', () => {
         drinks.value = drinks3.innerHTML;
 
+        dquan.value = 1;
+
         subtotal += 20;
         total.value = subtotal.toString();
 
@@ -105,6 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sides1.addEventListener('click', () => {
         side.value = sides1.innerHTML;
+
+        squan.value = 1;
 
         subtotal += 80;
         total.value = subtotal.toString();
@@ -117,6 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sides2.addEventListener('click', () => {
         side.value = sides2.innerHTML;
 
+        squan.value = 1;
+
         subtotal += 75;
         total.value = subtotal.toString();
 
@@ -127,6 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sides3.addEventListener('click', () => {
         side.value = sides3.innerHTML;
+
+        squan.value = 1;
 
         subtotal += 50;
         total.value = subtotal.toString();

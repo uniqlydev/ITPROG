@@ -16,7 +16,7 @@
             <%- include('partials/header-layer') %>
 
             <!-- Navigation layer -->
-            <%- include('partials/navigation-layer') %>
+            <!-- <%- include('partials/navigation-layer') %> -->
 
             <!-- Tiles layer -->
             <%- include('partials/meals-layer') %>
@@ -25,35 +25,43 @@
 
             <div class="cancel-layer">
                 <div class="button-menu-container">
-                    <button class = "button-cancel"id = "button-cancel" onclick="clearOrder()">Cancel</button>
+                    <button class = "button-cancel"id = "button-cancel" onclick="clearOrder()">Clear</button>
                 </div>
             </div>
         </div>
         <!-- FOR CART -->
         <div class="cart-container">
-            <form method="post" action="/customer2">
+            <form method="post" action="/checkout" id="submitForm">
                 <label for="item">Main:</label>
-                <input type="text" id="mainm" name="meal" required >
+                <input type="text" id="mainm" name="meal" required placeholder="" readonly>
             
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity-m" name="mquan" min="1" required value=1>
+                <input type="number" id="quantitymain" name="mquan" required value="0">
 
-                <label for="item">Drinks:</label>
-                <input type="text" id="drinks" name="drink" required readonly>
-            
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity-d" name="dquan" min="1" required value=1>
+                <br>
 
                 <label for="item">Sides:</label>
-                <input type="text" id="sides" name="sides" required readonly>
+                <input type="text" id="sides" name="sides" required placeholder="" readonly>
             
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity-s" name="squan" min="1" required value=1>
+                <input type="number" id="quantityside" name="squan" required value="0">
 
-                <label for="item">Total:</label>
-                <input type="text" id="total" name="total" min="1" required readonly value=0>
+                <br>
+
+                <label for="item">Drinks:</label>
+                <input type="text" id="drinks" name="drink" required placeholder="" readonly>
             
-                <button type="submit">Add to Cart</button>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantitydrink" name="dquan" required value="0">
+
+                <br>
+                <br>
+                <br>
+                
+                <label for="item">Total:</label>
+                <input type="text" id="total" name="total" required readonly value="0">
+            
+                <button type="submit" class="button-order" onclick="checkFields(event)">Add to Cart</button>
             </form>
         </div>
         <!-- END OF CART -->
