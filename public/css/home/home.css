@@ -1,0 +1,62 @@
+body {
+    font-family: 'Figtree', sans-serif;
+}
+
+
+.menu {
+    /* Make scrollable */
+    overflow-y: scroll;
+    /* Add space */
+    margin: 0.5em;
+    /* Make ul and li into row */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* Make it not scrollable sideways */
+    overflow-x: hidden;
+}
+
+.menu-options {
+    /* Add space per element */
+    padding: 4em;
+    margin: 0.5em;
+    /* Make it not scrollable sideways */
+    overflow-x: hidden;
+
+    /* Make it scrollable */
+    overflow-y: scroll;
+
+    
+
+    height: 700px;
+    width: 1000px;
+    
+}
+
+.menu-options li {
+    list-style-type: none;
+}
+
+.menu-options::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+/* Firefox scrollbar */
+.menu-options {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+/* WebKit-based scrollbar (Chrome, Safari, Edge) */
+.menu-options::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.menu-options::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+
+
+

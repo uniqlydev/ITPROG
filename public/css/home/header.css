@@ -1,0 +1,15 @@
+.header-layer {
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+
+.header-layer h1 span {
+    /* Make it seem like pornhub with the famous orange block around the text but this use lime green */
+    background-color: #01ff01;
+    color: white;
+    padding: 0.2em;
+    border-radius: 0.2em;
+    /* Add space */
+    margin: 0.2em;
+
+}

@@ -2,6 +2,9 @@
 var totl = 0;
 var subtotal = 0;
 
+
+
+
 function add(price) {
     total += price;
     document.getElementById('total').value = total;
@@ -75,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dquan = document.getElementById('quantitydrink');
 
     meals1.addEventListener('click', () => {
-        mainm.value = meals1.innerHTML;
+        mainm.value = "Ribeye Steak";
 
         mquan.value = 1;
     
@@ -88,24 +91,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     meals2.addEventListener('click', () => {
-        mainm.value = meals2.innerHTML;
+        mainm.value = "Salmon Steak";
 
         mquan.value = 1;
 
-        subtotal += 800;
+        subtotal += 850;
         total.value = subtotal.toString();
 
-        meals1.disabled = true;
-        meals2.disabled = true;
-        meals3.disabled = true;
+
     });
 
     meals3.addEventListener('click', () => {
-        mainm.value = meals3.innerHTML;
+        mainm.value = "Chicken";
 
         mquan.value = 1;
 
-        subtotal += 350;
+        subtotal += 300;
         total.value = subtotal.toString();
 
         meals1.disabled = true;
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     drinks1.addEventListener('click', () => {
-        drinks.value = drinks1.innerHTML;
+        drinks.value = "Iced Tea";
 
         dquan.value = 1;
 
@@ -127,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     drinks2.addEventListener('click', () => {
-        drinks.value = drinks2.innerHTML;
+        drinks.value = "Root Beer";
 
         dquan.value = 1;
 
@@ -140,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     drinks3.addEventListener('click', () => {
-        drinks.value = drinks3.innerHTML;
+        drinks.value = "Water";
 
         dquan.value = 1;
 
@@ -153,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sides1.addEventListener('click', () => {
-        side.value = sides1.innerHTML;
+        side.value = "Baked Potato";
 
         squan.value = 1;
 
@@ -166,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sides2.addEventListener('click', () => {
-        side.value = sides2.innerHTML;
+        side.value = "Mashed Potato";
 
         squan.value = 1;
 
@@ -179,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sides3.addEventListener('click', () => {
-        side.value = sides3.innerHTML;
+        side.value = "Steamed Vegetables";
 
         squan.value = 1;
 
