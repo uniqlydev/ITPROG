@@ -1,5 +1,6 @@
 CREATE TABLE Customer (
                         id int(10) NOT NULL AUTO_INCREMENT,
+                        uname VARCHAR(100),
                         main VARCHAR(40) ,
                         sides VARCHAR(40),
                         drinks VARCHAR(40),

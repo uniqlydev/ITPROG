@@ -83,20 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     mquan.addEventListener('input', () => {
-        subtotal += parseInt(mquan.value) * mainSelected;
+        var previousValue = parseInt(total.value);
+        var currentValue = parseInt(mquan.value);
+        subtotal = subtotal - previousValue + (mainSelected * currentValue);
         total.value = subtotal.toString();
+
     });
 
     squan.addEventListener('input', () => {
-        subtotal += parseInt(squan.value) * sideSelected;
+        subtotal += sideSelected;
         total.value = subtotal.toString();
     });
 
     dquan.addEventListener('input', () => {
-        subtotal += parseInt(dquan.value) * drinkSelected;
+        subtotal += drinkSelected;
         total.value = subtotal.toString();
     });
-    
+
     meals1.addEventListener('click', () => {
         mainm.value = "Ribeye Steak";
 
