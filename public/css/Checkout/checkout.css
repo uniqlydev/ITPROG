@@ -1,3 +1,9 @@
 body {
-    
+    /* Make everything center x and y axis */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Add space */
+    margin: 0.5em;
 }

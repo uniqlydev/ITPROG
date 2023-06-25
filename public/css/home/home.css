@@ -19,7 +19,7 @@ body {
 
 .menu-options {
     /* Add space per element */
-    padding: 2em;
+    padding: 4em;
     margin: 0.5em;
     /* Make it not scrollable sideways */
     overflow-x: hidden;
@@ -29,8 +29,8 @@ body {
 
     
 
-    height: 1000px;
-    width: 1300px;
+    height: 700px;
+    width: 1000px;
     
 }
 
