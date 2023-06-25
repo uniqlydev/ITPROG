@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         subtotal += parseInt(dquan.value) * drinkSelected;
         total.value = subtotal.toString();
     });
-
+    
     meals1.addEventListener('click', () => {
         mainm.value = "Ribeye Steak";
 
