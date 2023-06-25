@@ -2,6 +2,8 @@
 var totl = 0;
 var subtotal = 0;
 
+var mainSelected, sideSelected, drinkSelected;
+
 
 
 
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const meals2 = document.getElementById('meals2');
     const meals3 = document.getElementById('meals3');
 
+
     // Sides
     const sides1 = document.getElementById('sides1');
     const sides2 = document.getElementById('sides2');
@@ -77,6 +80,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const squan = document.getElementById('quantityside');
     const dquan = document.getElementById('quantitydrink');
 
+
+
+    mquan.addEventListener('input', () => {
+        subtotal += parseInt(mquan.value) * mainSelected;
+        total.value = subtotal.toString();
+    });
+
+    squan.addEventListener('input', () => {
+        subtotal += parseInt(squan.value) * sideSelected;
+        total.value = subtotal.toString();
+    });
+
+    dquan.addEventListener('input', () => {
+        subtotal += parseInt(dquan.value) * drinkSelected;
+        total.value = subtotal.toString();
+    });
+
     meals1.addEventListener('click', () => {
         mainm.value = "Ribeye Steak";
 
@@ -88,6 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
         meals1.disabled = true;
         meals2.disabled = true;
         meals3.disabled = true;
+
+        mainSelected = 900;
     });
 
     meals2.addEventListener('click', () => {
@@ -97,6 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         subtotal += 850;
         total.value = subtotal.toString();
+
+        mainSelected = 850;
 
 
     });
@@ -112,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
         meals1.disabled = true;
         meals2.disabled = true;
         meals3.disabled = true;
+
+        mainSelected = 300;
     });
 
     drinks1.addEventListener('click', () => {
@@ -125,6 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
         drinks1.disabled = true;
         drinks2.disabled = true;
         drinks3.disabled = true;
+
+        drinkSelected = 55;
     });
 
     drinks2.addEventListener('click', () => {
@@ -138,6 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
         drinks1.disabled = true;
         drinks2.disabled = true;
         drinks3.disabled = true;
+
+        drinkSelected = 60;
     });
 
     drinks3.addEventListener('click', () => {
@@ -151,6 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
         drinks1.disabled = true;
         drinks2.disabled = true;
         drinks3.disabled = true;
+
+        drinkSelected = 20;
     });
 
     sides1.addEventListener('click', () => {
@@ -164,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sides1.disabled = true;
         sides2.disabled = true;
         sides3.disabled = true;
+
+        sideSelected = 80;
     });
 
     sides2.addEventListener('click', () => {
@@ -177,6 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sides1.disabled = true;
         sides2.disabled = true;
         sides3.disabled = true;
+
+        sideSelected = 75;
     });
 
     sides3.addEventListener('click', () => {
@@ -190,6 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sides1.disabled = true;
         sides2.disabled = true;
         sides3.disabled = true;
+        
+        sideSelected = 50;
     });
 
     
