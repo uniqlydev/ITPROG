@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dquan = document.getElementById('quantitydrink');
 
     meals1.addEventListener('click', () => {
-        mainm.value = meals1.innerHTML;
+        mainm.value = "Ribeye Steak";
 
         mquan.value = 1;
     
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     meals2.addEventListener('click', () => {
-        mainm.value = meals2.innerHTML;
+        mainm.value = "Salmon Steak";
 
         mquan.value = 1;
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     meals3.addEventListener('click', () => {
-        mainm.value = meals3.innerHTML;
+        mainm.value = "Chicken";
 
         mquan.value = 1;
 
