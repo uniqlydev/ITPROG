@@ -7,6 +7,49 @@
     <link rel="stylesheet" href="css/Checkout/checkout.css">
 
     <script>
+        function comboChecker(main, side, drink, mquan, squan, dquan) {
+            // Temporary values cuz idk how to get values from other JS file
+            steak = 900;
+            salmon = 850;
+            chicken = 300;
+            baked = 80;
+            mashed = 75;
+            steamed = 50;
+            iced = 55;
+            root = 60;
+            water = 20;
+
+            comboTotal = 0;
+
+            if (main == "Chicken" && side == "Mashed Potato" && drink == "Iced Tea") {
+                while (mquan > 0 && squan > 0 && dquan > 0) {
+                    // Add price for combo meals ONLY
+                    comboTotal = comboTotal + (chicken + mashed + iced);
+                    
+                    // Decrement the quantity of each item to find how many combos in order
+                    mquan--;
+                    squan--;
+                    dquan--;
+                }
+                alert("Chicken Mash Tea Combo applied! 10% off your order!");
+                return comboTotal * 0.1;
+            } else if (main == "Ribeye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
+                while (mquan > 0 && squan > 0 && dquan > 0) {
+                    // Add price for combo meals ONLY
+                    comboTotal = comboTotal + (steak + steamed + root);
+
+                    // Decrement the quantity of each item to find how many combos in order
+                    mquan--;
+                    squan--;
+                    dquan--;
+                }
+                alert("Steak Veg Beer Combo applied! 15% off your order!");
+                return comboTotal * 0.15;
+            }
+
+            return 0;
+        }
+
         function submitForm(event) {
             event.preventDefault();
 
@@ -17,7 +60,11 @@
             const mquan = document.getElementById('mquan').value;
             const squan = document.getElementById('squan').value;
             const dquan = document.getElementById('dquan').value;
-            const total = document.getElementById('total').value;
+            var total = document.getElementById('total').value;
+
+            var discount = comboChecker(meal, sides, drink, mquan, squan, dquan);
+
+            total -= discount;
 
             const data = {
                 meal: meal,
@@ -41,12 +88,16 @@
                 if (response.ok) {
                     console.log('Customer created successfully!');
                     // Redirect or display a success message as needed
+                    alert('Payment Successful!');
+                    window.location.href = "/";
                 } else {
                     console.error('Failed to create customer');
+                    alert('Payment Failed!');
                 }
             })
             .catch(error => {
                 console.error('An error occurred:', error);
+                alert('Payment Failed!');
                 // Display an error message or handle the error as needed
             });
         }
@@ -56,12 +107,9 @@
 <body>
     <h1>Order Confirmation</h1>
     <h2>Order Summary</h2>
-    <p>Meal: <%= meal %> </p>
-    <p>Quantity: <%= mquan %> </p>
-    <p>Sides: <%= sides %> </p>
-    <p>Quantity: <%= squan %> </p>
-    <p>Drinks: <%= drink %> </p>
-    <p>Quantity: <%= dquan %> </p>
+    <p>Meal: <%= meal %> x<%= mquan %> </p>
+    <p>Sides: <%= sides %> x<%= squan %> </p>
+    <p>Drinks: <%= drink %> x<%= dquan %></p>
     <p>Total: <%= total %> </p>
     <br>
     <br>

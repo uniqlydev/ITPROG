@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mquan.value = 1;
 
-        subtotal += 800;
+        subtotal += 850;
         total.value = subtotal.toString();
 
 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mquan.value = 1;
 
-        subtotal += 350;
+        subtotal += 300;
         total.value = subtotal.toString();
 
         meals1.disabled = true;
