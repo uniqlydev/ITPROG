@@ -24,8 +24,48 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 2.5em;
+    width: 400px;
+
+    /* Mint blue bg */
+    background-color: #00dfc0;
+    /* Add space */
+    margin: 5.5em;
+
+    /* Make elements into a column */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 30px;
+
+    color: white;
+
+    border-radius: 20px;
 }
+
+/* Make input[type=submit] and button right next to each other */
+input[type=submit], button {
+    margin-top: 10px;
+    margin-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+
+    /* Center */
+    text-align: center;
+
+    cursor: pointer;
+}
+
+
+
+
 
 /* Make right portion of body into a column and middle of the screen horizontally and vertically */
 .right {
