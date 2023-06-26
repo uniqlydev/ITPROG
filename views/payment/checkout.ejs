@@ -20,11 +20,15 @@
             water = 20;
 
             comboTotal = 0;
+            totalDiscount = 0;
 
             if (main == "Chicken" && side == "Mashed Potato" && drink == "Iced Tea") {
                 while (mquan > 0 && squan > 0 && dquan > 0) {
                     // Add price for combo meals ONLY
-                    comboTotal = comboTotal + (chicken + mashed + iced);
+                    comboTotal = chicken + mashed + iced;
+                
+                    // Discount for the combo ONLY
+                    totalDiscount += (comboTotal * 0.10);
                     
                     // Decrement the quantity of each item to find how many combos in order
                     mquan--;
@@ -32,11 +36,14 @@
                     dquan--;
                 }
                 alert("Chicken Mash Tea Combo applied! 10% off your order!");
-                return comboTotal * 0.1;
+                return totalDiscount;
             } else if (main == "Ribeye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
                 while (mquan > 0 && squan > 0 && dquan > 0) {
                     // Add price for combo meals ONLY
-                    comboTotal = comboTotal + (steak + steamed + root);
+                    comboTotal = steak + steamed + root;
+
+                    // Discount for the combo ONLY
+                    totalDiscount += (comboTotal * 0.15);
 
                     // Decrement the quantity of each item to find how many combos in order
                     mquan--;
@@ -44,7 +51,7 @@
                     dquan--;
                 }
                 alert("Steak Veg Beer Combo applied! 15% off your order!");
-                return comboTotal * 0.15;
+                return totalDiscount;
             }
 
             return 0;
