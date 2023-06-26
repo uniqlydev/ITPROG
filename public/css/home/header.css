@@ -1,11 +1,11 @@
 .header-layer {
-    font-size: 1.5em;
+    font-size: 1em;
     margin: 0.5em;
+    
 }
 
 .header-layer h1 span {
-    /* Make it seem like pornhub with the famous orange block around the text but this use lime green */
-    background-color: #01ff01;
+    background-color: #C4F1A9;
     color: white;
     padding: 0.2em;
     border-radius: 0.2em;
