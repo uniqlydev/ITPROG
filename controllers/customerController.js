@@ -52,6 +52,7 @@ into the `Customer` table. If the query is successful, it returns a JSON respons
 status code and a success message along with the newly created `customer` object. If the query
 fails, it returns a `404` status code with an error message that includes the SQL error message. */
 exports.createCustomer = (req, res, next) => {
+    const uname = req.body.uname;
     const meal = req.body.meal;
     const drink = req.body.drink;
     const sides = req.body.sides;
@@ -62,7 +63,7 @@ exports.createCustomer = (req, res, next) => {
     const dquan = req.body.dquan;
 
 
-    const customer = new Customers(meal, sides,drink, total, date, mquan, squan, dquan);
+    const customer = new Customers(uname,meal, sides,drink, total, date, mquan, squan, dquan);
 
     db.query('INSERT INTO Customer SET ?', [customer], (err, rows, fields) => {
         if (!err) {

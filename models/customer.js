@@ -1,5 +1,6 @@
 class customer {
-    constructor(main, sides, drinks, total, date, mquan, squan, dquan) {
+    constructor(uname,main, sides, drinks, total, date, mquan, squan, dquan) {
+        this.uname = uname;
         this.main = main;
         this.sides = sides;
         this.drinks = drinks;

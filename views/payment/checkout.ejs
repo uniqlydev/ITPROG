@@ -60,6 +60,7 @@
         function submitForm(event) {
             event.preventDefault();
 
+            var uname = prompt("Please enter your username: ");
             const amount = document.getElementById('amount').value;
             const meal = document.getElementById('meal').value;
             const sides = document.getElementById('sides').value;
@@ -74,13 +75,14 @@
             total -= discount;
 
             const data = {
+                uname: uname,
                 meal: meal,
                 sides: sides,
                 drink: drink,
-                mquan: mquan,
-                squan: squan,
-                dquan: dquan,
-                total: total,
+                mquan: parseInt(mquan),
+                squan: parseInt(squan),
+                dquan: parseInt(dquan),
+                total: parseFloat(total),
                 amount: amount
             };
 
