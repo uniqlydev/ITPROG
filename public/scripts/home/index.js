@@ -4,6 +4,7 @@ var subtotal = 0;
 
 var mainSelected, sideSelected, drinkSelected;
 
+var mcounter = 0;
 
 
 
@@ -80,58 +81,108 @@ document.addEventListener('DOMContentLoaded', () => {
     const squan = document.getElementById('quantityside');
     const dquan = document.getElementById('quantitydrink');
 
+    // get button
+    const madd = document.getElementById('madd');
+    const msubtract = document.getElementById('msubtract');
+    const sadd = document.getElementById('sadd');
+    const ssubtract = document.getElementById('ssubtract');
+    const dadd = document.getElementById('dadd');
+    const dsubtract = document.getElementById('dsubtract');
 
-
-    mquan.addEventListener('input', () => {
-        var previousValue = parseInt(total.value);
-        var currentValue = parseInt(mquan.value);
-        subtotal = subtotal - previousValue + (mainSelected * currentValue);
+    madd.addEventListener('click', () => {
+        subtotal += mainSelected;
         total.value = subtotal.toString();
 
-        // If quantity is 0 then remove mainm
-        if (currentValue == 0) {
+        mquan.value = parseInt(mquan.value) + 1;
+
+    });
+
+    msubtract.addEventListener('click', () => {
+        subtotal -= mainSelected;
+        total.value = subtotal.toString();
+
+        mquan.value = parseInt(mquan.value) - 1;
+
+        if (mquan.value == 0) {
             mainm.value = "";
             meals1.disabled = false;
             meals2.disabled = false;
             meals3.disabled = false;
-            mainSelected = 0;
+
+            mquan.setAttribute('disabled', 'true');
+            mquan.setAttribute('readonly', 'true');
+
+            mainm.setAttribute('hidden', 'true');
+            mquan.setAttribute('hidden', 'true');  
+            
+            madd.setAttribute('hidden', 'true');
+            msubtract.setAttribute('hidden', 'true');
         }
     });
 
-    squan.addEventListener('input', () => {
-        var previousValue = parseInt(total.value);
-        var currentValue = parseInt(squan.value);
-        subtotal = subtotal - previousValue + (sideSelected * currentValue);
+    sadd.addEventListener('click', () => {
+        subtotal += sideSelected;
         total.value = subtotal.toString();
 
-        // If quantity is 0 then remove mainm
-        if (currentValue == 0) {
+        squan.value = parseInt(squan.value) + 1;
+    });
+
+    ssubtract.addEventListener('click', () => {
+        subtotal -= sideSelected;
+        total.value = subtotal.toString();
+
+        squan.value = parseInt(squan.value) - 1;
+
+        if (squan.value == 0) {
             side.value = "";
             sides1.disabled = false;
             sides2.disabled = false;
             sides3.disabled = false;
-            sideSelected = 0;
+
+            squan.setAttribute('disabled', 'true');
+            squan.setAttribute('readonly', 'true');
+
+            side.setAttribute('hidden', 'true');
+            squan.setAttribute('hidden', 'true');
+
+            sadd.setAttribute('hidden', 'true');
+            ssubtract.setAttribute('hidden', 'true');
         }
     });
 
-    dquan.addEventListener('input', () => {
-        var previousValue = parseInt(total.value);
-        var currentValue = parseInt(dquan.value);
-        subtotal = subtotal - previousValue + (drinkSelected * currentValue);
+    dadd.addEventListener('click', () => {
+        subtotal += drinkSelected;
         total.value = subtotal.toString();
 
-        // If quantity is 0 then remove mainm
-        if (currentValue == 0) {
+        dquan.value = parseInt(dquan.value) + 1;
+
+    });
+
+    dsubtract.addEventListener('click', () => {
+        subtotal -= drinkSelected;
+        total.value = subtotal.toString();
+
+        dquan.value = parseInt(dquan.value) - 1;
+
+        if (dquan.value == 0) {
             drinks.value = "";
             drinks1.disabled = false;
             drinks2.disabled = false;
             drinks3.disabled = false;
-            drinkSelected = 0;
 
             dquan.setAttribute('disabled', 'true');
             dquan.setAttribute('readonly', 'true');
+
+            drinks.setAttribute('hidden', 'true');
+            dquan.setAttribute('hidden', 'true');
+
+            dadd.setAttribute('hidden', 'true');
+            dsubtract.setAttribute('hidden', 'true');
+
         }
     });
+
+
 
     meals1.addEventListener('click', () => {
         mquan.value = "1";
@@ -146,6 +197,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mquan.removeAttribute('disabled');
         mquan.removeAttribute('readonly');
+        mquan.removeAttribute('hidden');
+        mainm.removeAttribute('hidden');
+
+        madd.removeAttribute('hidden');
+        msubtract.removeAttribute('hidden');
+        madd.removeAttribute('disabled');
+        msubtract.removeAttribute('disabled');
 
         mainSelected = 900;
     });
@@ -164,6 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mquan.removeAttribute('disabled');
         mquan.removeAttribute('readonly');
+        mquan.removeAttribute('hidden');
+        mainm.removeAttribute('hidden');
+
+        madd.removeAttribute('hidden');
+        msubtract.removeAttribute('hidden');
+        madd.removeAttribute('disabled');
+        msubtract.removeAttribute('disabled');
 
         mainSelected = 850;
 
@@ -184,6 +249,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mquan.removeAttribute('disabled');
         mquan.removeAttribute('readonly');
+        mquan.removeAttribute('hidden');
+        mainm.removeAttribute('hidden');
+
+        madd.removeAttribute('hidden');
+        msubtract.removeAttribute('hidden');
+        madd.removeAttribute('disabled');
+        msubtract.removeAttribute('disabled');
 
         mainSelected = 300;
     });
@@ -202,6 +274,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dquan.removeAttribute('disabled');
         dquan.removeAttribute('readonly');
+        dquan.removeAttribute('hidden');
+        drinks.removeAttribute('hidden');
+
+        dadd.removeAttribute('hidden');
+        dsubtract.removeAttribute('hidden');
+        dadd.removeAttribute('disabled');
+        dsubtract.removeAttribute('disabled');
 
         drinkSelected = 55;
     });
@@ -220,6 +299,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dquan.removeAttribute('disabled');
         dquan.removeAttribute('readonly');
+        dquan.removeAttribute('hidden');
+        drinks.removeAttribute('hidden');
+
+        dadd.removeAttribute('hidden');
+        dsubtract.removeAttribute('hidden');
+        dadd.removeAttribute('disabled');
+        dsubtract.removeAttribute('disabled');
 
         drinkSelected = 60;
     });
@@ -238,6 +324,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dquan.removeAttribute('disabled');
         dquan.removeAttribute('readonly');
+        dquan.removeAttribute('hidden');
+        drinks.removeAttribute('hidden');
+
+        dadd.removeAttribute('hidden');
+        dsubtract.removeAttribute('hidden');
+        dadd.removeAttribute('disabled');
+        dsubtract.removeAttribute('disabled');
 
 
         drinkSelected = 20;
@@ -257,6 +350,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         squan.removeAttribute('disabled');
         squan.removeAttribute('readonly');
+        squan.removeAttribute('hidden');
+        sides.removeAttribute('hidden');
+
+        sadd.removeAttribute('hidden');
+        ssubtract.removeAttribute('hidden');
+        sadd.removeAttribute('disabled');
+        ssubtract.removeAttribute('disabled');
 
         sideSelected = 80;
     });
@@ -275,6 +375,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         squan.removeAttribute('disabled');
         squan.removeAttribute('readonly');
+        squan.removeAttribute('hidden');
+        sides.removeAttribute('hidden');
+
+        sadd.removeAttribute('hidden');
+        ssubtract.removeAttribute('hidden');
+        sadd.removeAttribute('disabled');
+        ssubtract.removeAttribute('disabled');
 
         sideSelected = 75;
     });
@@ -293,6 +400,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         squan.removeAttribute('disabled');
         squan.removeAttribute('readonly');
+        squan.removeAttribute('hidden');
+        sides.removeAttribute('hidden');
+
+        sadd.removeAttribute('hidden');
+        ssubtract.removeAttribute('hidden');
+        sadd.removeAttribute('disabled');
+        ssubtract.removeAttribute('disabled');
         
         sideSelected = 50;
     });
