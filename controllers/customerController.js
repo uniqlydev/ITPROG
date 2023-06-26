@@ -62,7 +62,7 @@ exports.createCustomer = (req, res, next) => {
     const dquan = req.body.dquan;
 
 
-    const customer = new Customers(meal, drink, sides, total, date, mquan, squan, dquan);
+    const customer = new Customers(meal, sides,drink, total, date, mquan, squan, dquan);
 
     db.query('INSERT INTO Customer SET ?', [customer], (err, rows, fields) => {
         if (!err) {

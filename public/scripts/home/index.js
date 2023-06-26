@@ -88,22 +88,54 @@ document.addEventListener('DOMContentLoaded', () => {
         subtotal = subtotal - previousValue + (mainSelected * currentValue);
         total.value = subtotal.toString();
 
+        // If quantity is 0 then remove mainm
+        if (currentValue == 0) {
+            mainm.value = "";
+            meals1.disabled = false;
+            meals2.disabled = false;
+            meals3.disabled = false;
+            mainSelected = 0;
+        }
     });
 
     squan.addEventListener('input', () => {
-        subtotal += sideSelected;
+        var previousValue = parseInt(total.value);
+        var currentValue = parseInt(squan.value);
+        subtotal = subtotal - previousValue + (sideSelected * currentValue);
         total.value = subtotal.toString();
+
+        // If quantity is 0 then remove mainm
+        if (currentValue == 0) {
+            side.value = "";
+            sides1.disabled = false;
+            sides2.disabled = false;
+            sides3.disabled = false;
+            sideSelected = 0;
+        }
     });
 
     dquan.addEventListener('input', () => {
-        subtotal += drinkSelected;
+        var previousValue = parseInt(total.value);
+        var currentValue = parseInt(dquan.value);
+        subtotal = subtotal - previousValue + (drinkSelected * currentValue);
         total.value = subtotal.toString();
+
+        // If quantity is 0 then remove mainm
+        if (currentValue == 0) {
+            drinks.value = "";
+            drinks1.disabled = false;
+            drinks2.disabled = false;
+            drinks3.disabled = false;
+            drinkSelected = 0;
+
+            dquan.setAttribute('disabled', 'true');
+            dquan.setAttribute('readonly', 'true');
+        }
     });
 
     meals1.addEventListener('click', () => {
+        mquan.value = "1";
         mainm.value = "Ribeye Steak";
-
-        mquan.value = 1;
     
         subtotal += 900;
         total.value = subtotal.toString();
@@ -111,6 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
         meals1.disabled = true;
         meals2.disabled = true;
         meals3.disabled = true;
+
+        mquan.removeAttribute('disabled');
+        mquan.removeAttribute('readonly');
 
         mainSelected = 900;
     });
@@ -122,6 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         subtotal += 850;
         total.value = subtotal.toString();
+
+        meals1.disabled = true;
+        meals2.disabled = true;
+        meals3.disabled = true;
+
+        mquan.removeAttribute('disabled');
+        mquan.removeAttribute('readonly');
 
         mainSelected = 850;
 
@@ -140,6 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
         meals2.disabled = true;
         meals3.disabled = true;
 
+        mquan.removeAttribute('disabled');
+        mquan.removeAttribute('readonly');
+
         mainSelected = 300;
     });
 
@@ -154,6 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
         drinks1.disabled = true;
         drinks2.disabled = true;
         drinks3.disabled = true;
+
+        dquan.removeAttribute('disabled');
+        dquan.removeAttribute('readonly');
 
         drinkSelected = 55;
     });
@@ -170,6 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
         drinks2.disabled = true;
         drinks3.disabled = true;
 
+        dquan.removeAttribute('disabled');
+        dquan.removeAttribute('readonly');
+
         drinkSelected = 60;
     });
 
@@ -184,6 +235,10 @@ document.addEventListener('DOMContentLoaded', () => {
         drinks1.disabled = true;
         drinks2.disabled = true;
         drinks3.disabled = true;
+
+        dquan.removeAttribute('disabled');
+        dquan.removeAttribute('readonly');
+
 
         drinkSelected = 20;
     });
@@ -200,6 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
         sides2.disabled = true;
         sides3.disabled = true;
 
+        squan.removeAttribute('disabled');
+        squan.removeAttribute('readonly');
+
         sideSelected = 80;
     });
 
@@ -215,6 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
         sides2.disabled = true;
         sides3.disabled = true;
 
+        squan.removeAttribute('disabled');
+        squan.removeAttribute('readonly');
+
         sideSelected = 75;
     });
 
@@ -229,6 +290,9 @@ document.addEventListener('DOMContentLoaded', () => {
         sides1.disabled = true;
         sides2.disabled = true;
         sides3.disabled = true;
+
+        squan.removeAttribute('disabled');
+        squan.removeAttribute('readonly');
         
         sideSelected = 50;
     });
