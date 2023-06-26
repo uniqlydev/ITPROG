@@ -105,6 +105,7 @@
     
 </head>
 <body>
+   <div class="left">
     <h1>Order Confirmation</h1>
     <h2>Order Summary</h2>
     <p>Meal: <%= meal %> x<%= mquan %> </p>
@@ -127,11 +128,14 @@
         <input type="hidden" id="squan" value="<%= squan %>">
         <input type="hidden" id="dquan" value="<%= dquan %>">
         <input type="hidden" id="total" value="<%= total %>">
-
         <br>
         <br>
         <button type="button" onclick="window.history.back()">Cancel</button>
         <input type="submit" value="Pay">
     </form>
+    </div>
+    <div class="right">
+        <img src="/images/checkout/confirmed.jpg" alt="" srcset="">
+    </div>
 </body>
 </html>
