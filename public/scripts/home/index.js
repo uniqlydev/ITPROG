@@ -54,6 +54,10 @@ function clearOrder() {
     totl = 0;
 }
 
+function loadMain() {
+    
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // On load alert instructions

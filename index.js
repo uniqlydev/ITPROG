@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const customerRoutes = require('./routes/customerRoutes');
+const foodRoutes = require('./routes/foodRoutes');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -17,6 +18,7 @@ const port = process.env.PORT || 8080;
 
 // Use the customerRoutes for API requests
 app.use('/api', customerRoutes);
+app.use('/api', foodRoutes);
 
 // Routing for views
 app.get('/', (req, res) => {
