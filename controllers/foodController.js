@@ -77,6 +77,7 @@ exports.createFood = (req, res, next) => {
     const price = req.body.price;
     const image = req.body.image;
     const description = req.body.description;
+    const protein = req.body.protein;
     const type = req.body.type;
 
     const food = {
@@ -84,6 +85,7 @@ exports.createFood = (req, res, next) => {
         price: price,
         image: image,
         description: description,
+        protein: protein,
         type: type
     };
 

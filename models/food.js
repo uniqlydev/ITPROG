@@ -1,9 +1,10 @@
 class food {
-    constructor(name, price, image, description, type) {
+    constructor(name, price, image, description, type, protein) {
         this.name = name;
         this.price = price;
         this.image = image;
         this.description = description;
+        this.protein = protein;
         this.type = type;
     }
 
@@ -46,6 +47,14 @@ class food {
 
     setType(type) {
         this.type = type;
+    }
+
+    getProtein() {
+        return this.protein;
+    }
+
+    setProtein(protein) {
+        this.protein = protein;
     }
 }
 
