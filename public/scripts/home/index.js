@@ -55,6 +55,11 @@ function clearOrder() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // On load alert instructions
+    alert("Please select one (1) meal, one (1) drink, and one (1) side dish. You can add more by clicking the + button. However, having multiple different kinds of meal is not allowed.");
+
+
     // Drinks
     const drinks1 = document.getElementById('drinks1');
     const drinks2 = document.getElementById('drinks2');
