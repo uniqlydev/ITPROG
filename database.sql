@@ -9,6 +9,9 @@ CREATE TABLE Customer (
                         mquan INT(2) , # Quantity meal
                         squan INT(2) , # Quantity Sides
                         dquan INT(3) ,  # Quantity drinks
+                        priceOfMain  DOUBLE,
+                        priceOfSide  DOUBLE,
+                        priceOfDrink DOUBLE,
                         # Setting up Primary key
                         PRIMARY KEY (id)
 );
