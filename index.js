@@ -3,6 +3,7 @@ const path = require('path');
 const customerRoutes = require('./routes/customerRoutes');
 const foodRoutes = require('./routes/foodRoutes');
 const bodyParser = require('body-parser');
+const db = require('./database/db');
 
 const app = express();
 
@@ -21,23 +22,41 @@ app.use('/api', customerRoutes);
 app.use('/api', foodRoutes);
 
 // Routing for views
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     let totalpr = 0;
     let discountpr = 0;
-    const sides = ["Baked Potato","Mashed Potato","Steamed Vegetables"];
-    const meals = ["Steak","Salmon","Chicken"];
-    const drinks = ["Iced Tea", "Root Beer", "Water"];
 
-    res.render('home/index', {
-        title: 'Home',
-        total: totalpr,
-        discount: discountpr,
-        date: new Date().toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }),
-        sides: sides,
-        meals: meals,
-        drinks: drinks
+    fetchFoodsFromDatabase((err, foods) => {
+        if (err) {
+            console.log(err);
+            res.render('home/index', {
+                title: 'Home',
+                total: totalpr,
+                discount: discountpr,
+                date: new Date().toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }),
+            });
+        }else {
+            console.log("Foods: ", foods);
+            res.render('home/index', {
+                title: 'Home',
+                total: totalpr,
+                discount: discountpr,
+                date: new Date().toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }),
+                foods: foods
+            });
+        }
     });
 });
+
+function fetchFoodsFromDatabase(callback) {
+    db.query('SELECT * FROM Food', (err, foods) => {
+      if (err) {
+        callback(err, null);
+      } else {
+        callback(null, foods);
+      }
+    });
+  }
 
 // Handle post from home to checkout
 app.post('/checkout', (req, res) => {
