@@ -64,6 +64,14 @@ app.post('/checkout', (req, res) => {
     });
 });
 
+app.get('/about', (req, res) => {
+
+    res.render('about/about', {
+        title: 'About Us'
+    });
+
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
