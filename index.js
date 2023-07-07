@@ -3,6 +3,8 @@ const path = require('path');
 const customerRoutes = require('./routes/customerRoutes');
 const bodyParser = require('body-parser');
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,6 +19,9 @@ const port = process.env.PORT || 8080;
 
 // Use the customerRoutes for API requests
 app.use('/api', customerRoutes);
+
+// Proxy middleware
+app.use('/api', createProxyMiddleware({ target: 'http://localhost:15000', changeOrigin: true }));
 
 // Routing for views
 app.get('/', (req, res) => {
