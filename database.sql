@@ -23,7 +23,7 @@ CREATE TABLE Food (
     image VARCHAR(255), # This will store the image path
     description TEXT,
     protein DOUBLE NOT NULL,
-    type ENUM('M','S','D') DEFAULT 'M' NOT NULL,
+    type ENUM('M','S','D') NOT NULL,
 
     # Setting up Primary key
     PRIMARY KEY (id)

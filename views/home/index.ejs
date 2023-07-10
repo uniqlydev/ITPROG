@@ -12,24 +12,27 @@
     <link rel="stylesheet" href="css/navbar/navbar.css">
 
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Figtree:wght@300&family=Righteous&display=swap" rel="stylesheet">
 
 
     <!-- Scripts -->
-    <script type="text/javascript" src="scripts/home/index.js"></script>
+    <!-- <script type="text/javascript" src="scripts/home/index.js"></script> -->
+    <script type="text/javascript" src="scripts/cart/cart-container.js"></script>
     
 
     <%- include('../navbar/navbar.ejs') %>
 </head>
 <body>
 
+    <div class="cart-main">
+        <%- include('partials/cart-nav.ejs') %>
+    </div>
 
-    <div class="menu-options">
-        <%- include('partials/meals-layer') %>
-        <%- include('partials/sides-layer') %>
-        <%- include('partials/drinks-layer') %> 
+    <div class="menu-options" id="cart-container">
+
     </div>
 
     <%- include('partials/cart.ejs') %>
