@@ -36,7 +36,6 @@ app.get('/', async (req, res) => {
                 date: new Date().toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }),
             });
         }else {
-            console.log("Foods: ", foods);
             res.render('home/index', {
                 title: 'Home',
                 total: totalpr,

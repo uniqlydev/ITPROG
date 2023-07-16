@@ -1,11 +1,19 @@
+function loadMenu(foods) {
+    
+    for (var i = 0; i < foods.length; i++) {
+        console.log(foods[i]);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+
     var cartContainer = document.getElementById('cart-container');
     var mealbutton = document.getElementById('meal-button');
     var sidesbutton = document.getElementById('sides-button');
     var drinkbutton = document.getElementById('drink-button');
 
-    mealbutton.addEventListener('click', this.appendChild {
-        cartContainer.innerHTML = '<%- include(\'partials/meals-layer\') %>';
-    });
+
+    loadMenu(foods);
+
     }
 );

@@ -1,0 +1,65 @@
+.item {
+    /* Make into a column */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.item .pic {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    /* Add shadows */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.item .calorie-intake {
+    width: 15px;
+    height: 15px;
+}
+.item .label {
+    text-align: justify;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.desc {
+    text-align: justify;
+    font-size: 12px;
+    width: 250px;
+    color: rgb(180, 176, 176);
+
+    height: 100px;
+}
+
+.item .button-menu {
+   /* Set button pic as /images/cart/add-to-cart.png */
+    background-image: url("/images/cart/add-to-cart.png");
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    float: right;
+}
+
+.buy {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+.buy p {
+    float: left;
+    width: 230px;
+}
