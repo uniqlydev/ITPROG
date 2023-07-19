@@ -28,3 +28,12 @@ CREATE TABLE Food (
     # Setting up Primary key
     PRIMARY KEY (id)
 );
+
+CREATE TABLE Administrator (
+    id int(10) NOT NULL AUTO_INCREMENT,
+    uname VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+
+    # Setting up Primary key
+    PRIMARY KEY (id)
+)
