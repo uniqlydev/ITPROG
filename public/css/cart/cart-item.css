@@ -35,7 +35,7 @@
     height: 100px;
 }
 
-.item .button-menu {
+.button-menu {
    /* Set button pic as /images/cart/add-to-cart.png */
     background-image: url("/images/cart/add-to-cart.png");
     background-size: 100% 100%;
@@ -63,3 +63,4 @@
     float: left;
     width: 230px;
 }
+

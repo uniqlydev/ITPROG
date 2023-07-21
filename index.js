@@ -48,7 +48,7 @@ app.get('/', async (req, res) => {
 });
 
 function fetchFoodsFromDatabase(callback) {
-    db.query('SELECT * FROM Food', (err, foods) => {
+    db.query('SELECT * FROM Food ;', (err, foods) => {
       if (err) {
         callback(err, null);
       } else {
