@@ -2,12 +2,12 @@
     <ul id="foodlist">
     <% foods.forEach((food, index) => { %>
         <% if (food.type === "M") { %>
-        <li>
+        <li id = "m<%= index+1%>">
             <div class="item">
                 <img src="<%= food.image %>" alt="<%= food.name %>" class="pic">
             </div>
             <div>
-                <p class="label"><%= food.name %></p>
+                <p class="label" id="foodname-<%= index + 1 %>"><%= food.name %></p>
                 <div class="cal-content">
                     <img src="/images/cart/calories.png" class="calorie-intake">
                     <p class="calorie-<%= index + 1 %>"><%= food.protein %>g</p>
@@ -16,8 +16,8 @@
                 <br>
             </div>
             <div class="buy">
-                <p>PHP <%= food.price %></p>
-                <button class="button-menu" id="meals<%= index + 1 %>"></button>
+                <p id="price-<%=index + 1%>"> PHP <%= food.price %></p>
+                <button class="button-menu"></button>
             </div>
         </li>
         <% } %>
