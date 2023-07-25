@@ -11,16 +11,24 @@
         <title>
             Edit Dishes
         </title>
+        <link rel="stylesheet" href="editDishModStyle.css">
     </head>
 
     <body>
+    <div class="Menu-container">
+            <div class="header-layer">
+                <h1>Animo<span>Bites</span></h1>
+            </div>
+            <div class = "menu">
+                <div class="header-layerB">
+                    <h1>Edit <span>Dishes</span></h1>
+                </div>
         <?php
             $conn = mysqli_connect("localhost", "root", "") or die ("Unable to connect". mysqli_error($conn));
             mysqli_select_db($conn, "dbanimoeats");
 
             $dish = $_POST["dish"];
 
-            echo "<h1>Edit Dishes</h1>";
             echo "<h3>Now editing: ".$dish."</h3>";
 
             $dishQuery = mysqli_query($conn, "SELECT * FROM Food WHERE name='$dish'");
@@ -39,9 +47,11 @@
             echo "<option value='D'>Drink</option>";
             echo "</select> <br /><br />";
 
-            echo "<input type='submit' value='Edit Dish' name='editBtn'/>";
+            echo "<button type='submit' value='Edit Dish' name='editBtn'> Edit Dish </button>";
         ?>
         <br /><br />
         <a href="editDish.php">Back</a>
+    </div>
+</div>
     </body>
 </html>

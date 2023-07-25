@@ -5,18 +5,29 @@
     } else {
     }
 ?>
-
 <html>
-    <head>
-        <title>
-            Add Dish
-        </title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Dish Menu Page</title>
+    <link rel="stylesheet" href="addDishStyle.css">
+</head>
+<body>
+    <div class="Menu-container">
+        <div class="header-layer">
+            <h1>Animo<span>Bites</span></h1>
+        </div>
+        <div class = "menu">
+            <div class="header-layerB">
+                <h1>Add<span>Dish</span></h1>
+            </div>
+            <button onclick="window.location.href = 'addDishApplication.php';">Web Application</button><br>
+            <button onclick="window.location.href = 'uploadDishXML.php';">XML</button><br>
+            <button onclick="window.location.href = 'adminPage.php';">Go Back</button><br>
+        </div>
+    </div>
 
-    <body>
-        <h1>Add Dishes</h2>
-        <a href="addDishApplication.php">Web Application</a> <br />
-        <a href="uploadDishXML.php">XML</a> <br /> <br />
-        <a href="adminPage.php">Go back</a> <br />
-    </body>
+    <?php
+         
+    ?>
+</body>
 </html>

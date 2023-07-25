@@ -5,20 +5,31 @@
     } else {
     }
 ?>
-
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Admin Page</title>
-    </head>
-    <body>
-        <h1>Admin Page</h1>
-        <a href="addDish.php">Add Dishes</a> <br />
-        <a href="editDish.php">Edit Dishes</a> <br />
-        <a href="deleteDish.php">Delete Dishes</a> <br />
-        <a href="addCombo.php">Add Combo</a> <br />
-        <a href="generateReport.php">Generate Report</a> <br /> <br />
+<head>
+    <meta charset="UTF-8" />
+    <title>admin Page</title>
+    <link rel="stylesheet" href="adminStyle.css">
+</head>
+<body>
+    <div class="Menu-container">
+        <div class="header-layer">
+            <h1>Animo<span>Bites</span></h1>
+        </div>
+        <div class = "menu">
+            <button onclick="window.location.href = 'addDish.php';">Add Dishes</button><br>
+            <button onclick="window.location.href = 'editDish.php';">Edit Dishes</button><br>
+            <button onclick="window.location.href = 'deleteDish.php';">Delete Dishes</button><br>
+            <button onclick="window.location.href = 'addCombo.php';">Add Combo</button><br>
+            <button onclick="window.location.href = 'generateReport.php';">Generate Report</button><br>
+            
+            <button onclick="window.location.href = 'logoutPage.php';">Logout</button>
+        </div>
+    </div>
 
-        <a href="logoutPage.php">Logout</a>
-    </body>
+
+    <?php
+         
+    ?>
+</body>
 </html>
