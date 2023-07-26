@@ -62,15 +62,29 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('dadd').hidden = false;
         document.getElementById('quantitydrink').value = 1;
         document.getElementById('quantitydrink').disabled = false;
-        document.getElementById('drinkphp').hidden = false;
-        document.getElementById('drinkphp').value = price.toFixed(2);
+        document.getElementById('drinksphp').hidden = false;
+        document.getElementById('drinksphp').value = price.toFixed(2);
 
         subtotal += price;
         totalField.value = subtotal.toFixed(2);
     }
 
+    function addToCartSides(foodName, price) {
+        document.getElementById('sides').value = foodName;
+        document.getElementById('sides').hidden = false;
+        document.getElementById('ssubtract').hidden = false;
+        document.getElementById('quantityside').hidden = false;
+        document.getElementById('sadd').hidden = false;
+        document.getElementById('quantityside').value = 1;
+        document.getElementById('quantityside').disabled = false;
+        document.getElementById('sidesphp').hidden = false;
+        document.getElementById('sidesphp').value = price.toFixed(2);
 
+        subtotal += price;
+        totalField.value = subtotal.toFixed(2);
+    }
 
+    
     function addQuantity(qtty, price) {
         qtty.value = parseInt(qtty.value) + 1;
         subtotal += price;
@@ -97,14 +111,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const drinkLis = document.querySelectorAll('li[id^="d"]');
+    drinkLis.forEach((li, index) => {
+        const buttonD = li.querySelector('.button-menu');
+        const priceD = parseFloat(li.querySelector('p[id^="price-"]').textContent.trim().replace('PHP', ''));
+        const foodNameD = li.querySelector('.label').textContent;
+
+        buttonD.addEventListener('click', () => {
+            addToCartDrinks(foodNameD, priceD);
+        });
+    });
+
+    const sidesLis = document.querySelectorAll('li[id^="s"]');
+    sidesLis.forEach((li, index) => {
+        const buttonS = li.querySelector('.button-menu');
+        const priceS = parseFloat(li.querySelector('p[id^="price-"]').textContent.trim().replace('PHP', ''));
+        const foodNameS = li.querySelector('.label').textContent;
+
+        buttonS.addEventListener('click', () => {
+            addToCartSides(foodNameS, priceS);
+        });
+    });
+
     // Add event listener to add button
     document.getElementById('madd').addEventListener('click', () => {
         addQuantity(document.getElementById('quantitymain'), parseFloat(document.getElementById('mainphp').value));
     });
 
+    document.getElementById('sadd').addEventListener('click', () => {
+        addQuantity(document.getElementById('quantityside'), parseFloat(document.getElementById('sidesphp').value));
+    });
+
+    document.getElementById('dadd').addEventListener('click', () => {
+        addQuantity(document.getElementById('quantitydrink'), parseFloat(document.getElementById('drinksphp').value));
+    });
+
     // Add event listener to subtract button
     document.getElementById('msubtract').addEventListener('click', () => {
         subtractQuantity(document.getElementById('quantitymain'), parseFloat(document.getElementById('mainphp').value));
+    });
+
+    document.getElementById('ssubtract').addEventListener('click', () => {
+        subtractQuantity(document.getElementById('quantityside'), parseFloat(document.getElementById('sidesphp').value));
+    });
+
+    document.getElementById('dsubtract').addEventListener('click', () => {
+        subtractQuantity(document.getElementById('quantitydrink'), parseFloat(document.getElementById('drinksphp').value));
     });
 });
 

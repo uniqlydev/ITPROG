@@ -1,60 +1,28 @@
 <div class="button-menu-container">
-    <ul>
-        <li>
+    <ul id="foodlist">
+    <% foods.forEach((food, index) => { %>
+        <% if (food.type === "S") { %>
+        <li id="s<%= index + 1%>">
             <div class="item">
-                <img class="steak" src="images/bakedpotato.jpg" alt="steak"">
-                <div class="steak-label">
-                    <p class="label">Cheesy Baked Potato</p>
-                    <div class="cal-content">
-                        <img src="/images/cart/calories.png" class="calorie-intake">
-                        <p class="calorie-1">50g</p>
-                    </div>
-                    <p class="desc">Indulge in the ultimate comfort food experience with our Cheesy Baked Potato, a symphony of flavors and textures that will leave you craving for more. Picture a fluffy, oven-baked potato, perfectly cooked to yield a tender interior encased in a crispy, golden-brown skin. Now imagine it generously adorned with a melty, gooey layer of cheese that stretches and oozes with every delightful bite.</p>
-                    <br>
+                <img src="<%= food.image %>" alt="<%= food.name %>" class="pic">
+            </div>
+            <div>
+                <p class="label" id="foodname-<%= index + 1%> "><%= food.name %></p>
+                <div class="cal-content">
+                    <img src="/images/cart/calories.png" class="calorie-intake">
+                    <p class="calorie-<%= index + 1%>%"><%= food.protein %>g</p>
                 </div>
-                <div class="buy">
-                    <p>PHP 80</p>
-                    <button class="button-menu" id="sides1" class="meals1"></button>
-                </div>
+                <p class="desc"><%= food.description %></p>
+                <br>
+            </div>
+            <div class="buy">
+                <p id="price-<%= index + 1%>">PHP <%= food.price %></p>
+                <button class="button-menu"></button>
             </div>
         </li>
-
-        <li>
-            <div class="meal-2">
-                <img class="salmon" src="images/mashedpotato.jpg" alt="salmon"">
-                <div class="steak-label">
-                    <p class="label">Creamy Mashed Potato</p>
-                    <div class="cal-content">
-                        <img src="/images/cart/calories.png" class="calorie-intake">
-                        <p class="calorie-1">20</p>
-                    </div>
-                    <p class="desc">As you savor the Creamy Mashed Potato, its flavors unfold on your palate. The mild sweetness of the potatoes mingles harmoniously with the buttery richness, creating a symphony of taste that is both comforting and indulgent. The seasonings, carefully balanced, enhance the natural flavors of the potatoes without overpowering them, allowing their pure essence to shine through.</p>
-                    <br>
-                </div>
-                <div class="buy">
-                    <p>PHP 75</p>
-                    <button class="button-menu" id="sides2" class="meals2"></button>
-                </div>
-            </div>
-        </li>
-
-        <li>
-            <div class="meal-2">
-                <img class="salmon" src="images/steamedvege.jpg" alt="salmon"">
-                <div class="steak-label">
-                    <p class="label">Steamed Vegetables</p>
-                    <div class="cal-content">
-                        <img src="/images/cart/calories.png" class="calorie-intake">
-                        <p class="calorie-1">20</p>
-                    </div>
-                        <p class="desc">The steaming process unlocks the full spectrum of the vegetables' nutritional value, ensuring that they retain their vital vitamins, minerals, and antioxidants. Each mouthful not only satisfies your taste buds but also nourishes your body, offering a wholesome and guilt-free dining experience.</p>
-                    </div>
-                <div class="buy">
-                    <p>PHP 50</p>
-                    <button class="button-menu" id="sides3" class="meals2"></button>
-                </div>
-            </div>
-        </li>
+        <% } %>
+    <% }); %>
     </ul>
 </div>
+
 
