@@ -12,6 +12,7 @@ CREATE TABLE Customer (
     priceOfMain  DOUBLE,
     priceOfSide  DOUBLE,
     priceOfDrink DOUBLE,
+
     # Setting up Primary key
     PRIMARY KEY (id)
 );
@@ -28,3 +29,24 @@ CREATE TABLE Food (
     # Setting up Primary key
     PRIMARY KEY (id)
 );
+
+CREATE TABLE Administrator (
+    id int(10) NOT NULL AUTO_INCREMENT,
+    uname VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+
+    # Setting up Primary key
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE ComboMeals (
+    id int(10) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    discount DOUBLE NOT NULL,
+    main VARCHAR(40) NOT NULL,
+    sides VARCHAR(40) NOT NULL,
+    drinks VARCHAR(40) NOT NULL,
+
+    # Setting up Primary key
+    PRIMARY KEY (id)
+)

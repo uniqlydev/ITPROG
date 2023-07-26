@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    margin: 0;
+  }
+
+  
+
+  .login-container {
+    background-color: white;
+    width: 50vh;
+    height: 100vh; /* Adjust the height value as needed */
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .login {
+    background-color: #00DFC0;
+    width: 50vh;
+    height: 50vh; /* Adjust the height value as needed */
+    border-radius: 50px;
+
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+.header-layer {
+    font-size: 1em;
+}
+
+.header-layer h1 span {
+    background-color: #00dfc0;
+    color: white;
+    padding: 0.2em;
+    border-radius: 0.2em;
+}
+
+.input-field {
+    margin-top: -10px;
+ 
+  }
+  .input-field label {
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  .input-field input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  #user{
+    margin-bottom: 25px;
+
+  }
+  
+
+  .remember-me {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-right: 63px;
+    margin-top: 5px;
+  }
+
+    .remember-me input {
+      margin-right: 5px;
+    }
+
+    .login-button {
+        margin-top: 9px;
+        height: 40px;
+        width: 75px;
+        border-radius: 5px;
+        background-color: gray;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .forgot-password {
+        margin-top: 9px;
+        text-decoration: none;
+        color: white;
+      }
+
+
+      .home-link {
+        margin-top: 9px;
+        margin-left: -185px; 
+        color: black;
+      }
