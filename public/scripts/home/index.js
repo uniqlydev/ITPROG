@@ -33,14 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const totalField = document.getElementById('total');
 
-    // <div class="total-container">
-    // <label for="item">Total:</label>
-    // <input type="text" id="total" class="ttl" name="total" required readonly value="0" >
-    // </div>
+
     const total = document.getElementById('total');
 
     // Function to add the selected item to the cart
-    function addToCart(foodName, price) {
+    function addToCartMain(foodName, price) {
         document.getElementById('mainm').value = foodName;
         document.getElementById('mainm').hidden = false;
         document.getElementById('msubtract').hidden = false;
@@ -51,10 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('mainphp').hidden = false;
         document.getElementById('mainphp').value = price.toFixed(2);
 
+        subtotal += price;
+        totalField.value = subtotal.toFixed(2);
+    }
+
+    function addToCartDrinks(foodName, price) {
+        document.getElementById('drinks').value = foodName;
+        document.getElementById('drinks').hidden = false;
+        document.getElementById('dsubtract').hidden = false;
+        document.getElementById('quantitydrink').hidden = false;
+        document.getElementById('dadd').hidden = false;
+        document.getElementById('quantitydrink').value = 1;
+        document.getElementById('quantitydrink').disabled = false;
+        document.getElementById('drinkphp').hidden = false;
+        document.getElementById('drinkphp').value = price.toFixed(2);
 
         subtotal += price;
         totalField.value = subtotal.toFixed(2);
     }
+
 
 
     function addQuantity(qtty, price) {
@@ -79,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const foodName = li.querySelector('.label').textContent;
 
         button.addEventListener('click', () => {
-            addToCart(foodName, price);
+            addToCartMain(foodName, price);
         });
     });
 
