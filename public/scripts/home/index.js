@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // On load alert instructions
     alert("Please select one (1) meal, one (1) drink, and one (1) side dish. You can add more by clicking the + button. However, having multiple different kinds of meal is not allowed.");
 
+
+    // Fixed 
     // Variables for subtotal, total, and other variables (if any)
     let totals = 0;
     let discount = 0;
