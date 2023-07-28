@@ -61,16 +61,15 @@ exports.createCustomer = (req, res, next) => {
     const mquan = req.body.mquan;
     const squan = req.body.squan;
     const dquan = req.body.dquan;
+    const priceOfMain = req.body.priceOfMain;
+    const priceOfSide = req.body.priceOfSide;
+    const priceOfDrink = req.body.priceOfDrink;
 
-
-    const customer = new Customers(uname,meal, sides,drink, total, date, mquan, squan, dquan);
+    const customer = new Customers(uname, meal, sides,drink, total, date, mquan, squan, dquan, priceOfMain, priceOfSide, priceOfDrink);
 
     db.query('INSERT INTO Customer SET ?', [customer], (err, rows, fields) => {
         if (!err) {
-            res.status(201).json({
-                message: 'Customer created successfully!',
-                customer: customer
-            });
+            res.redirect('/success');
         } else {
             res.status(404).json({
                 // Show sql error message
@@ -95,11 +94,14 @@ exports.updateCustomer = (req, res, next) => {
     const sides = req.body.sides;
     const total = req.body.total;
     const date = req.body.date;
+    const mainphp = req.body.mainprice;
+    const sidephp = req.body.sideprice;
+    const drinkphp = req.body.drinkprice;
     const mquan = req.body.mquan;
     const squan = req.body.squan;
     const dquan = req.body.dquan;
 
-    const customer = new Customers(meal, drink, sides, total, date, mquan, squan, dquan);
+    const customer = new Customers(meal, sides,drink, total, date, mainphp, sidephp, drinkphp, mquan, squan, dquan);
 
     db.query('UPDATE Customer SET ? WHERE id = ?', [customer, id], (err, rows, fields) => {
         if (!err) {
@@ -113,6 +115,7 @@ exports.updateCustomer = (req, res, next) => {
             });
         }
     });
+
 }
 
 // DELETE /api/customers/:id
