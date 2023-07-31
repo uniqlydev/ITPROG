@@ -35,60 +35,23 @@ document.addEventListener('DOMContentLoaded', function () {
             return totalDiscount;
         }
 
-        return 0;
+        return totalDiscount;
     }
 
-    function submitForm(event) {
-        event.preventDefault();
+    // Ask for username
+    var uname = prompt("Please enter your username: ");
 
-        var uname = prompt("Please enter your username: ");
-        const amount = document.getElementById('amount').value;
-        const meal = document.getElementById('meal').value;
-        const sides = document.getElementById('sides').value;
-        const drink = document.getElementById('drink').value;
-        const mquan = document.getElementById('mquan').value;
-        const squan = document.getElementById('squan').value;
-        const dquan = document.getElementById('dquan').value;
-        var total = document.getElementById('total').value;
+    const main = document.getElementById('meal').innerHTML;
+    const side = document.getElementById('sides').innerHTML;
+    const drink = document.getElementById('drink').innerHTML;
+    const mquan = document.getElementById('mquan').innerHTML;
+    const squan = document.getElementById('squan').innerHTML;
+    const dquan = document.getElementById('dquan').innerHTML;
 
-        var discount = comboChecker(meal, sides, drink, mquan, squan, dquan);
+    var disc = comboChecker(main, side, drink, mquan, squan, dquan);
 
-        total -= discount;
+    
+    document.getElementById('username').value = uname;
+    document.getElementById('discount').value = disc;
 
-        const data = {
-            uname: uname,
-            meal: meal,
-            sides: sides,
-            drink: drink,
-            mquan: parseInt(mquan),
-            squan: parseInt(squan),
-            dquan: parseInt(dquan),
-            total: parseFloat(total),
-            amount: amount
-        };
-
-        fetch('/api/customer', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Customer created successfully!');
-                // Redirect or display a success message as needed
-                alert('Payment Successful!');
-                window.location.href = "/";
-            } else {
-                console.error('Failed to create customer');
-                alert('Payment Failed!');
-            }
-        })
-        .catch(error => {
-            console.error('An error occurred:', error);
-            alert('Payment Failed!');
-            // Display an error message or handle the error as needed
-        });
-    }
 });

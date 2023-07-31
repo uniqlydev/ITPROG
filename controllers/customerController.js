@@ -58,14 +58,17 @@ exports.createCustomer = (req, res, next) => {
     const sides = req.body.sides;
     const total = req.body.total;
     const date =  new Date().toISOString().split('T')[0];
-    const mquan = req.body.mquan;
-    const squan = req.body.squan;
-    const dquan = req.body.dquan;
-    const priceOfMain = req.body.priceOfMain;
-    const priceOfSide = req.body.priceOfSide;
-    const priceOfDrink = req.body.priceOfDrink;
+    var mquan = req.body.mquan;
+    var squan = req.body.squan;
+    var dquan = req.body.dquan;
+    var priceOfMain = req.body.priceOfMain;
+    var priceOfSide = req.body.priceOfSide;
+    var priceOfDrink = req.body.priceOfDrink;
+    var discount = req.body.discount;
 
-    const customer = new Customers(uname, meal, sides,drink, total, date, mquan, squan, dquan, priceOfMain, priceOfSide, priceOfDrink);
+
+    const customer = new Customers(uname, meal,sides, drink, total, date, parseInt(mquan), 
+                                  parseInt(squan), parseInt(dquan), parseFloat(priceOfMain),  parseFloat(priceOfSide), parseFloat(priceOfDrink), parseFloat(discount));
 
     db.query('INSERT INTO Customer SET ?', [customer], (err, rows, fields) => {
         if (!err) {
@@ -73,7 +76,7 @@ exports.createCustomer = (req, res, next) => {
         } else {
             res.status(404).json({
                 // Show sql error message
-                message: err.sqlMessage
+                message: customer
             });
         }
     });
@@ -100,8 +103,10 @@ exports.updateCustomer = (req, res, next) => {
     const mquan = req.body.mquan;
     const squan = req.body.squan;
     const dquan = req.body.dquan;
-
-    const customer = new Customers(meal, sides,drink, total, date, mainphp, sidephp, drinkphp, mquan, squan, dquan);
+    const discount = req.body.discount;
+    const username = req.body.username;
+    
+    const customer = new Customers(username,meal, sides,drink, total, date, mainphp, sidephp, drinkphp, mquan, squan, dquan, discount);
 
     db.query('UPDATE Customer SET ? WHERE id = ?', [customer, id], (err, rows, fields) => {
         if (!err) {
