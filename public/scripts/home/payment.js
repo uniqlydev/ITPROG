@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         comboTotal = 0;
         totalDiscount = 0;
 
-        if (main == "Chicken" && side == "Mashed Potato" && drink == "Ice Tea") {
+        if (main == "Chicken" && side == "Mashed Potato" && drink == "Iced Tea") {
             while (mquan > 0 && squan > 0 && dquan > 0) {
                 // Add price for combo meals ONLY
                 comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('totallbl').innerHTML = "Total: "+ String(comboTotal - totalDiscount);
             document.getElementById('total').value = comboTotal - totalDiscount;
             return totalDiscount;
-        } else if (main == "Ribeye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
+        } else if (main == "Rib-eye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
             while (mquan > 0 && squan > 0 && dquan > 0) {
                 // Add price for combo meals ONLY
                 comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);

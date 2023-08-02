@@ -67,7 +67,7 @@ exports.createCustomer = (req, res, next) => {
     var discount = req.body.discount;
 
 
-    const customer = new Customers(uname, meal,sides, drink, total, date, parseInt(mquan), 
+    const customer = new Customers(uname, meal,sides, drink, parseFloat(total), date, parseInt(mquan), 
                                   parseInt(squan), parseInt(dquan), parseFloat(priceOfMain),  parseFloat(priceOfSide), parseFloat(priceOfDrink), parseFloat(discount));
 
     db.query('INSERT INTO Customer SET ?', [customer], (err, rows, fields) => {
@@ -76,7 +76,7 @@ exports.createCustomer = (req, res, next) => {
         } else {
             res.status(404).json({
                 // Show sql error message
-                message: customer
+                message: err.sqlMessage
             });
         }
     });
