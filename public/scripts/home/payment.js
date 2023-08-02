@@ -6,22 +6,33 @@ document.addEventListener('DOMContentLoaded', function () {
         if (main == "Chicken" && side == "Mashed Potato" && drink == "Ice Tea") {
             while (mquan > 0 && squan > 0 && dquan > 0) {
                 // Add price for combo meals ONLY
-                comboTotal = mainprice + sideprice + drinkprice;
+                comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
             
                 // Discount for the combo ONLY
                 totalDiscount += (comboTotal * 0.10);
+
+                console.log(totalDiscount);
                 
                 // Decrement the quantity of each item to find how many combos in order
                 mquan--;
                 squan--;
                 dquan--;
             }
+            console.log(mainprice);
+            console.log(sideprice);
+            console.log(drinkprice);
             alert("Chicken Mash Tea Combo applied! 10% off your order!");
+            console.log(totalDiscount)
+            document.getElementById('disclbl').innerHTML = "Discount: "+ String(totalDiscount);
+            const amount = document.getElementById('amount');
+            amount.setAttribute('min', String(comboTotal - totalDiscount));
+            document.getElementById('totallbl').innerHTML = "Total: "+ String(comboTotal - totalDiscount);
+            document.getElementById('total').value = comboTotal - totalDiscount;
             return totalDiscount;
         } else if (main == "Ribeye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
             while (mquan > 0 && squan > 0 && dquan > 0) {
                 // Add price for combo meals ONLY
-                comboTotal = mainprice + sideprice + drinkprice;
+                comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
 
                 // Discount for the combo ONLY
                 totalDiscount += (comboTotal * 0.15);
@@ -32,6 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 dquan--;
             }
             alert("Steak Veg Beer Combo applied! 15% off your order!");
+            document.getElementById('disclbl').innerHTML = "Discount: "+ String(totalDiscount);
+            const amount = document.getElementById('amount');
+            amount.setAttribute('min', String(comboTotal - totalDiscount));
+            document.getElementById('totallbl').innerHTML = "Total: "+ String(comboTotal - totalDiscount);
+            document.getElementById('total').value = comboTotal - totalDiscount;
+            
+
             return totalDiscount;
         }
 
@@ -54,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     var disc = comboChecker(main, side, drink, mquan, squan, dquan);
+    console.log(disc);
 
     
     document.getElementById('username').value = uname;
