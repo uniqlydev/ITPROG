@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+   
+  }
+
+  h2 {
+    color: white;
+  
+  }
+
+  .Menu-container {
+    margin-top: 10vh;
+    background-color: white;
+    width: 50vh;
+    height: 100vh; /* Adjust the height value as needed */
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   
+
+  }
+
+.menu{
+    background-color: #00DFC0;
+    width: 63vh;
+    height: 75vh;
+    border-radius: 60px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+  .header-layer {
+    font-size: 1em;
+}
+
+.header-layer h1 span {
+    background-color: #00dfc0;
+    color: white;
+    padding: 0.2em;
+    border-radius: 0.2em;
+}
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 45px;
+    width: 145px;
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}

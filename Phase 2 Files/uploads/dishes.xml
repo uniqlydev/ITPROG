@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dishes>
+    <dish>
+        <id>1000</id>
+        <name>adobo</name>
+        <price>100</price>
+        <image>google.com</image>
+        <description>Very tasty!</description>
+        <protein>5</protein>
+        <type>M</type>
+    </dish>
+</dishes>
