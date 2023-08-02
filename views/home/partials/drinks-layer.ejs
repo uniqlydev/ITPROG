@@ -1,60 +1,29 @@
 <div class="button-menu-container">
-    <ul>
-        <li>
-            <div class="meal-1">
-                <img class="steak" src="images/icedtea.jpg" alt="steak"">
-                <div class="steak-label">
-                    <p class="label">Oolong Iced Tea</p>
-                    <div class="cal-content">
-                        <img src="/images/cart/calories.png" class="calorie-intake">
-                        <p class="calorie-1">50g</p>
-                    </div>
-                    <p class="desc">Quench your thirst and delight your senses with our refreshing Oolong Iced Tea, a harmonious fusion of tradition and cool, crisp flavors. Imagine a tall glass brimming with golden-hued tea, its enticing aroma wafting through the air and beckoning you to take a sip of pure rejuvenation.</p>
-                    <br>
+    <h1>Drinks</h1>
+    <ul id="foodlist">
+    <% foods.forEach((food, index) => { %>
+        <% if (food.type === "D") { %>
+        <li id="d<%= index + 1%>">
+            <div class="item">
+                <img src="<%= food.image %>" alt="<%= food.name %>" class="pic">
+            </div>
+            <div>
+                <p class="label" id="foodname-<%= index + 1%> "><%= food.name %></p>
+                <div class="cal-content">
+                    <img src="/images/cart/calories.png" class="calorie-intake">
+                    <p class="calorie-<%= index + 1%>%"><%= food.protein %>g</p>
                 </div>
-                <div class="buy">
-                    <p>PHP 55</p>
-                    <button class="button-menu" id="drinks1" class="meals1"></button>
-                </div>
+                <p class="desc"><%= food.description %></p>
+                <br>
+            </div>
+            <div class="buy">
+                <p id="price-<%= index + 1%>">PHP <%= food.price %></p>
+                <button class="button-menu"></button>
             </div>
         </li>
-
-        <li>
-            <div class="meal-2">
-                <img class="salmon" src="images/rootbeer.jpg" alt="salmon"">
-                <div class="steak-label">
-                    <p class="label">Root Beer</p>
-                    <div class="cal-content">
-                        <img src="/images/cart/calories.png" class="calorie-intake">
-                        <p class="calorie-1">20</p>
-                    </div>
-                    <p class="desc">The root beer's signature taste is a harmonious blend of sassafras, wintergreen, anise, and other secret botanicals, meticulously combined to create a distinctively refreshing and complex flavor profile. The sassafras root lends a gentle earthiness, while the wintergreen adds a cool, minty undertone. The subtle hints of anise and other spices add layers of depth, resulting in a balanced and satisfying taste that lingers on your palate.</p>
-                    <br>
-                </div>
-                <div class="buy">
-                    <p>PHP 60</p>
-                    <button class="button-menu" id="drinks2" class="meals2"></button>
-                </div>
-            </div>
-        </li>
-
-        <li>
-            <div class="meal-2">
-                <img class="salmon" src="images/water.jpg" alt="salmon"">
-                <div class="steak-label">
-                    <p class="label">Tap Water</p>
-                    <div class="cal-content">
-                        <img src="/images/cart/calories.png" class="calorie-intake">
-                        <p class="calorie-1">20</p>
-                    </div>
-                    <p class="desc">As you fill your glass, witness the crystal-clear liquid cascading with a gentle flow, like a babbling brook meandering through lush meadows. The freshness in the air is palpable as the water carries whispers of its journey through the underground aquifers, purified by nature's own filtration system.</p>
-                </div>
-                <div class="buy">
-                    <p>PHP 20</p>
-                    <button class="button-menu" id="drinks3" class="meals2"></button>
-                </div>
-            </div>
-        </li>
+        <% } %>
+    <% }); %>
     </ul>
 </div>
+
 

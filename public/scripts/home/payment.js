@@ -6,22 +6,33 @@ document.addEventListener('DOMContentLoaded', function () {
         if (main == "Chicken" && side == "Mashed Potato" && drink == "Iced Tea") {
             while (mquan > 0 && squan > 0 && dquan > 0) {
                 // Add price for combo meals ONLY
-                comboTotal = chicken + mashed + iced;
+                comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
             
                 // Discount for the combo ONLY
                 totalDiscount += (comboTotal * 0.10);
+
+                console.log(totalDiscount);
                 
                 // Decrement the quantity of each item to find how many combos in order
                 mquan--;
                 squan--;
                 dquan--;
             }
+            console.log(mainprice);
+            console.log(sideprice);
+            console.log(drinkprice);
             alert("Chicken Mash Tea Combo applied! 10% off your order!");
+            console.log(totalDiscount)
+            document.getElementById('disclbl').innerHTML = "Discount: "+ String(totalDiscount);
+            const amount = document.getElementById('amount');
+            amount.setAttribute('min', String(comboTotal - totalDiscount));
+            document.getElementById('totallbl').innerHTML = "Total: "+ String(comboTotal - totalDiscount);
+            document.getElementById('total').value = comboTotal - totalDiscount;
             return totalDiscount;
-        } else if (main == "Ribeye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
+        } else if (main == "Rib-eye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
             while (mquan > 0 && squan > 0 && dquan > 0) {
                 // Add price for combo meals ONLY
-                comboTotal = steak + steamed + root;
+                comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
 
                 // Discount for the combo ONLY
                 totalDiscount += (comboTotal * 0.15);
@@ -32,63 +43,39 @@ document.addEventListener('DOMContentLoaded', function () {
                 dquan--;
             }
             alert("Steak Veg Beer Combo applied! 15% off your order!");
+            document.getElementById('disclbl').innerHTML = "Discount: "+ String(totalDiscount);
+            const amount = document.getElementById('amount');
+            amount.setAttribute('min', String(comboTotal - totalDiscount));
+            document.getElementById('totallbl').innerHTML = "Total: "+ String(comboTotal - totalDiscount);
+            document.getElementById('total').value = comboTotal - totalDiscount;
+            
+
             return totalDiscount;
         }
 
-        return 0;
+        return totalDiscount;
     }
 
-    function submitForm(event) {
-        event.preventDefault();
+    // Ask for username
+    var uname = prompt("Please enter your username: ");
 
-        var uname = prompt("Please enter your username: ");
-        const amount = document.getElementById('amount').value;
-        const meal = document.getElementById('meal').value;
-        const sides = document.getElementById('sides').value;
-        const drink = document.getElementById('drink').value;
-        const mquan = document.getElementById('mquan').value;
-        const squan = document.getElementById('squan').value;
-        const dquan = document.getElementById('dquan').value;
-        var total = document.getElementById('total').value;
+    const main = document.getElementById('meal').value;
+    const side = document.getElementById('sides').value;
+    const drink = document.getElementById('drink').value;
+    const mainprice = document.getElementById('mainprice').value;
+    const sideprice = document.getElementById('sideprice').value;
+    const drinkprice = document.getElementById('drinkprice').value;
+    const mquan = document.getElementById('mquan').value;
+    const squan = document.getElementById('squan').value;
+    const dquan = document.getElementById('dquan').value;
 
-        var discount = comboChecker(meal, sides, drink, mquan, squan, dquan);
+    
 
-        total -= discount;
+    var disc = comboChecker(main, side, drink, mquan, squan, dquan);
+    console.log(disc);
 
-        const data = {
-            uname: uname,
-            meal: meal,
-            sides: sides,
-            drink: drink,
-            mquan: parseInt(mquan),
-            squan: parseInt(squan),
-            dquan: parseInt(dquan),
-            total: parseFloat(total),
-            amount: amount
-        };
+    
+    document.getElementById('username').value = uname;
+    document.getElementById('discount').value = disc;
 
-        fetch('/api/customer', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Customer created successfully!');
-                // Redirect or display a success message as needed
-                alert('Payment Successful!');
-                window.location.href = "/";
-            } else {
-                console.error('Failed to create customer');
-                alert('Payment Failed!');
-            }
-        })
-        .catch(error => {
-            console.error('An error occurred:', error);
-            alert('Payment Failed!');
-            // Display an error message or handle the error as needed
-        });
-    }
 });

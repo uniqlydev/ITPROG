@@ -36,7 +36,6 @@ app.get('/', async (req, res) => {
                 date: new Date().toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }),
             });
         }else {
-            console.log("Foods: ", foods);
             res.render('home/index', {
                 title: 'Home',
                 total: totalpr,
@@ -48,8 +47,15 @@ app.get('/', async (req, res) => {
     });
 });
 
+app.post('/api/customers', (req, res) => {
+    
+    res.render('payment/orderSuccess', {
+        title: 'Order Success',
+    });
+});
+
 function fetchFoodsFromDatabase(callback) {
-    db.query('SELECT * FROM Food', (err, foods) => {
+    db.query('SELECT * FROM Food ;', (err, foods) => {
       if (err) {
         callback(err, null);
       } else {
@@ -67,6 +73,9 @@ app.post('/checkout', (req, res) => {
     const meal = req.body.meal;
     const sides = req.body.sides;
     const drink = req.body.drink;
+    const mainprice = req.body.mainprice;
+    const sideprice = req.body.sideprice;
+    const drinkprice = req.body.drinkprice;
     const mquan = req.body.mquan;
     const squan = req.body.squan;
     const dquan = req.body.dquan;
@@ -81,8 +90,22 @@ app.post('/checkout', (req, res) => {
         mquan: mquan,
         squan: squan,
         dquan: dquan,
+        mainprice: mainprice,
+        sideprice: sideprice,
+        drinkprice: drinkprice,
         total: total,
     });
+});
+
+app.get('/success', (req, res) => {
+    // Print order to console
+    console.log(req.body);
+
+    res.render('payment/orderSuccess', {
+        title: 'Order - Success',
+    });
+
+
 });
 
 app.get('/about', (req, res) => {
