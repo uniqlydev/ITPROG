@@ -1,31 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
     function comboChecker(main, side, drink, mquan, squan, dquan) {
-        var comboDiscount = 0;
-        // Connect to sql database
-        var mysql = require('mysql');
-        var db = mysql.createConnection({
-            host: process.env.host,
-            user: process.env.user,
-            database: process.env.database,
-        });
+        comboTotal = 0;
+        totalDiscount = 0;
 
-        // Check if combo exists
-        db.query('SELECT discount FROM ComboMeals WHERE main = ? AND sides = ? AND drinks = ?;', [main, side, drink], (err, combo) => {
-            if (err) {
-                console.log(err);
-            } else {
-                if (combo.length > 0) {
-                    // Combo exists
-                    comboDiscount = combo[0].discount;
-                } else {
-                    // Combo does not exist
-                    comboDiscount = 0;
-                }
+        if (main == "Chicken" && side == "Mashed Potato" && drink == "Iced Tea") {
+            while (mquan > 0 && squan > 0 && dquan > 0) {
+                // Add price for combo meals ONLY
+                comboTotal = chicken + mashed + iced;
+            
+                // Discount for the combo ONLY
+                totalDiscount += (comboTotal * 0.10);
+                
+                // Decrement the quantity of each item to find how many combos in order
+                mquan--;
+                squan--;
+                dquan--;
             }
-        });
+            alert("Chicken Mash Tea Combo applied! 10% off your order!");
+            return totalDiscount;
+        } else if (main == "Ribeye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
+            while (mquan > 0 && squan > 0 && dquan > 0) {
+                // Add price for combo meals ONLY
+                comboTotal = steak + steamed + root;
 
-        console.log(comboDiscount);
-        return comboDiscount;
+                // Discount for the combo ONLY
+                totalDiscount += (comboTotal * 0.15);
+
+                // Decrement the quantity of each item to find how many combos in order
+                mquan--;
+                squan--;
+                dquan--;
+            }
+            alert("Steak Veg Beer Combo applied! 15% off your order!");
+            return totalDiscount;
+        }
+
+        return totalDiscount;
     }
 
     // Ask for username
@@ -39,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const dquan = document.getElementById('dquan').innerHTML;
 
     var disc = comboChecker(main, side, drink, mquan, squan, dquan);
+
     
     document.getElementById('username').value = uname;
     document.getElementById('discount').value = disc;

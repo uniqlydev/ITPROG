@@ -80,7 +80,6 @@ app.post('/checkout', (req, res) => {
     const squan = req.body.squan;
     const dquan = req.body.dquan;
     const total = req.body.total;
-    const discount = req.body.discount;
 
     // Render order_success.ejs
     res.render('payment/checkout', {
@@ -95,7 +94,6 @@ app.post('/checkout', (req, res) => {
         sideprice: sideprice,
         drinkprice: drinkprice,
         total: total,
-        discount: discount,
     });
 });
 

@@ -13,7 +13,7 @@
     <p>Meal: <%= meal %> x <%= mquan %> - <%= mainprice %> </p>
     <p>Sides: <%= sides %> x <%= squan %> - <%= sideprice %></p>
     <p>Drinks: <%= drink %> x <%= dquan %> - <%= drinkprice %></p>
-    <p id="disclbl">Discount: <%= discount %> </p>
+    <p id="disclbl">Discount: </p>
     <p id="totallbl">Total: <%= total %> </p>
 
     <br>
@@ -32,7 +32,7 @@
         <input type="hidden" id="squan" name="squan" value="<%= squan %>">
         <input type="hidden" id="dquan" name="dquan" value="<%= dquan %>">
         <input type="hidden" id="total" name="total" value="<%= total %>">
-        <input type="hidden" id="discount" name="discount" value="<%= discount %>">
+        <input type="hidden" id="discount" name="discount">
         <input type="hidden" id="mainprice" name="priceOfMain" value="<%= mainprice %>">
         <input type="hidden" id="sideprice" name="priceOfSide" value="<%= sideprice %>">
         <input type="hidden" id="drinkprice" name="priceOfDrink" value="<%= drinkprice %>">
