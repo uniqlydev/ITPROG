@@ -4,6 +4,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
+    /* Make it scrollable horizontal only and each items inside this should not go down */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+
 }
 
 
