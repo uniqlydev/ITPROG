@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION["getLogin"])) {
-        header("location:loginPage.php");
+        header("location:../index.php");
     } else {
     }
 ?>
@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>admin Page</title>
-    <link rel="stylesheet" href="./css/adminStyle.css">
+    <link rel="stylesheet" href="../css/adminPage.css" />
 </head>
 <body>
     <div class="Menu-container">

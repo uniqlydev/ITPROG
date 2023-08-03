@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION["getLogin"])) {
-        header("location:loginPage.php");
+        header("location:../index.php");
     } else {
     }
 ?>
