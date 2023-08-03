@@ -1,5 +1,5 @@
 
-CREATE TABLE Adminstrator (
+CREATE TABLE Administrator (
     id int(10) NOT NULL AUTO_INCREMENT,
     uname VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL,
@@ -68,7 +68,7 @@ INSERT INTO Food (name,price,image,description,protein,type) VALUES
 ('Water', 20, 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/776064c9-7a86-4a88-aa6d-57273401af5c-water_bottle_facts.jpg','Fresh Water from the sea.',0,'D');
 
 -- Dumping data for Admin --
-INSERT INTO Adminstrator (uname,password) VALUES
+INSERT INTO Administrator (uname,password) VALUES
 ('admin','admin');
 
 -- Dumping data for Combo Meals --
