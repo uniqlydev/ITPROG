@@ -11,15 +11,26 @@
         <title>
             Delete Dishes Confirmation
         </title>
-        <link rel="stylesheet" href="delDishConStyle.css">
+        <link rel="stylesheet" href="deleteDishConfirmStyle.css">
     </head>
 
     <body>
-        <div class="Menu-container">
+        <div class="main-menu">
             <div class="header-layer">
                 <h1>Animo<span>Bites</span></h1>
             </div>
-            <div class = "menu">
+            <div class="menu">
+                <button onclick="window.location.href = 'addDish.php';">Add Dishes</button><br>
+                <button onclick="window.location.href = 'editDish.php';">Edit Dishes</button><br>
+                <button onclick="window.location.href = 'deleteDish.php';">Delete Dishes</button><br>
+                <button onclick="window.location.href = 'addCombo.php';">Add Combo</button><br>
+                <button onclick="window.location.href = 'generateReport.php';">Generate Report</button><br>
+                    
+                <button onclick="window.location.href = 'logoutPage.php';">Logout</button>
+            </div>
+        </div>
+        <div class="Menu-container">
+            <div class="menu1">
                 <?php
                 function parseEnv($path) {
                         $contents = file_get_contents($path);
@@ -47,7 +58,7 @@
                     $checkResult = mysqli_fetch_array($check);
                     if ($checkResult["id"] != $dishID) {
                         echo "<h2>Dish does not exist!</h2>";
-                        echo "<a href='deleteDish.php'>Back</a>";
+                        echo "<button onclick=\"window.location.href = 'deleteDish.php';\">Back</button>";
                         exit();
                     }
 
@@ -56,10 +67,10 @@
                         mysqli_query($conn, $delete);
 
                         echo "<h2>Record has been successfully deleted!</h2>";
-                        echo "<a href='adminPage.php'>Back</a>";
+                        echo "<button onclick=\"window.location.href = 'adminPage.php';\">Main Menu</button>";
                     } else {
                         echo "<h2>Failed to delete record!!!</h2>";
-                        echo "<a href='deleteDish.php'>Back</a>";
+                        echo "<button onclick=\"window.location.href = 'deleteDish.php';\">Back</button>";
                     }
                 ?>
             </div>

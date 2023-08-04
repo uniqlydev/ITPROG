@@ -1,0 +1,102 @@
+body {
+    font-family: 'Figtree', sans-serif;
+    display: flex;
+    height: 85vh;
+    background-color: #00DFC0;
+}
+
+.main-menu {
+    /* align to left */
+    margin-top: 10vh;
+    background-color: #00DFC0;
+    width: 45vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu {
+    background-color: #00DFC0;
+    width: 63vh;
+    height: 75vh; /* Adjust the height value as needed */
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Menu-container {
+    /* Align to right */
+    margin-top: 10vh;
+    background-color: #00DFC0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 12%;
+}
+
+.menu1 {
+    background-color: #00DFC0;
+    width: 63vh;
+    height: 75vh; /* Adjust the height value as needed */
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu1 h2 {
+    font-size: 25px;
+}
+
+.menu1 input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    /* center the input */
+    display: block;
+    margin: 0 auto;
+    margin-left: 15%;
+}
+
+.menu1 button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #a69897;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.menu1 select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 295px;
+    border-radius: 10px;
+    background-color: #a69897;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 26px;
+    cursor: pointer;
+}

@@ -28,55 +28,65 @@
             </div>
         </div>
         <div class="Menu-container">
-            <div class = "menu1">
-                <?php
-                    if (isset($_POST["uploadBtn"])) {
-                        echo "<h2>Upload Dishes via XML Confirmation</h2>";
-                        
-                        // Move file to uploads folder
-                        $target_dir = "uploads/";
-                        $target_file = $target_dir . basename($_FILES["file"]["name"]);
-                        $uploadOk = 1;
-                        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        <div class = "menu1">
+            <?php
+                if (isset($_POST["uploadBtn"])) {
+                    echo "<h2>Upload Dishes via XML Confirmation</h2>";
+                    
+                    $target_dir = "uploads/";
+                    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+
+                    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                        echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
+                        echo "<br /><br />";
+                        echo "<a href = 'adminPage.php'>Back</a>";// it doesnt do anything when pressed
                         $success = true;
-
-                        rename($target_file, "uploads/dishes.xml");
+                        echo "<br /><br />";
+                    } else {
+                        echo "Sorry, there was an error uploading your file.";
+                        echo "<br /><br />";
+                        echo "<a href = 'uploadDishXML.php';'>Back</a>";
+                        $success = false;
+                        echo "<br /><br />";
                     }
 
-                    // View XML data in table format
-                    if ($success) {
-                        echo "<form method='post' action='uploadDishXMLDatabase.php'>";
-                            $dishes = simplexml_load_file("uploads/dishes.xml") or die("Error: Cannot create object");
+                    rename($target_file, "uploads/dishes.xml");
+                }
 
-                            echo "<table border='1'>";
+                // View XML data in table format
+                if ($success) {
+                    echo "<form method='post' action='uploadDishXMLDatabase.php'>";
+                        $dishes = simplexml_load_file("uploads/dishes.xml") or die("Error: Cannot create object");
+
+                        echo "<table border='1'>";
+                        echo "<tr style='color:white'>";
+                        echo "<th>Dish ID</th>";
+                        echo "<th>Dish Name</th>";
+                        echo "<th>Dish Price</th>";
+                        echo "<th>Dish Image</th>";
+                        echo "<th>Dish Description</th>";
+                        echo "<th>Dish Protein</th>";
+                        echo "<th>Dish Type</th>";
+                        echo "</tr>";
+                    
+                        foreach ($dishes->dish as $dish) {
                             echo "<tr style='color:white'>";
-                            echo "<th>Dish ID</th>";
-                            echo "<th>Dish Name</th>";
-                            echo "<th>Dish Price</th>";
-                            echo "<th>Dish Image</th>";
-                            echo "<th>Dish Description</th>";
-                            echo "<th>Dish Protein</th>";
-                            echo "<th>Dish Type</th>";
+                            echo "<td>" . $dish->id . "</td>";
+                            echo "<td>" . $dish->name . "</td>";
+                            echo "<td>" . $dish->price . "</td>";
+                            echo "<td>" . $dish->image . "</td>";
+                            echo "<td>" . $dish->description . "</td>";
+                            echo "<td>" . $dish->protein . "</td>";
+                            echo "<td>" . $dish->type . "</td>";
                             echo "</tr>";
-                        
-                            foreach ($dishes->dish as $dish) {
-                                echo "<tr style='color:white'>";
-                                echo "<td>" . $dish->id . "</td>";
-                                echo "<td>" . $dish->name . "</td>";
-                                echo "<td>" . $dish->price . "</td>";
-                                echo "<td>" . $dish->image . "</td>";
-                                echo "<td>" . $dish->description . "</td>";
-                                echo "<td>" . $dish->protein . "</td>";
-                                echo "<td>" . $dish->type . "</td>";
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-                            echo "<br /><br />";
-                            echo "<button type='submit' name='uploadBtn' value='Upload to Database' >Upload to Database </button>";
-                        echo "</form>";
-                    }
-                ?>
-            </div>
+                        }
+                        echo "</table>";
+                        echo "<br /><br />";
+                        echo "<button type='submit' name='uploadBtn' value='Upload to Database' >Upload to Database </button>";
+                    echo "</form>";
+                }
+            ?>
+        </div>
         </div>
     </body>
 </html>
