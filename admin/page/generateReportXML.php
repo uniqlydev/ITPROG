@@ -22,6 +22,12 @@
             $totalDiscount = $_POST["totalDiscount"];
             $fileName = $_POST["fileName"];
 
+            if (strpos($fileName, '.xml') !== false) {
+                // echo 'true';
+            } else {
+                $fileName = $fileName . ".xml";
+            }
+
             if (isset($_POST["generateReportBtn"])) {
                 if (file_exists($fileName)) {
                     echo "<h1>File already exists!</h1>";
@@ -39,7 +45,7 @@
                     file_put_contents($fileName, $reports->asXML());
 
                     echo "<h1>Report XML file generated successfully!</h1>";
-                    header("location:adminPage.php");
+                    echo "<a href='generateReport.php'>Back</a>";
                 }
             }
         ?>

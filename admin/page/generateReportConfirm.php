@@ -15,6 +15,21 @@
 
     <body>
         <?php
+            function parseEnv($path) {
+                $contents = file_get_contents($path);
+                $lines = explode("\n", $contents);
+                $env = [];
+        
+                foreach ($lines as $line) {
+                    if (strpos($line, '=') !== false) {
+                        list($key, $value) = explode('=', $line, 2);
+                        $env[$key] = trim($value);
+                    }
+                }
+        
+                return $env;
+            }
+
             $startDate = $_POST["startDate"];
             $endDate = $_POST["endDate"];
 
@@ -30,8 +45,10 @@
             echo "<h2>End Date</h2>";
             echo "<p>" . $endDate . "</p>";
 
-            $conn = mysqli_connect("localhost", "root", "") or die ("Unable to connect". mysqli_error($conn));
-            $use = mysqli_select_db($conn, "dbanimoeats");
+            $env = parseEnv(__DIR__ . '/../.env'); 
+
+            $conn = mysqli_connect($env['DB_HOST'], $env['DB_USER'], $env['DB_PASS']) or die ("Unable to Connect". mysqli_error($dbconnect));
+            $use = mysqli_select_db($conn, $env['DB_NAME']);
 
             $totalDishesSold = 0;
             $totalAmount = 0;
