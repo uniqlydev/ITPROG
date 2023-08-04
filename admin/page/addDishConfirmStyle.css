@@ -5,7 +5,7 @@ body {
     background-color: #00DFC0;
 }
 
-.Menu-container {
+.main-menu {
     /* align to left */
     margin-top: 10vh;
     background-color: #00DFC0;
@@ -27,11 +27,40 @@ body {
     align-items: center;
 }
 
-.header-layer h1 span {
-    background-color: #00dfc0;
+.Menu-container {
+    /* Align to right */
+    margin-top: 10vh;
+    background-color: #00DFC0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 12%;
+}
+
+.menu1 {
+    background-color: #00DFC0;
+    width: 63vh;
+    height: 75vh; /* Adjust the height value as needed */
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu1 button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #a69897;
     color: white;
-    padding: 0.2em;
-    border-radius: 0.2em;
+    border: none;
+    border-radius: 5px;
+    font-size: 26px;
+    cursor: pointer;
 }
 
 button {

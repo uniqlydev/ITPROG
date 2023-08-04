@@ -1,43 +1,30 @@
 body {
     font-family: 'Figtree', sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 85vh;
-   
     background-color: #00DFC0;
-  }
+}
 
-  
-
-  .Menu-container {
+.main-menu {
+    /* align to left */
     margin-top: 10vh;
-    width: 50vh;
-    height: 100vh; /* Adjust the height value as needed */
-    
+    background-color: #00DFC0;
+    width: 45vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
 
-  }
-
-.menu{
+.menu {
     background-color: #00DFC0;
     width: 63vh;
     height: 75vh; /* Adjust the height value as needed */
     border-radius: 60px;
-
-
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
-}
-
-  .header-layer {
-    font-size: 1em;
 }
 
 .header-layer h1 span {
@@ -47,18 +34,25 @@ body {
     border-radius: 0.2em;
 }
 
-.header-layerB {
-  font-size: 1em;
-  color: white;
+.header-layerB h1 {
+    /* center */
+    text-align: center;
+    font-size: 1.9em;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.header-layerB h1 span {
-  background-color: black;
-  color: #00dfc0;
-  padding: 0.2em;
-  border-radius: 0.2em;
+.Menu-container {
+    /* Align to right */
+    margin-top: 10vh;
+    background-color: #00DFC0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 12%;
 }
-
 
 button {
     margin-top: 10px;
