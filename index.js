@@ -4,6 +4,7 @@ const customerRoutes = require('./routes/customerRoutes');
 const foodRoutes = require('./routes/foodRoutes');
 const bodyParser = require('body-parser');
 const db = require('./database/db');
+const axios = require('axios');
 
 const app = express();
 
@@ -20,6 +21,21 @@ const port = process.env.PORT || 8080;
 // Use the customerRoutes for API requests
 app.use('/api', customerRoutes);
 app.use('/api', foodRoutes);
+
+// Getting PHP 
+app.get('/login', async (req, res) => {
+    try {
+        const phpReponse = await axios.get('../../admin/index.php');
+
+        const renderedContent = phpReponse.data;
+
+        res.send(renderedContent);
+
+
+    }catch (err) {
+        console.log(err);
+    }
+});
 
 // Routing for views
 app.get('/', async (req, res) => {
@@ -96,6 +112,7 @@ app.post('/checkout', (req, res) => {
         total: total,
     });
 });
+
 
 app.get('/success', (req, res) => {
     // Print order to console
