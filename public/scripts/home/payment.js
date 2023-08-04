@@ -18,11 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 squan--;
                 dquan--;
             }
-            console.log(mainprice);
-            console.log(sideprice);
-            console.log(drinkprice);
             alert("Chicken Mash Tea Combo applied! 10% off your order!");
-            console.log(totalDiscount)
             document.getElementById('disclbl').innerHTML = "Discount: "+ String(totalDiscount);
             const amount = document.getElementById('amount');
             amount.setAttribute('min', String(comboTotal - totalDiscount));
@@ -31,26 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
             return totalDiscount;
         } else if (main == "Rib-eye Steak" && side == "Steamed Vegetables" && drink == "Root Beer") {
             while (mquan > 0 && squan > 0 && dquan > 0) {
-                // Add price for combo meals ONLY
+                // Add price for combo meals only 
                 comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
 
-                // Discount for the combo ONLY
-                totalDiscount += (comboTotal * 0.15);
+                // Discount for the combo only
+                totalDiscount += (parseFloat(comboTotal) * 0.15);
 
                 // Decrement the quantity of each item to find how many combos in order
                 mquan--;
                 squan--;
                 dquan--;
             }
-            alert("Steak Veg Beer Combo applied! 15% off your order!");
+            alert("Steak Veg Root Beer Combo applied! 15% off your order!");
             document.getElementById('disclbl').innerHTML = "Discount: "+ String(totalDiscount);
             const amount = document.getElementById('amount');
             amount.setAttribute('min', String(comboTotal - totalDiscount));
             document.getElementById('totallbl').innerHTML = "Total: "+ String(comboTotal - totalDiscount);
             document.getElementById('total').value = comboTotal - totalDiscount;
-            
-
-            return totalDiscount;
         }
 
         return totalDiscount;
