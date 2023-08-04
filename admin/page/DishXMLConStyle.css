@@ -27,8 +27,8 @@ body {
 
 .menu{
     background-color: #00DFC0;
-    width: 63vh;
-    height: 75vh;
+    width: 163vh;
+    height: 75vh; /* Adjust the height value as needed */
     border-radius: 60px;
     color: white;
 
@@ -49,16 +49,27 @@ body {
     padding: 0.2em;
     border-radius: 0.2em;
 }
+
 button {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 45px;
     width: 145px;
     border-radius: 10px;
-    background-color: gray;
+    background-color: #a69897;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
 }
+.Submenu{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+  
+}
+

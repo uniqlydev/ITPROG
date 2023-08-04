@@ -8,7 +8,7 @@ body {
 
   h2 {
     color: white;
-  
+    margin-top: 20px;
   }
 
   .Menu-container {
@@ -37,38 +37,39 @@ body {
     align-items: center;
 
 }
-
-  .header-layer {
-    font-size: 1em;
+.Submenu{
+  margin-top: 15px;
 }
 
 .header-layer h1 span {
-    background-color: #00dfc0;
-    color: white;
-    padding: 0.2em;
-    border-radius: 0.2em;
+  background-color: #00dfc0;
+  color: white;
+  padding: 0.2em;
+  border-radius: 0.2em;
 }
 
 button {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 45px;
-    width: 145px;
+    width: 100px;
     border-radius: 10px;
-    background-color: gray;
+    background-color: #a69897;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
 }
-.Submenu{
 
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;
-  
+.input-field {
+  margin-top: -10px;
+
 }
 
+
+.input-field input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}

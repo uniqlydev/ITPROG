@@ -1,19 +1,17 @@
 body {
+    font-family: 'Figtree', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 85vh;
-   
+    background-color: #00DFC0;
   }
 
-  h2 {
-    color: white;
   
-  }
 
   .Menu-container {
     margin-top: 10vh;
-    background-color: white;
+    background-color: #00DFC0;
     width: 50vh;
     height: 100vh; /* Adjust the height value as needed */
     
@@ -21,16 +19,15 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-   
 
   }
 
 .menu{
     background-color: #00DFC0;
-    width: 163vh;
+    width: 63vh;
     height: 75vh; /* Adjust the height value as needed */
     border-radius: 60px;
-    color: white;
+
 
     display: flex;
     justify-content: center;
@@ -53,23 +50,13 @@ body {
 button {
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 45px;
-    width: 145px;
+    height: 100px;
+    width: 295px;
     border-radius: 10px;
-    background-color: gray;
+    background-color: #a69897;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 26px;
     cursor: pointer;
 }
-.Submenu{
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;
-  
-}
-
