@@ -26,5 +26,8 @@
             <button onclick="window.location.href = 'logoutPage.php';">Logout</button>
         </div>
     </div>
+    <div class="picture-container">
+        <img src="../images/header.png" alt="header" />
+    </div>
 </body>
 </html>
