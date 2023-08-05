@@ -1,3 +1,5 @@
+let comboDetected;
+
 document.addEventListener('DOMContentLoaded', function () {
 
     function fetchCombos() {
@@ -20,28 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
         comboTotal = 0;
         totalDiscount = 0;
 
-        console.log(main);
-        console.log(side);
-        console.log(drink);
-
         if (main == combo.main && side == combo.sides && drink == combo.drinks) {
-            while (mquan > 0 && squan > 0 && dquan > 0) {
-                comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
+            comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
 
-                totalDiscount += (parseFloat(comboTotal) * combo.discount);
-
-
-                mquan--;
-                squan--;
-                dquan--;
-            }
+            totalDiscount = (parseFloat(comboTotal) * combo.discount);
+            console.log("Combo total: " + totalDiscount);
 
             alert(combo.name + " has been availed! Enjoy your " + (combo.discount * 100) + "%");
             document.getElementById('disclbl').innerHTML = "Discount: " + String(totalDiscount);
-            const amount = document.getElementById('amount');
-            amount.setAttribute('min',String(comboTotal - totalDiscount));
-            document.getElementById('totallbl').innerHTML = "Total: " + String(comboTotal - totalDiscount);
-            document.getElementById('total').value = comboTotal - totalDiscount;
+            console.log(String(document.getElementById('total').value));
+            document.getElementById('totallbl').innerHTML = "Total: " + String(parseFloat(document.getElementById('total').value) - totalDiscount);
+            document.getElementById('amount').setAttribute('min', String(parseFloat(document.getElementById('total').value) - totalDiscount));
+
+            comboDetected = true;
 
             return totalDiscount;
         }
@@ -63,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const mquan = document.getElementById('mquan').value;
     const squan = document.getElementById('squan').value;
     const dquan = document.getElementById('dquan').value;
+    const total = document.getElementById('total').value;
+
+    console.log("total: " + parseFloat(total));
+
 
 
     fetchCombos()
@@ -72,10 +69,15 @@ document.addEventListener('DOMContentLoaded', function () {
         combosArray.forEach(combo => {
             const {id, name, discount, drinks, main, sides} = combo; 
 
-            var disc = comboChecker(meal,side,drink,mquan,squan,dquan,combo);
+            if (!comboDetected) {
+                var disc = comboChecker(meal,side,drink,mquan,squan,dquan,combo);
+                console.log("disc: " + disc);
+                document.getElementById('username').value = uname;
+                document.getElementById('discount').value = String(disc);
+            }else {
 
-            document.getElementById('username').value = uname;
-            document.getElementById('discount').value = disc;
+            }
+
         })
     })
     .catch(error => {

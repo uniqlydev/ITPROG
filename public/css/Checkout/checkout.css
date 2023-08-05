@@ -46,21 +46,38 @@ body {
 }
 
 /* Make input[type=submit] and button right next to each other */
-input[type=submit], button {
-    margin-top: 10px;
-    margin-left: 10px;
+input[type=submit] {
+    width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 10px;
-    align-items: center;
-
-    /* Center */
-    text-align: center;
-
+    /* Make beaufiful*/
+    background-color: rgb(79, 243, 79);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
     cursor: pointer;
+}
+
+button {
+    width: 100%;
+
+    /* Make beaufiful*/
+    background-color: #fc4c4c;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 20px;
+
+    text-align: left;
 }
 
 
@@ -82,4 +99,9 @@ input[type=submit], button {
 img {
     width: 600px;
     height: 600px;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
 }
