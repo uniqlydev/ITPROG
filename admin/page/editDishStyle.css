@@ -62,13 +62,13 @@ border-radius: 0.2em;
 button {
   margin-top: 10px;
   margin-bottom: 10px;
-  height: 45;
-  width: 65px;
+  height: 100px;
+  width: 295px;
   border-radius: 10px;
-  background-color: gray;
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 26px;
   cursor: pointer;
 }

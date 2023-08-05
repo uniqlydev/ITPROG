@@ -11,15 +11,26 @@
         <title>
             Edit Dishes Confirm
         </title>
-        <link rel="stylesheet" href="editDishConStyle.css">
+        <link rel="stylesheet" href="editDishModifyConfirmStyle.css">
     </head>
 
     <body>
-        <div class="Menu-container">
+        <div class="main-menu">
             <div class="header-layer">
                 <h1>Animo<span>Bites</span></h1>
             </div>
-            <div class = "menu">
+            <div class="menu">
+                <button onclick="window.location.href = 'addDish.php';">Add Dishes</button><br>
+                <button onclick="window.location.href = 'editDish.php';">Edit Dishes</button><br>
+                <button onclick="window.location.href = 'deleteDish.php';">Delete Dishes</button><br>
+                <button onclick="window.location.href = 'addCombo.php';">Add Combo</button><br>
+                <button onclick="window.location.href = 'generateReport.php';">Generate Report</button><br>
+                    
+                <button onclick="window.location.href = 'logoutPage.php';">Logout</button>
+            </div>
+        </div>
+        <div class="Menu-container">
+            <div class="menu1">
                 <?php
                 
                 function parseEnv($path) {
@@ -51,7 +62,7 @@
 
                     if ($type == "") {
                         echo "<h2>Please select a dish type!</h2>";
-                        echo "<a href='editDish.php'>Back</a>";
+                        echo "<button onclick=\"window.location.href = 'editDish.php';\">Back</button>";
                         exit();
                     }
 
@@ -60,10 +71,10 @@
                         mysqli_query($conn, $updateQuery);
 
                         echo "<h2>Dish has been successfully edited.</h2>";
-                        echo "<a href='adminPage.php'>Main Menu</a>";
+                        echo "<button onclick=\"window.location.href = 'adminPage.php';\">Back</button>";
                     } else {
                         echo "<h2>Failed to edit dish!!!</h2>";
-                        echo "<a href='editDish.php'>Back</a>";
+                        echo "<button onclick=\"window.location.href = 'editDish.php';\">Back</button>";
                     }
                 ?>
             </div>

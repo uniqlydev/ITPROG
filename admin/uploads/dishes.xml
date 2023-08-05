@@ -2,7 +2,7 @@
 <dishes>
     <dish>
         <id>1000</id>
-        <name>adobo</name>
+        <name>Adobo</name>
         <price>100</price>
         <image>google.com</image>
         <description>Very tasty!</description>
