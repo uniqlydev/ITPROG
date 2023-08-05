@@ -1,113 +1,99 @@
 body {
-    font-family: 'Figtree', sans-serif;
+    /* Make all divs right next to each other */
     display: flex;
-    height: 85vh;
-    background-color: #00DFC0;
-}
-
-.main-menu {
-    /* align to left */
-    margin-top: 10vh;
-    background-color: #00DFC0;
-    width: 45vh;
-    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+
+    /* align vertical */
+    height: 100vh;
+    width: 100vw;
 }
 
-.menu {
-    background-color: #00DFC0;
-    width: 63vh;
-    height: 75vh; /* Adjust the height value as needed */
-    border-radius: 60px;
+.left {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-}
+    width: 600px;
 
-.Menu-container {
-    /* Align to right */
-    margin-top: 10vh;
-    background-color: #00DFC0;
+    /* Mint blue bg */
+    background-color: #00dfc0;
+    /* Add space */
+    margin: 5.5em;
+
+    /* Make elements into a column */
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    margin-left: 12%;
-}
-
-table {
-    border: 2px solid;
-}
-
-.menu1 {
-    background-color: #00DFC0;
-    width: 63vh;
-    height: 75vh; /* Adjust the height value as needed */
-    border-radius: 60px;
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-}
+    
+    padding: 30px;
 
-.menu1 h2 {
-    font-size: 25px;
-    margin-left: 7%;
-}
-
-.menu1 select {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 40px;
-    width: 150px;
-    border-radius: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.menu1 input {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 40px;
-    width: 150px;
-    border-radius: 10px;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.menu1 button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 50px;
-    width: 150px;
-    border-radius: 10px;
-    background-color: #a69897;
     color: white;
+
+    border-radius: 20px;
+}
+
+.left button {
+    width: 100%;
+
+    /* Make beaufiful*/
+    background-color: #FF6F61;
     border: none;
-    font-size: 20px;
-    /* align to center */
-    margin-left: 5%;
+    border-radius: 20px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
     cursor: pointer;
 }
 
-button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 100px;
-    width: 295px;
-    border-radius: 10px;
-    background-color: white;
-    color: black;
+
+.left h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    /* Add space */
+    margin: 5.5em;
+
+    /* Make elements into a column */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 30px;
+
+    color: white;
+
+    border-radius: 20px;
+    background-color: #00dfc0;
+}
+
+.right button {
+    width: 100%;
+
+    /* Make beaufiful*/
+    background-color: #FF6F61;
     border: none;
-    border-radius: 5px;
-    font-size: 26px;
+    border-radius: 20px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
     cursor: pointer;
 }
