@@ -60,6 +60,7 @@ function clearOrder() {
 
     document.getElementById('mainphp').value="0"
     document.getElementById('mainphp').hidden = true;
+    document.getElementById('mclear').hidden=true;
 
     document.getElementById('msubtract').hidden = true;
     document.getElementById('quantitymain').hidden = true;
@@ -72,6 +73,7 @@ function clearOrder() {
 
     document.getElementById('sidesphp').value="0"
     document.getElementById('sidesphp').hidden = true;
+    document.getElementById('sclear').hidden=true;
 
     document.getElementById('ssubtract').hidden = true;
     document.getElementById('quantityside').hidden = true;
@@ -85,6 +87,7 @@ function clearOrder() {
 
     document.getElementById('drinksphp').value="0"
     document.getElementById('drinksphp').hidden = true;
+    document.getElementById('dclear').hidden=true;
 
     document.getElementById('dsubtract').hidden = true;
     document.getElementById('quantitydrink').hidden = true;

@@ -10,7 +10,7 @@
                 <input type="text" id="mainm" name="meal" required readonly hidden value="none">
                 <input type="text" id="mainphp" name="mainprice" required readonly hidden value="0">
                 <button type="button" class="quantbtn" id="msubtract" hidden>-</button>
-                <input type="text" class="quanti" id="quantitymain" name="mquan" required value="0" min="0" readonly hidden>
+                <input type="text" class="quanti" id="quantitymain" name="mquan" required value="0" pattern="[1-9]" readonly hidden>
                 <button type="button" id="madd" class="quantbtn" hidden>+</button>
             </div>
     
@@ -19,7 +19,7 @@
                 <input type="text" id="sides" name="sides" required readonly hidden value="none" >
                 <input type="text" id="sidesphp" name="sideprice" required readonly hidden value="0">
                 <button type="button" id="ssubtract" class="quantbtn" hidden>-</button>
-                <input type="text" id="quantityside" name="squan" class="quanti" required value="0" min="0" readonly hidden>
+                <input type="text" id="quantityside" name="squan" class="quanti" required value="0" pattern="[1-9]" readonly hidden>
                 <button type="button" id="sadd" class="quantbtn" hidden>+</button>
             </div>
     
@@ -28,7 +28,7 @@
                 <input type="text" id="drinks" name="drink" required readonly hidden value="none">
                 <input type="text" id="drinksphp" name="drinkprice" required readonly hidden value="0">
                 <button type="button" id="dsubtract" class="quantbtn" hidden>-</button>
-                <input type="text" id="quantitydrink" name="dquan" class="quanti" required value="0" min="0" hidden>  
+                <input type="text" id="quantitydrink" name="dquan" class="quanti" required value="0" pattern="[1-9]" hidden>  
                 <button type="button" id="dadd"  class="quantbtn" hidden>+</button>
             </div>
 
