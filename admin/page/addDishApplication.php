@@ -56,9 +56,5 @@
             <button onclick="window.location.href = 'addDish.php';">Backs</button><br>
         </div>
     </div>
-
-    <?php
-         
-    ?>
 </body>
 </html>

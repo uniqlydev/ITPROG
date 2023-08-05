@@ -5,7 +5,7 @@ body {
     background-color: #00DFC0;
 }
 
-.main-menu {
+.Menu-container {
     /* align to left */
     margin-top: 10vh;
     background-color: #00DFC0;
@@ -27,14 +27,21 @@ body {
     align-items: center;
 }
 
+.header-layer h1 span {
+    background-color: #00dfc0;
+    color: white;
+    padding: 0.2em;
+    border-radius: 0.2em;
+}
+
 button {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 100px;
     width: 295px;
     border-radius: 10px;
-    background-color: #a69897;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     border-radius: 5px;
     font-size: 26px;

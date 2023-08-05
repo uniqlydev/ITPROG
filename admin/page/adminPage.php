@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>admin Page</title>
-    <link rel="stylesheet" href="adminStyle.css" />
+    <link rel="stylesheet" href="adminStyles.css" />
 </head>
 <body>
     <div class="Menu-container">
