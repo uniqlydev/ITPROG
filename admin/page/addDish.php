@@ -9,10 +9,10 @@
 <head>
     <meta charset="UTF-8" />
     <title>Add Dish Menu Page</title>
-    <link rel="stylesheet" href="addDishStyles.css">
+    <link rel="stylesheet" href="../public/css/addDishStyles.css">
 </head>
 <body>
-    <div class="main-menu">
+    <div class="left">
         <div class="header-layer">
             <h1>Animo<span>Bites</span></h1>
         </div>
@@ -26,7 +26,7 @@
             <button onclick="window.location.href = 'logoutPage.php';">Logout</button>
         </div>
     </div>
-    <div class="Menu-container">
+    <div class="right">
         <div class = "menu">
             <div class="header-layerB">
                 <h1>How would you like to add?</h1>

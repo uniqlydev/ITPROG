@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Login Page</title>
-    <link rel="stylesheet" href="loginStyle.css">
+    <link rel="stylesheet" href="./public/css/loginStyle.css">
 </head>
 <body>
     <form method="post" action="./page/loginCheck.php">

@@ -11,11 +11,11 @@
         <title>
             Add Combo
         </title>
-        <link rel="stylesheet" href="addComboStyles.css">
+        <link rel="stylesheet" href="../public/css/addComboStyles.css">
     </head>
 
     <body>
-        <div class="main-menu">
+        <div class="left">
             <div class="header-layer">
                 <h1>Animo<span>Bites</span></h1>
             </div>
@@ -29,7 +29,7 @@
                 <button onclick="window.location.href = 'logoutPage.php';">Logout</button>
             </div>
         </div>
-        <div class="Menu-container">
+        <div class="right">
             <div class = "menu1">
                 <h1> Add Combo </h1>
                 <form method="post" action="addComboConfirm.php">

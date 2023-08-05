@@ -11,7 +11,7 @@
         <title>
             Add Combo Confirmation
         </title>
-        <link rel="stylesheet" href="addComboConfirmStyle.css">
+        <link rel="stylesheet" href="../public/css/addComboConfirmStyle.css">
     </head>
 
     <body>

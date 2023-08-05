@@ -11,7 +11,7 @@
         <title>
             Delete Dishes Confirmation
         </title>
-        <link rel="stylesheet" href="deleteDishConfirmStyle.css">
+        <link rel="stylesheet" href="../public/css/deleteDishConfirmStyle.css">
     </head>
 
     <body>

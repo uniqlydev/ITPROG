@@ -11,11 +11,11 @@
         <title>
             Generate Report XML
         </title>
-        <link rel="stylesheet" href="generateReportXMLStyle.css">
+        <link rel="stylesheet" href="../public/css/generateReportXMLStyle.css">
     </head>
 
     <body>
-        <div class="main-menu">
+        <div class="left">
             <div class="header-layer">
                 <h1>Animo<span>Bites</span></h1>
             </div>
@@ -29,7 +29,7 @@
                 <button onclick="window.location.href = 'logoutPage.php';">Logout</button>
             </div>
         </div>
-        <div class="Menu-container">
+        <div class="right">
             <div class="menu1">
                 <?php
                     $startDate = $_POST["startDate"];
@@ -39,12 +39,16 @@
                     $totalDiscount = $_POST["totalDiscount"];
                     $fileName = $_POST["fileName"];
 
-                    if (strpos($fileName, '.xml') !== false) {
-                        // echo 'true';
+                    $fileName = "../reports/" . $_POST["fileName"];
+
+                    if (strpos($fileName, '.xml') === false) {
+                        $fileName = $fileName . ".xml";
                     } else {
                         $fileName = $fileName . ".xml";
                     }
 
+                    $fileName = "../reports/" . $_POST["fileName"];
+                    
                     if (isset($_POST["generateReportBtn"])) {
                         if (file_exists($fileName)) {
                             echo "<h1>File already exists!</h1>";
@@ -58,13 +62,14 @@
                             $report->addChild("totalAmount", $totalAmount);
                             $report->addChild("totalDiscount", $totalDiscount);
                             $report->addChild("endDate", $endDate);
-
+                    
                             file_put_contents($fileName, $reports->asXML());
-
+                    
                             echo "<h1>Report XML file generated successfully!</h1>";
                             echo "<a href='generateReport.php'>Back</a>";
                         }
                     }
+                    
                 ?>
             </div>
         </div>

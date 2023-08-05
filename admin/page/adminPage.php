@@ -9,12 +9,12 @@
 <head>
     <meta charset="UTF-8" />
     <title>admin Page</title>
-    <link rel="stylesheet" href="adminStyles.css" />
+    <link rel="stylesheet" href="../public/css/adminStyles.css" />
 </head>
 <body>
-    <div class="Menu-container">
+    <div class="left">
         <div class="header-layer">
-            <h1>Animo<span>Bites</span></h1>
+            <h1>Welcome back, admin</h1>
         </div>
         <div class = "menu">
             <button onclick="window.location.href = 'addDish.php';">Add Dishes</button><br>
@@ -26,8 +26,8 @@
             <button onclick="window.location.href = 'logoutPage.php';">Logout</button>
         </div>
     </div>
-    <div class="picture-container">
-        <img src="../images/header.png" alt="header" />
+    <div class="right">
+        <img src="../public/assets/header.png" alt="header" />
     </div>
 </body>
 </html>

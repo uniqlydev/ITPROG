@@ -11,7 +11,7 @@
         <title>
             Confirm Dishes via XML
         </title>
-        <link rel="stylesheet" href="uploadDishXMLDatabaseStyle.css">
+        <link rel="stylesheet" href="../public/css/uploadDishXMLDatabaseStyle.css">
     </head>
 
     <body>

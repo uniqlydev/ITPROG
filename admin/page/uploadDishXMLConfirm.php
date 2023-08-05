@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Add Dishes via XML</title>
-    <link rel="stylesheet" href="uploadDishXMLConfirmStyles.css">
+    <link rel="stylesheet" href="../public/css/uploadDishXMLConfirmStyles.css">
 </head>
     <body>
         <div class="main-menu">

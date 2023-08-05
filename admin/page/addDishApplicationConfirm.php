@@ -11,7 +11,7 @@
         <title>
             Confirm Dishes via Application
         </title>
-        <link rel="stylesheet" href="addDishConfirmStyle.css">
+        <link rel="stylesheet" href="../public/css/addDishConfirmStyle.css">
     </head>
 
     <body>
