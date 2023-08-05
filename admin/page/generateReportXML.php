@@ -46,7 +46,8 @@
                     }
 
                     if (isset($_POST["generateReportBtn"])) {
-                        if (file_exists($fileName)) {
+                        // Check if file exists in uploads folder
+                        if (file_exists("../reports/" . $fileName)) {
                             echo "<h1>File already exists!</h1>";
                             echo "<a href='generateReport.php'>Back</a>";
                             exit();
@@ -60,6 +61,8 @@
                             $report->addChild("endDate", $endDate);
 
                             file_put_contents($fileName, $reports->asXML());
+
+                            rename($fileName, "../reports/" . $fileName);
 
                             echo "<h1>Report XML file generated successfully!</h1>";
                             echo "<a href='generateReport.php'>Back</a>";
