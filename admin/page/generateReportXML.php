@@ -48,7 +48,7 @@
                     if (isset($_POST["generateReportBtn"])) {
                         if (file_exists($fileName)) {
                             echo "<h1>File already exists!</h1>";
-                            echo "<a href='generateReport.php'>Back</a>";
+                            echo "<button onclick='window.location.href = \"generateReport.php\";'>Back</button>";
                             exit();
                         } else {
                             $reports = new SimpleXMLElement("<reports></reports>");
@@ -62,7 +62,7 @@
                             file_put_contents($fileName, $reports->asXML());
 
                             echo "<h1>Report XML file generated successfully!</h1>";
-                            echo "<a href='generateReport.php'>Back</a>";
+                            echo "<button onclick='window.location.href = \"adminPage.php\";'>Main Menu</button>";
                         }
                     }
                 ?>
