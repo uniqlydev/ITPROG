@@ -16,51 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    function revisedComboChecker(combo) {
-        comboTotal = 0;
-        totalDiscount = 0;
-
-    }
-
-
-
-    
-
-    // function comboChecker(main, side, drink, mquan, squan, dquan) {
-    //     comboTotal = 0;
-    //     totalDiscount = 0;
-
-    //     if (main == "Chicken" && side == "Mashed Potato" && drink == "Iced Tea") {
-    //         while (mquan > 0 && squan > 0 && dquan > 0) {
-    //             // Add price for combo meals ONLY
-    //             comboTotal = parseFloat(mainprice) + parseFloat(sideprice) + parseFloat(drinkprice);
-            
-    //             // Discount for the combo ONLY
-    //             totalDiscount += (comboTotal * 0.10);
-
-    //             console.log(totalDiscount);
-                
-    //             // Decrement the quantity of each item to find how many combos in order
-    //             mquan--;
-    //             squan--;
-    //             dquan--;
-    //         }
-    //         alert("Chicken Mash Tea Combo applied! 10% off your order!");
-    //         document.getElementById('disclbl').innerHTML = "Discount: "+ String(totalDiscount);
-    //         const amount = document.getElementById('amount');
-    //         amount.setAttribute('min', String(comboTotal - totalDiscount));
-    //         document.getElementById('totallbl').innerHTML = "Total: "+ String(comboTotal - totalDiscount);
-    //         document.getElementById('total').value = comboTotal - totalDiscount;
-    //         return totalDiscount;
-    //     } 
-
-    //     return totalDiscount;
-    // }
-
-
     function comboChecker(main,side,drink,mquan,squan,dquan,combo) {
         comboTotal = 0;
         totalDiscount = 0;
+
+        console.log(main);
+        console.log(side);
+        console.log(drink);
 
         if (main == combo.main && side == combo.sides && drink == combo.drinks) {
             while (mquan > 0 && squan > 0 && dquan > 0) {
@@ -68,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 totalDiscount += (parseFloat(comboTotal) * combo.discount);
 
-                console.log(totalDiscount);
 
                 mquan--;
                 squan--;
@@ -93,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var uname = prompt("Please enter your username: ");
 
 
-    const main = document.getElementById('meal').value;
+    const meal = document.getElementById('meal').value;
     const side = document.getElementById('sides').value;
     const drink = document.getElementById('drink').value;
     const mainprice = document.getElementById('mainprice').value;
@@ -111,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         combosArray.forEach(combo => {
             const {id, name, discount, drinks, main, sides} = combo; 
 
-            var disc = comboChecker(main,side,drink,mquan,squan,dquan,combo);
+            var disc = comboChecker(meal,side,drink,mquan,squan,dquan,combo);
 
             document.getElementById('username').value = uname;
             document.getElementById('discount').value = disc;

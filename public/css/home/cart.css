@@ -46,7 +46,7 @@
 input {
     width: 40%;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     border: none;
     background-color: transparent;
     font-size: 15px;
@@ -139,3 +139,25 @@ button {
 
     color: white;
 }
+
+
+.clear-button {
+
+    /* Make round no border same size as the other buttons */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fc4c4c;
+    color: white;
+}
+
+.clear-button[hidden] {
+    display: none;
+}
+  

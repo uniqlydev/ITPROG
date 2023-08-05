@@ -18,6 +18,41 @@ function checkFields(event) {
     }
 }
 
+function clearPortion(itemm,itemphp,itemquan,subtract,quantity,add,clear) {
+    console.log(parseFloat(document.getElementById(itemphp).value) * itemquan);
+
+    subtotal -= (parseFloat(document.getElementById(itemphp).value) * itemquan);
+
+    console.log(subtotal);
+
+    const total = document.getElementById('total');
+    total.value = subtotal.toFixed(2);
+
+    document.getElementById(itemm).value = "none";
+    document.getElementById(itemm).hidden = true;
+
+    document.getElementById(itemphp).value="0"
+    document.getElementById(itemphp).hidden = true;
+
+    document.getElementById(subtract).hidden = true;
+    document.getElementById(quantity).hidden = true;
+    document.getElementById(quantity).value="0";
+    document.getElementById(add).hidden = true;
+
+    document.getElementById(clear).hidden = true;
+
+    if (itemm == "mainm") {
+        mainSelected = false;
+    } else if (itemm == "sides") {
+        sideSelected = false;
+    } else if (itemm == "drinks") {
+        drinkSelected = false;
+    }
+};
+
+
+
+
 function clearOrder() {
     // main-meal
     document.getElementById('mainm').value = "none";
@@ -59,9 +94,14 @@ function clearOrder() {
 
     document.getElementById('total').value = "0";
 
+
     // Reset variables
     subtotal = 0;
     totl = 0;
+
+    mainSelected = false;
+    sideSelected = false;
+    drinkSelected = false;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -85,6 +125,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('quantitymain').disabled = false;
         document.getElementById('mainphp').hidden = false;
         document.getElementById('mainphp').value = price.toFixed(2);
+        document.getElementById('mclear').hidden = false;
+
+        mainSelected = true;
+
+        subtotal += price;
+        totalField.value = subtotal.toFixed(2);
+    }
+
+    function changeMain(foodName,price) {
+
+        // Subtract the price first before adding the new price
+        subtotal -= parseFloat(document.getElementById('mainphp').value) * parseInt(document.getElementById('quantitymain').value);
+
+        // Add the new price
+        document.getElementById('mainm').value = foodName;
+        document.getElementById('mainm').hidden = false;
+        document.getElementById('msubtract').hidden = false;
+        document.getElementById('quantitymain').hidden = false;
+        document.getElementById('madd').hidden = false;
+        document.getElementById('quantitymain').value = 1;
+        document.getElementById('quantitymain').disabled = false;
+        document.getElementById('mainphp').hidden = false;
+        document.getElementById('mainphp').value = price.toFixed(2);
+        document.getElementById('mclear').hidden = false;
+
+        mainSelected = true;
 
         subtotal += price;
         totalField.value = subtotal.toFixed(2);
@@ -100,6 +166,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('quantitydrink').disabled = false;
         document.getElementById('drinksphp').hidden = false;
         document.getElementById('drinksphp').value = price.toFixed(2);
+        document.getElementById('dclear').hidden = false;
+
+        drinkSelected = true;
+        
+        subtotal += price;
+        totalField.value = subtotal.toFixed(2);
+    }
+
+    function changeDrinks(foodName,price) {
+
+        // Subtract the price first before adding the new price
+        subtotal -= parseFloat(document.getElementById('drinksphp').value) * parseInt(document.getElementById('quantitydrink').value);
+
+        // Add the new price
+        document.getElementById('drinks').value = foodName;
+        document.getElementById('drinks').hidden = false;
+        document.getElementById('dsubtract').hidden = false;
+        document.getElementById('quantitydrink').hidden = false;
+        document.getElementById('dadd').hidden = false;
+        document.getElementById('quantitydrink').value = 1;
+        document.getElementById('quantitydrink').disabled = false;
+        document.getElementById('drinksphp').hidden = false;
+        document.getElementById('drinksphp').value = price.toFixed(2);
+        document.getElementById('dclear').hidden = false;
+
+        drinkSelected = true;
 
         subtotal += price;
         totalField.value = subtotal.toFixed(2);
@@ -115,6 +207,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('quantityside').disabled = false;
         document.getElementById('sidesphp').hidden = false;
         document.getElementById('sidesphp').value = price.toFixed(2);
+        document.getElementById('sclear').hidden = false;
+
+        sideSelected = true;
+
+        subtotal += price;
+        totalField.value = subtotal.toFixed(2);
+    }
+
+    function changeSides(foodName,price) {
+
+        // Subtract the price first before adding the new price
+        subtotal -= parseFloat(document.getElementById('sidesphp').value) * parseInt(document.getElementById('quantityside').value);
+
+        // Add the new price
+        document.getElementById('sides').value = foodName;
+        document.getElementById('sides').hidden = false;
+        document.getElementById('ssubtract').hidden = false;
+        document.getElementById('quantityside').hidden = false;
+        document.getElementById('sadd').hidden = false;
+        document.getElementById('quantityside').value = 1;
+        document.getElementById('quantityside').disabled = false;
+        document.getElementById('sidesphp').hidden = false;
+        document.getElementById('sidesphp').value = price.toFixed(2);
+        document.getElementById('sclear').hidden = false;
+
+        sideSelected = true;
 
         subtotal += price;
         totalField.value = subtotal.toFixed(2);
@@ -143,7 +261,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const foodName = li.querySelector('.label').textContent;
 
         button.addEventListener('click', () => {
-            addToCartMain(foodName, price);
+            // addToCartMain(foodName, price);
+
+            if (mainSelected == false) {
+                addToCartMain(foodName, price);
+            }else {
+                changeMain(foodName,price);   
+            }
         });
     });
 
@@ -154,7 +278,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const foodNameD = li.querySelector('.label').textContent;
 
         buttonD.addEventListener('click', () => {
-            addToCartDrinks(foodNameD, priceD);
+            // addToCartDrinks(foodNameD, priceD);
+
+            if (drinkSelected == false) {
+                addToCartDrinks(foodNameD, priceD);
+            }else {
+                changeDrinks(foodNameD,priceD);   
+            }
         });
     });
 
@@ -165,7 +295,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const foodNameS = li.querySelector('.label').textContent;
 
         buttonS.addEventListener('click', () => {
-            addToCartSides(foodNameS, priceS);
+            // addToCartSides(foodNameS, priceS);
+
+            if (sideSelected == false) {
+                addToCartSides(foodNameS, priceS);
+            }else {
+                changeSides(foodNameS,priceS);   
+            }
         });
     });
 
@@ -200,5 +336,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('submit').addEventListener('click', () => {
         checkFields(event);
+    });
+
+
+
+
+    document.getElementById('mclear').addEventListener('click', () => {
+        clearPortion('mainm','mainphp',parseInt(document.getElementById('quantitymain').value),'msubtract','quantitymain','madd','mclear');
+    });
+
+    document.getElementById('sclear').addEventListener('click', () => {
+        clearPortion('sides','sidesphp',parseInt(document.getElementById('quantityside').value),'ssubtract','quantityside','sadd','sclear');
+    });
+
+    document.getElementById('dclear').addEventListener('click', () => {
+        clearPortion('drinks','drinksphp',parseInt(document.getElementById('quantitydrink').value),'dsubtract','quantitydrink','dadd','dclear');
     });
 });
