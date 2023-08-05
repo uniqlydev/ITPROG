@@ -110,3 +110,46 @@ li {
     height: 1;
 }
 
+
+.wrapper-butt {
+    /* Make elements side by side horizontally maximizing space */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-butt .button-order {
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+
+    /* Make borderless */
+    border: none;
+
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(88, 241, 88);
+    color: white;
+}
+
+.wrapper-butt .clear-button {
+    /* Make red and white text */
+    color: white;
+    background-color: #fc4c4c;
+
+    /* Make button bigger */
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

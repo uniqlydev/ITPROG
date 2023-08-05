@@ -36,7 +36,10 @@
             <label for="item">Total:</label>
             <input type="text" id="total" class="ttl" name="total" required readonly value="0" >
         </div>
-    
-        <button type="submit" class="button-order" onclick="checkFields(event)">Add to Cart</button>
+
+        <div class="wrapper-butt">
+            <button id='clear' type="button" class="clear-button" onclick="clearOrder()">Clear</button>
+            <button id='submit' type="submit" class="button-order">Add to Cart</button>
+        </div>
     </form>
 </div>
