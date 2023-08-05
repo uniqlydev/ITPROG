@@ -89,8 +89,8 @@ table {
     height: 50px;
     width: 150px;
     border-radius: 10px;
-    background-color: #a69897;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     font-size: 20px;
     /* align to center */
