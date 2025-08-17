@@ -1,0 +1,27 @@
+<div class="button-menu-container">
+    <h1>Mains</h1>
+    <ul id="foodlist">
+    <% foods.forEach((food, index) => { %>
+        <% if (food.type === "M") { %>
+        <li id = "m<%= index+1%>">
+            <div class="item">
+                <img src="<%= food.image %>" alt="<%= food.name %>" class="pic">
+            </div>
+            <div>
+                <p class="label" id="foodname-<%= index + 1 %>"><%= food.name %></p>
+                <div class="cal-content">
+                    <img src="/images/cart/calories.png" class="calorie-intake">
+                    <p class="calorie-<%= index + 1 %>"><%= food.protein %>g</p>
+                </div>
+                <p class="desc"><%= food.description %></p>
+                <br>
+            </div>
+            <div class="buy">
+                <p id="price-<%=index + 1%>"> PHP <%= food.price %></p>
+                <button class="button-menu"></button>
+            </div>
+        </li>
+        <% } %>
+    <% }); %>
+    </ul>
+</div>

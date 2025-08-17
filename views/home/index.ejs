@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/home.css">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="css/home/home.css">
+    <link rel="stylesheet" href="css/home/cart.css">
+    <link rel="stylesheet" href="css/home/header.css">
+    <link rel="stylesheet" href="css/cart/cart.css">
+    <link rel="stylesheet" href="css/navbar/navbar.css">
+    <link rel="stylesheet" href="css/cart/cart-item.css">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Figtree:wght@300&family=Righteous&display=swap" rel="stylesheet">
+
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="scripts/home/index.js"></script>
+    <script type="text/javascript" src="scripts/cart/cart-container.js"></script>
+    
+
+    <%- include('../navbar/navbar.ejs') %>
 </head>
 <body>
-    <h1>Home</h1>
+
+    <div class="menu-options" id="cart-container">
+        <%- include('partials/meals-layer.ejs') %>
+        <%- include('partials/sides-layer.ejs') %>
+        <%- include('partials/drinks-layer.ejs') %>
+    </div>
+
+    <%- include('partials/cart.ejs') %>
 </body>
 </html>

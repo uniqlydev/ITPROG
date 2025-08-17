@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+
+    <link rel="stylesheet" href="css/Checkout/checkout.css">
+    <script type="text/javascript" src="scripts/home/payment.js"></script> 
+</head>
+<body>
+   <div class="left">
+    <h1>Order Summary</h1>
+    <p>Meal: <%= meal %> x <%= mquan %> - <%= mainprice %> </p>
+    <p>Sides: <%= sides %> x <%= squan %> - <%= sideprice %></p>
+    <p>Drinks: <%= drink %> x <%= dquan %> - <%= drinkprice %></p>
+    <p id="disclbl">Discount: </p>
+    <p id="totallbl">Total: <%= total %> </p>
+
+    <br>
+    <br>
+    <br>
+    
+    <form method="post" action="/api/customer">
+        <label for="amount">Amount to be paid:</label>
+        <input type="number" id="amount" name="amount" min="<%= total %>" required>
+
+        <input type="hidden" id="username" name="uname">
+        <input type="hidden" id="meal" name="meal" value="<%= meal %>">
+        <input type="hidden" id="sides" name="sides" value="<%= sides %>">
+        <input type="hidden" id="drink" name="drink" value="<%= drink %>">
+        <input type="hidden" id="mquan" name="mquan" value="<%= mquan %>">
+        <input type="hidden" id="squan" name="squan" value="<%= squan %>">
+        <input type="hidden" id="dquan" name="dquan" value="<%= dquan %>">
+        <input type="hidden" id="total" name="total" value="<%= total %>">
+        <input type="hidden" id="discount" name="discount">
+        <input type="hidden" id="mainprice" name="priceOfMain" value="<%= mainprice %>">
+        <input type="hidden" id="sideprice" name="priceOfSide" value="<%= sideprice %>">
+        <input type="hidden" id="drinkprice" name="priceOfDrink" value="<%= drinkprice %>">
+        <br>
+        <br>
+        <button type="button" onclick="window.history.back()">Cancel</button>
+        <input type="submit" value="Pay">
+    </form>
+    </div>
+    <div class="right">
+        <img src="/images/checkout/confirmed.jpg" alt="" srcset="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<?php
+    session_start();
+    if (!isset($_SESSION["getLogin"])) {
+        header("location:loginPage.php");
+    } else {
+    }
+?>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Dish Page</title>
+    <link rel="stylesheet" href="addDishAppStyle.css">
+</head>
+<body>
+    <div class="Menu-container">
+        <div class="header-layer">
+            <h1>Animo<span>Bites</span></h1>
+        </div>
+        <div class = "menu">
+            <h2>Add Dishes via Application</h2>
+            <form method="post" action="addDishApplicationConfirm.php">
+                <div class = "Submenu">
+                    <?php
+                        echo "<div class='input-field' id = 'user'>";
+                        echo "<input type='text' name='dishName' placeholder='Dish Name' required/> <br /><br />";
+                        echo "<input type='text' name='dishPrice' placeholder='Dish Price' required/> <br /><br />";
+                        echo "<input type='text' name='dishImage' placeholder='Dish Image URL' required/> <br /><br />";
+                        echo "<input type='text' name='dishDescription' placeholder='Dish Description' required/> <br /><br />";
+                        echo "<input type='text' name='dishProtein' placeholder='Dish Protein' required/> <br /><br />";
+                        echo "</div>";
+                        echo "<select name='dishType'>";
+                        echo "<option value=''>Select Dish Type</option>";
+                        echo "<option value='M'>Main Dish</option>";
+                        echo "<option value='S'>Side Dish</option>";
+                        echo "<option value='D'>Drink</option>";
+                        echo "</select> <br /><br />";
+
+                        echo "<button type='submit' value='Add Dish' name='addBtn'>Submit</button";
+                        
+                    ?>
+                </div>
+            </form>
+            <br>
+            <button onclick="window.location.href = 'addDish.php';">Backs</button><br>
+        </div>
+    </div>
+
+    <?php
+         
+    ?>
+</body>
+</html>

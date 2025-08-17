@@ -1,0 +1,112 @@
+.button-menu-container {
+    /* Make into a row */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/* For Meal-2 */
+
+.meal-2 {
+    /* Make into a column */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.meal-2 .salmon {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    /* Add shadows */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.meal-2 .calorie-intake {
+    width: 15px;
+    height: 15px;
+}
+
+.meal-2 .label {
+    text-align: justify;
+    font-size: 15px;
+    font-weight: bold;
+}
+.meal-2 .button-menu {
+    /* Set button pic as /images/cart/add-to-cart.png */
+    background-image: url("/images/cart/add-to-cart.png");
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    float: right;
+}
+
+.buy {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+.buy p {
+    float: left;
+    width: 230px;
+}
+
+/* Make ul and li into row */
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* Add space  */
+    padding: 0px;
+    margin: 10px;
+
+    width: 1500px;
+}
+
+li {
+    list-style-type: none;
+
+    /* Add space per element */
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+/* FOR CALORY CONTENTS */
+
+/* Make cal-content beside "label" */
+.cal-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.calorie-intake {
+    width: 15px;
+    height: 15px;
+}
+
+.desc0 {
+    height: 1;
+}
+

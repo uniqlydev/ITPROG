@@ -1,5 +1,8 @@
 class customer {
-    constructor(main, sides, drinks, total, date, mquan, squan, dquan) {
+    constructor(uname,main, sides, drinks, total, date,mquan, 
+                squan, dquan, priceOfMain, priceOfSide, 
+                priceOfDrink,discount) {
+        this.uname = uname;
         this.main = main;
         this.sides = sides;
         this.drinks = drinks;
@@ -8,6 +11,10 @@ class customer {
         this.mquan = mquan;
         this.squan = squan;
         this.dquan = dquan;
+        this.priceOfMain = priceOfMain;
+        this.priceOfSide = priceOfSide;
+        this.priceOfDrink = priceOfDrink;
+        this.discount = discount;
     }    
 }
 
